@@ -1,0 +1,7 @@
+# Ignorer les vidéos trop volumineuses pour GitHub (>100Mo)
+Image/*.mp4
+
+# Autres fichiers système
+.DS_Store
+Thumbs.db
+node_modules/
