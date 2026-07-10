@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bradley Joseph — Développeur Web & Systèmes</title>
+    <meta name="description" content="Portfolio de Bradley Joseph — Développeur web et concepteur de systèmes.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            /* Surcharge de l'accent pour le profil Développeur (Bleu élégant) */
+            --accent-color: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cursor" id="cursor"></div>
+
+    <!-- ── NAVBAR ──────────────────────────────── -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" title="Retour au choix de profil"><i class="fas fa-arrow-left" style="font-size: 0.9rem; margin-right: 10px;"></i> B<span>.</span>Joseph</a>
+            <ul class="nav-links">
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact" class="nav-cta">Contact</a></li>
+            </ul>
+            <button class="burger" id="burger" aria-label="Menu">
+                <span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="#projects" class="mm-link">Work</a></li>
+            <li><a href="#about" class="mm-link">About</a></li>
+            <li><a href="#skills" class="mm-link">Skills</a></li>
+            <li><a href="#contact" class="mm-link">Contact</a></li>
+            <li style="margin-top: 40px;"><a href="index.html" class="mm-link" style="font-size: 1.2rem; color: var(--text-secondary);"><i class="fas fa-arrow-left"></i> Changer de profil</a></li>
+        </ul>
+    </div>
+
+    <!-- ── HERO ───────────────────────────────── -->
+    <section id="home" class="hero">
+        <div class="hero-grid container">
+            <div class="hero-left">
+                <p class="hero-eyebrow reveal">Développeur & Architecte Web</p>
+                <h1 class="hero-title reveal">Code.<br><em>Logic.</em></h1>
+                <p class="hero-desc reveal">Je conçois des architectures solides et des interfaces web interactives pour résoudre des problèmes complexes.</p>
+                <div class="hero-actions reveal">
+                    <a href="#projects" class="btn-primary">Voir mon code</a>
+                    <a href="#contact" class="btn-ghost">Me contacter</a>
+                </div>
+                <div class="hero-meta reveal">
+                    <span>Tech Stack</span>
+                    <span class="meta-dot"></span>
+                    <span>PHP, JS, React</span>
+                    <span class="meta-dot"></span>
+                    <span>MySQL</span>
+                </div>
+            </div>
+            <div class="hero-right reveal">
+                <div class="hero-img-wrap">
+                    <img src="Image/Photo pro.png" alt="Bradley Joseph — Développeur" class="hero-img">
+                    <div class="hero-img-label" style="background-color: var(--bg-darker);">
+                        <i class="fas fa-code" style="color: var(--accent-color);"></i>
+                        Full-Stack Developer
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ── MARQUEE ─────────────────────────────── -->
+    <div class="marquee-wrap">
+        <div class="marquee-track">
+            <span>Frontend</span><span class="sep">·</span>
+            <span>Backend</span><span class="sep">·</span>
+            <span>API Rest</span><span class="sep">·</span>
+            <span>Bases de données</span><span class="sep">·</span>
+            <span>Architecture Logicielle</span><span class="sep">·</span>
+            <span>UI/UX Code</span><span class="sep">·</span>
+            <span>Frontend</span><span class="sep">·</span>
+            <span>Backend</span><span class="sep">·</span>
+            <span>API Rest</span><span class="sep">·</span>
+            <span>Bases de données</span><span class="sep">·</span>
+            <span>Architecture Logicielle</span><span class="sep">·</span>
+            <span>UI/UX Code</span><span class="sep">·</span>
+        </div>
+    </div>
+
+    <!-- ── ABOUT ──────────────────────────────── -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-left">
+                    <p class="section-label reveal">À propos</p>
+                    <h2 class="section-title reveal">Logique &<br>Performance.</h2>
+                    <div class="about-stats reveal">
+                        <div class="astat">
+                            <span class="astat-n">10+</span>
+                            <span class="astat-l">Projets Web<br>Déployés</span>
+                        </div>
+                        <div class="astat">
+                            <span class="astat-n">ESIH</span>
+                            <span class="astat-l">Formation<br>Ingénierie</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-right">
+                    <div class="about-photo-wrap reveal">
+                        <img src="Image/hero_bg_1777007739091.png" alt="Setup Code" class="about-photo">
+                    </div>
+                    <div class="about-text reveal">
+                        <p>Étudiant à l'ESIH, je me spécialise dans le développement d'applications web robustes et scalables. Mon approche allie une forte compréhension algorithmique à une passion pour les interfaces fluides.</p>
+                        <p>Qu'il s'agisse de concevoir une base de données complexe ou d'intégrer une maquette pixel-perfect, je mets un point d'honneur à écrire un code propre, maintenable et optimisé.</p>
+                        <a href="#contact" class="btn-text">Discuter de technique <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SERVICES ───────────────────────────── -->
+    <section id="skills" class="services section section-dark">
+        <div class="container">
+            <div class="services-head">
+                <p class="section-label reveal">Compétences</p>
+                <h2 class="section-title reveal">Stack Technique.</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <span class="service-num">01</span>
+                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Frontend Development</h3>
+                    <p>Création d'interfaces utilisateur modernes et réactives. Maîtrise de HTML5, CSS3 (animations, grid, flexbox), JavaScript Vanilla et initiation aux frameworks comme React.</p>
+                </div>
+                <div class="service-card reveal">
+                    <span class="service-num">02</span>
+                    <div class="service-icon"><i class="fas fa-server"></i></div>
+                    <h3>Backend & APIs</h3>
+                    <p>Développement de logiques serveur robustes en PHP. Création d'APIs RESTful, gestion des sessions, authentification sécurisée et architecture MVC.</p>
+                </div>
+                <div class="service-card reveal">
+                    <span class="service-num">03</span>
+                    <div class="service-icon"><i class="fas fa-database"></i></div>
+                    <h3>Bases de données</h3>
+                    <p>Modélisation et gestion de bases de données relationnelles MySQL. Requêtes SQL complexes, optimisation et intégrité des données.</p>
+                </div>
+                <div class="service-card reveal">
+                    <span class="service-num">04</span>
+                    <div class="service-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>Systèmes d'Information</h3>
+                    <p>Conception complète de systèmes de gestion (ERP, CRM légers). Digitalisation des processus métiers, de l'inventaire à la facturation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── WORK ───────────────────────────────── -->
+    <section id="projects" class="work section">
+        <div class="container">
+            <div class="work-head">
+                <p class="section-label reveal">Projets Dev</p>
+                <h2 class="section-title reveal">Mes réalisations.</h2>
+            </div>
+            <div class="work-grid">
+
+                <div class="work-card reveal">
+                    <div class="work-img">
+                        <img src="Image/IMG-20251103-WA0022.jpg" alt="Système Paulinog Multiservice">
+                        <div class="work-overlay">
+                            <div class="work-tags">
+                                <span>PHP</span><span>MySQL</span><span>Système</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <h3>Système Paulinog Multiservice</h3>
+                        <p>Application de gestion opérationnelle complète — suivi d'activités, inventaire, facturation et rapports.</p>
+                        <button class="work-btn" onclick="openModal('modal-paulinog')">
+                            Voir la démo vidéo <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="work-card reveal">
+                    <div class="work-img">
+                        <img src="Image/IMG_0785.JPG" alt="Archivage Rankont-edu">
+                        <div class="work-overlay">
+                            <div class="work-tags">
+                                <span>Architecture</span><span>Base de données</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <h3>Système d'archivage — Rankont-edu</h3>
+                        <p>Plateforme de digitalisation et d'organisation des archives scolaires permettant des recherches rapides et sécurisées.</p>
+                        <button class="work-btn" onclick="openModal('modal-rankont')">
+                            Voir la démo vidéo <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── MODALS (Dev) ───────────────────────── -->
+    <div id="modal-paulinog" class="custom-modal">
+        <div class="modal-content modal-fullscreen">
+            <button class="modal-close" onclick="closeModal('modal-paulinog')"><i class="fas fa-times"></i></button>
+            <div class="modal-body">
+                <div class="video-wrapper">
+                    <video preload="metadata" loop playsinline>
+                        <source src="Image/Paulinog.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-action-overlay">
+                        <a href="METTRE_LIEN_DRIVE_PAULINOG_ICI" target="_blank" class="btn-primary" style="background-color: var(--accent-color); color: var(--text-light); border:none;"><i class="fas fa-external-link-alt"></i> Voir la vidéo complète sur Drive</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-rankont" class="custom-modal">
+        <div class="modal-content modal-fullscreen">
+            <button class="modal-close" onclick="closeModal('modal-rankont')"><i class="fas fa-times"></i></button>
+            <div class="modal-body">
+                <div class="video-wrapper">
+                    <video preload="metadata" loop playsinline>
+                        <source src="Image/Rankont-edu.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-action-overlay">
+                        <a href="METTRE_LIEN_DRIVE_RANKONT_ICI" target="_blank" class="btn-primary" style="background-color: var(--accent-color); color: var(--text-light); border:none;"><i class="fas fa-external-link-alt"></i> Voir la vidéo complète sur Drive</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── CONTACT ────────────────────────────── -->
+    <section id="contact" class="contact section section-dark">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-left">
+                    <p class="section-label reveal">Contact</p>
+                    <h2 class="section-title reveal">Travaillons<br>ensemble.</h2>
+                    <p class="contact-desc reveal">Besoin d'un développeur pour concrétiser votre idée logicielle ?</p>
+                    <div class="contact-methods reveal">
+                        <a href="mailto:josephdjamy26@gmail.com" class="cmethod">
+                            <i class="fas fa-envelope"></i>
+                            <span>josephdjamy26@gmail.com</span>
+                        </a>
+                        <a href="tel:+50948724750" class="cmethod">
+                            <i class="fas fa-phone"></i>
+                            <span>+509 48724750</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/bradley-djamy-joseph" target="_blank" class="cmethod">
+                            <i class="fab fa-linkedin"></i>
+                            <span>Bradley DJamy Joseph</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ─────────────────────────────── -->
+    <footer>
+        <div class="container footer-inner">
+            <span class="footer-logo">B<span>.</span>Joseph</span>
+            <p class="footer-copy">© 2025 Bradley Joseph — Tous droits réservés.</p>
+            <div class="footer-links">
+                <a href="index.html">Changer de profil</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

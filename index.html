@@ -1,461 +1,563 @@
-l<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bradley Joseph | Créatif, Développeur & Stratège Digital</title>
-    <meta name="description" content="Portfolio de Bradley Joseph, un jeune professionnel multidisciplinaire spécialisé en développement web, design graphique, photographie et stratégie digitale.">
-    
+    <title>Bradley Joseph — Sélectionnez votre profil</title>
+    <meta name="description" content="Portfolio de Bradley Joseph — Développeur web et Créatif Média.">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap"
+        rel="stylesheet">
 
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo">B.<span>Joseph</span></a>
-            <ul class="nav-links">
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#skills">Compétences</a></li>
-                <li><a href="#projects">Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </div>
+    <!-- CSS -->
+    <style>
+        :root {
+            --bg-dark: #0A0A0A;
+            --text-light: #F5F1E8;
+            --accent-dev: #3b82f6;
+            /* Bleu élégant pour Dev */
+            --accent-media: #E8A427;
+            /* Ambre pour Média */
+            --transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Minimal Nav */
+        .nav-minimal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 50px;
+            z-index: 100;
+            background: linear-gradient(to bottom, var(--bg-dark) 0%, transparent 100%);
+        }
+
+        .nav-minimal .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-minimal .logo span {
+            color: var(--accent-media);
+        }
+
+        /* Intro Section */
+        .intro-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 50px;
+            position: relative;
+            background: radial-gradient(circle at 10% 20%, rgba(232, 164, 39, 0.05) 0%, transparent 50%);
+        }
+
+        .intro-container {
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .intro-image .img-frame {
+            position: relative;
+            background-color: #111;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+        }
+
+        .intro-image img {
+            width: 100%;
+            display: block;
+            filter: contrast(105%);
+            transition: 0.8s var(--transition);
+        }
+
+        .intro-image:hover img {
+            filter: grayscale(0%) contrast(100%);
+        }
+
+        .intro-label {
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent-media);
+            margin-bottom: 20px;
+        }
+
+        .intro-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .intro-title em {
+            font-style: italic;
+            color: var(--accent-dev);
+        }
+
+        .intro-text {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .intro-text p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: rgba(245, 241, 232, 0.7);
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        /* Transition links */
+        .intro-transition {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 40px;
+        }
+
+        .intro-transition p {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 25px;
+            color: var(--text-light);
+        }
+
+        .transition-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .t-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: var(--text-light);
+            transition: 0.3s ease;
+        }
+
+        .t-icon {
+            width: 44px;
+            height: 44px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: 0.3s ease;
+        }
+
+        .t-text {
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-bottom: 1px solid transparent;
+            padding-bottom: 2px;
+        }
+
+        .t-link:hover .t-icon {
+            background-color: var(--text-light);
+            color: var(--bg-dark);
+            border-color: var(--text-light);
+            transform: translateY(-5px);
+        }
+
+        .t-link.link-dev:hover .t-icon {
+            background-color: var(--accent-dev);
+            border-color: var(--accent-dev);
+        }
+
+        .t-link.link-media:hover .t-icon {
+            background-color: var(--accent-media);
+            border-color: var(--accent-media);
+        }
+
+        /* Scroll hint */
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            opacity: 0.5;
+        }
+
+        .mouse {
+            width: 20px;
+            height: 35px;
+            border: 1px solid var(--text-light);
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .mouse::after {
+            content: '';
+            width: 2px;
+            height: 6px;
+            background-color: var(--text-light);
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: mouseScroll 2s infinite;
+        }
+
+        @keyframes mouseScroll {
+            0% {
+                transform: translate(-50%, 0);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(-50%, 15px);
+                opacity: 0;
+            }
+        }
+
+        /* Selection Section */
+        .split-section {
+            height: auto;
+            min-height: 100vh;
+            background-color: var(--bg-dark);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .selection-header {
+            width: 100%;
+            padding: 100px 50px 40px;
+            text-align: center;
+            background-color: var(--bg-dark);
+            z-index: 10;
+        }
+
+        .selection-header p {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: rgba(245, 241, 232, 0.6);
+            position: relative;
+            display: inline-block;
+        }
+
+        .selection-header p::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 1px;
+            background-color: var(--accent-media);
+        }
+
+        /* Split Container */
+        .split-container {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        /* Shared Styles for both sides */
+        .split-side {
+            position: relative;
+            flex: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-light);
+            transition: var(--transition);
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .split-side::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+            transition: var(--transition);
+            z-index: 1;
+            filter: contrast(110%);
+        }
+
+        .split-side:hover {
+            flex: 1.5;
+        }
+
+        .split-side:hover::before {
+            opacity: 0.5;
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        /* Dim the other side when hovering one */
+        .split-container:hover .split-side:not(:hover) {
+            flex: 0.5;
+        }
+
+        .split-container:hover .split-side:not(:hover)::before {
+            opacity: 0.05;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .split-side:hover .content {
+            transform: scale(1.05);
+        }
+
+        .split-side h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
+
+        .split-side p {
+            font-size: 1rem;
+            opacity: 0.7;
+            max-width: 300px;
+            font-weight: 300;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .enter-btn {
+            margin-top: 20px;
+            padding: 12px 30px;
+            border: 1px solid rgba(245, 241, 232, 0.3);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .split-side:hover .enter-btn {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Developer Side */
+        .side-dev {
+            background-color: #050505;
+        }
+
+        .side-dev::before {
+            background-image: url('Image/hero_bg_1777007739091.png');
+        }
+
+        .side-dev h2 {
+            color: var(--text-light);
+        }
+
+        .side-dev:hover .enter-btn {
+            background-color: var(--accent-dev);
+            color: var(--text-light);
+            border-color: var(--accent-dev);
+        }
+
+        /* Media Side */
+        .side-media {
+            background-color: #030303;
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .side-media::before {
+            background-image: url('Image/Multi.jpeg');
+        }
+
+        .side-media h2 {
+            color: var(--accent-media);
+        }
+
+        .side-media:hover .enter-btn {
+            background-color: var(--accent-media);
+            color: var(--bg-dark);
+            border-color: var(--accent-media);
+        }
+
+        /* Mobile specific */
+        @media (max-width: 1024px) {
+            .intro-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+            }
+
+            .intro-image {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .intro-text p {
+                text-align: center;
+            }
+
+            .transition-links {
+                justify-content: center;
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-minimal {
+                padding: 20px;
+            }
+
+            .intro-section {
+                padding: 100px 20px;
+            }
+
+            .split-container {
+                flex-direction: column;
+            }
+
+            .split-side {
+                width: 100%;
+                height: 50%;
+            }
+
+            .split-side:hover {
+                flex: 1;
+            }
+
+            .split-container:hover .split-side:not(:hover) {
+                flex: 1;
+            }
+
+            .enter-btn {
+                opacity: 1;
+                transform: translateY(0);
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ── NAVIGATION (Minimal) ────────────────── -->
+    <nav class="nav-minimal">
+        <div class="logo">B<span>.</span>Joseph</div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-bg"></div>
-        <div class="container hero-content">
-            <div class="badge fade-in">Multidisciplinaire & Ambitieux</div>
-            <h1 class="fade-in">Bradley Joseph</h1>
-            <h2 class="typewriter fade-in">Développeur Web | Créatif Digital | Photographe | Communicant</h2>
-            <p class="fade-in">Je transforme des idées en solutions digitales et visuelles à travers la technologie, la création et la communication.</p>
-            <div class="hero-btns fade-in">
-                <a href="#projects" class="btn btn-primary">Voir mes projets</a>
-                <a href="#contact" class="btn btn-outline">Me contacter</a>
+    <!-- ── INTRODUCTION SECTION ────────────────── -->
+    <section class="intro-section">
+        <div class="intro-container">
+            <div class="intro-image">
+                <div class="img-frame">
+                    <img src="Image/Photo pro.png" alt="Bradley Joseph">
+                </div>
+            </div>
+            <div class="intro-content">
+                <span class="intro-label">Bonjour, je suis Bradley</span>
+                <h1 class="intro-title">Étudiant, Créatif & <em>Développeur.</em></h1>
+                <div class="intro-text">
+                    <p>Je suis un étudiant passionné par la technologie, la création visuelle et l’innovation numérique.
+                        Actuellement en formation à ESIH, j’évolue entre le développement web et la production
+                        multimédia, avec une approche centrée sur la créativité, la rigueur et l’impact.</p>
+                    <p>À travers mes projets, je combine design, vidéo, communication et programmation afin de créer des
+                        expériences modernes et engageantes. Que ce soit pour développer des applications, concevoir des
+                        identités visuelles, réaliser des contenus vidéo ou gérer des projets numériques, j’aime
+                        transformer des idées en solutions concrètes.</p>
+                    <p>En dehors du cadre académique, je suis également impliqué dans plusieurs initiatives étudiantes
+                        et communautaires où je mets mes compétences au service de l’organisation, de la communication
+                        et de la valorisation des événements.</p>
+                </div>
+
+                <!-- Suppression des liens redondants pour une transition plus fluide -->
             </div>
         </div>
-        <div class="scroll-indicator">
+        <div class="scroll-hint">
             <div class="mouse"></div>
-            <span>Scroll</span>
+            <span>Scroll pour choisir</span>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about section">
-        <div class="container">
-            <div class="section-header">
-                <span class="subtitle">Mon Parcours</span>
-                <h2>À propos de moi</h2>
-            </div>
-            <div class="about-grid">
-                <div class="about-text animate-on-scroll">
-                    <p>Je suis étudiant à l'ESIH avec un profil résolument multidisciplinaire. J'évolue dans un univers où la rigueur du code rencontre la liberté de la création visuelle.</p>
-                    <p>Mon objectif est d'utiliser la technologie, le design et la communication pour concevoir des projets innovants et apporter des solutions concrètes et humaines.</p>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">Multidisciplinaire</span>
-                            <span class="stat-label">Profil</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">ESIH</span>
-                            <span class="stat-label">Formation</span>
-                        </div>
-                    </div>
+    <!-- ── SELECTION SECTION ───────────────────── -->
+    <section id="selection" class="split-section">
+        <div class="selection-header">
+            <p>Découvrez maintenant l’univers qui vous intéresse le plus :</p>
+        </div>
+        <div class="split-container">
+            <!-- Developer Side -->
+            <a href="developer.html" class="split-side side-dev">
+                <div class="content">
+                    <h2>Développeur</h2>
+                    <p>Architectures web, systèmes, et interfaces numériques.</p>
+                    <div class="enter-btn">Entrer le profil</div>
                 </div>
-                <div class="about-vision animate-on-scroll">
-                    <div class="vision-card">
-                        <i class="fas fa-quote-left"></i>
-                        <p>Je crois que la technologie, la créativité et la communication sont des outils puissants pour transformer les idées en actions concrètes.</p>
-                        <span class="vision-author">— Ma Vision</span>
-                    </div>
+            </a>
+
+            <!-- Media Side -->
+            <a href="media.html" class="split-side side-media">
+                <div class="content">
+                    <h2>Créatif & Média</h2>
+                    <p>Photographie, vidéographie, et storytelling visuel.</p>
+                    <div class="enter-btn">Entrer le profil</div>
                 </div>
-            </div>
+            </a>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills section bg-dark">
-        <div class="container">
-            <div class="section-header">
-                <span class="subtitle">Ce que je maîtrise</span>
-                <h2>Mes Compétences</h2>
-            </div>
-            <div class="skills-grid">
-                <!-- Développement -->
-                <div class="skill-category animate-on-scroll">
-                    <div class="skill-icon"><i class="fas fa-code"></i></div>
-                    <h3>Développement</h3>
-                    <p class="skill-description">Création d'interfaces web interactives et d'applications dynamiques, de la conception frontend (HTML, CSS, JS, React) au développement backend (PHP, bases de données). J'utilise également C++ pour la programmation orientée objet et possède la capacité de lire et comprendre du code Python.</p>
-                    <div class="skill-image-placeholder">
-                        <i class="fas fa-image"></i>
-                        <span>Espace pour photo</span>
-                    </div>
-                </div>
+    <!-- FontAwesome for the new icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-                <!-- Création -->
-                <div class="skill-category animate-on-scroll">
-                    <div class="skill-icon"><i class="fas fa-camera"></i></div>
-                    <h3>Création</h3>
-                    <p class="skill-description">Production visuelle complète alliant photographie de qualité, captation vidéo événementielle professionnelle et montage dynamique pour donner vie à vos projets.</p>
-                    <div class="skill-image-placeholder">
-                        <i class="fas fa-image"></i>
-                        <span>Espace pour photo</span>
-                    </div>
-                </div>
-
-                <!-- Communication -->
-                <div class="skill-category animate-on-scroll">
-                    <div class="skill-icon"><i class="fas fa-bullhorn"></i></div>
-                    <h3>Communication</h3>
-                    <p class="skill-description">Développement d'identité de marque (branding), gestion stratégique de contenu et animation de communautés pour accroître et engager votre audience.</p>
-                    <div class="skill-image-placeholder">
-                        <i class="fas fa-image"></i>
-                        <span>Espace pour photo</span>
-                    </div>
-                </div>
-
-                <!-- Organisation -->
-                <div class="skill-category animate-on-scroll">
-                    <div class="skill-icon"><i class="fas fa-tasks"></i></div>
-                    <h3>Organisation</h3>
-                    <p class="skill-description">Pilotage efficace de projets numériques, incluant la planification stratégique, le suivi rigoureux des tâches et la coordination fluide des équipes impliquées.</p>
-                    <div class="skill-image-placeholder">
-                        <i class="fas fa-image"></i>
-                        <span>Espace pour photo</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects section bg-dark">
-        <div class="container">
-            <div class="section-header">
-                <span class="subtitle">Mes Réalisations</span>
-                <h2>Projets Majeurs</h2>
-            </div>
-            
-            <h3 class="project-category-title">A. Développement & Systèmes</h3>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card animate-on-scroll">
-                    <div class="project-img">
-                        <img src="Image/IMG-20251103-WA0022.jpg" alt="Logo Paulinog Multiservice">
-                        <div class="project-overlay">
-                            <div class="project-tags">
-                                <span>Web App</span>
-                                <span>PHP</span>
-                                <span>MySQL</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Système de gestion - Paulinog Multiservice</h3>
-                        <p>Conception d'un outil complet pour la gestion opérationnelle et le suivi des activités de l'entreprise.</p>
-                        <div class="project-impact"><strong>Impact:</strong> Optimisation des processus et centralisation des données.</div>
-                        <button class="gallery-link" onclick="openModal('modal-paulinog')"><i class="fas fa-play-circle"></i> Voir la présentation vidéo</button>
-                    </div>
-                </div>
-                <!-- Project 2 -->
-                <div class="project-card animate-on-scroll">
-                    <div class="project-img">
-                        <img src="Image/IMG_0785.JPG" alt="Logo Rankont-edu">
-                        <div class="project-overlay">
-                            <div class="project-tags">
-                                <span>Système</span>
-                                <span>Archivage</span>
-                                <span>Data</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Système d'archivage numérique - Rankont-edu</h3>
-                        <p>Digitalisation et organisation des archives pour une récupération rapide et sécurisée de l'information.</p>
-                        <div class="project-impact"><strong>Impact:</strong> Gain de temps majeur dans la recherche documentaire.</div>
-                        <button class="gallery-link" onclick="openModal('modal-rankont')"><i class="fas fa-play-circle"></i> Voir la présentation vidéo</button>
-                    </div>
-                </div>
-                <!-- Project 3 -->
-                <div class="project-card animate-on-scroll">
-                    <div class="project-img">
-                        <img src="Image/hero_bg_1777007739091.png" alt="Projets Web Personnels">
-                        <div class="project-overlay">
-                            <div class="project-tags">
-                                <span>ReactJS</span>
-                                <span>Frontend</span>
-                                <span>Creative</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Projets Web Personnels</h3>
-                        <p>Exploration des dernières technologies web à travers des interfaces interactives et performantes.</p>
-                        <div class="project-impact"><strong>Impact:</strong> Veille technologique et perfectionnement technique.</div>
-                    </div>
-                </div>
-            </div>
-
-            <h3 class="project-category-title">B. Photographie & Vidéo</h3>
-            <div class="projects-grid">
-                <!-- Project 4: Photo Concert -->
-                <div class="project-card animate-on-scroll">
-                    <div class="project-img">
-                        <img src="Image/IMGP5707.jpg" alt="Productions Photo - Concert">
-                        <div class="project-overlay">
-                            <div class="project-tags">
-                                <span>Photographie</span>
-                                <span>Concert</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Galerie Photo : Concert Live</h3>
-                        <p>Couverture photographique d'événements musicaux — capturer l'émotion et l'énergie du moment avec un œil artistique.</p>
-                        <div class="project-impact"><strong>Impact:</strong> Visuels premium pour la promotion de l'artiste.</div>
-                        <button class="gallery-link" onclick="openModal('modal-concert-photo')"><i class="fas fa-images"></i> Voir la galerie complète</button>
-                    </div>
-                </div>
-
-                <!-- Project 5: Video Concert -->
-                <div class="project-card animate-on-scroll">
-                    <div class="project-img" style="cursor: pointer;" onclick="openModal('modal-concert-video')">
-                        <img src="Image/Screenshot 2026-04-24 140923.png" alt="Portfolio Vidéo" id="video-portfolio-cover">
-                        <div class="play-overlay-icon">
-                            <i class="fas fa-play"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-tags">
-                                <span>Vidéographie</span>
-                                <span>Montage</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Portfolio Vidéographie</h3>
-                        <p>Découvrez une sélection de mes meilleures réalisations vidéo : récapitulatifs d'événements, captations live et créations dynamiques.</p>
-                        <div class="project-impact"><strong>Format:</strong> Multiples vidéos à explorer.</div>
-                        <button class="gallery-link" onclick="openModal('modal-concert-video')"><i class="fas fa-play-circle"></i> Découvrir les vidéos</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modals (Hidden by default) -->
-    
-    <!-- Modal 1: Paulinog Video (Fullscreen) -->
-    <div id="modal-paulinog" class="custom-modal">
-        <div class="modal-content modal-fullscreen">
-            <button class="modal-close" onclick="closeModal('modal-paulinog')"><i class="fas fa-times"></i></button>
-            <div class="modal-body">
-                <div class="video-wrapper">
-                    <video preload="metadata" loop playsinline>
-                        <source src="Image/Paulinog.mp4" type="video/mp4">
-                        Votre navigateur ne supporte pas la lecture vidéo.
-                    </video>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 1B: Rankont-edu Video (Fullscreen) -->
-    <div id="modal-rankont" class="custom-modal">
-        <div class="modal-content modal-fullscreen">
-            <button class="modal-close" onclick="closeModal('modal-rankont')"><i class="fas fa-times"></i></button>
-            <div class="modal-body">
-                <div class="video-wrapper">
-                    <video preload="metadata" loop playsinline>
-                        <source src="Image/Rankont-edu.mp4" type="video/mp4">
-                        Votre navigateur ne supporte pas la lecture vidéo.
-                    </video>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 2: Concert Photos (Masonry) -->
-    <div id="modal-concert-photo" class="custom-modal">
-        <div class="modal-content modal-large">
-            <button class="modal-close" onclick="closeModal('modal-concert-photo')"><i class="fas fa-times"></i></button>
-            <div class="modal-header">
-                <h2>Galerie Photo : Concert Live</h2>
-            </div>
-            <div class="modal-body">
-                <!-- Inner Lightbox (for full screen single photo view) -->
-                <div id="lightbox" class="lightbox">
-                    <button class="lb-close" id="lb-close"><i class="fas fa-times"></i></button>
-                    <button class="lb-prev" id="lb-prev"><i class="fas fa-chevron-left"></i></button>
-                    <button class="lb-next" id="lb-next"><i class="fas fa-chevron-right"></i></button>
-                    <div class="lb-content">
-                        <img id="lb-img" src="" alt="">
-                        <div class="lb-counter" id="lb-counter"></div>
-                    </div>
-                </div>
-                <!-- Masonry Grid -->
-                <div class="masonry-grid" id="masonry-grid">
-                    <div class="masonry-item" data-index="0"><img src="Image/3.jpg" alt="Concert photo 1" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
-                    <div class="masonry-item" data-index="1"><img src="Image/5.jpg" alt="Concert photo 2" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
-                    <div class="masonry-item" data-index="2"><img src="Image/8.jpg" alt="Concert photo 3" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
-                    <div class="masonry-item" data-index="3"><img src="Image/9.jpg" alt="Concert photo 4" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
-                    <div class="masonry-item" data-index="4"><img src="Image/11.jpg" alt="Concert photo 5" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
-                    <div class="masonry-item" data-index="5"><img src="Image/13.jpg" alt="Concert photo 6" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
-                    <div class="masonry-item" data-index="6"><img src="Image/15.jpg" alt="Concert photo 7" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
-                    <div class="masonry-item" data-index="7"><img src="Image/18.jpg" alt="Concert photo 8" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
-                    <div class="masonry-item" data-index="8"><img src="Image/21.jpg" alt="Concert photo 9" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
-                    <div class="masonry-item" data-index="9"><img src="Image/31.jpg" alt="Concert photo 10" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
-                    <div class="masonry-item" data-index="10"><img src="Image/IMGP5355.jpg" alt="Concert photo 11" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
-                    <div class="masonry-item" data-index="11"><img src="Image/IMGP5393.jpg" alt="Concert photo 12" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
-                    <div class="masonry-item" data-index="12"><img src="Image/IMGP5470.jpg" alt="Concert photo 13" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
-                    <div class="masonry-item" data-index="13"><img src="Image/IMGP5539.jpg" alt="Concert photo 14" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
-                    <div class="masonry-item" data-index="14"><img src="Image/IMGP5540.jpg" alt="Concert photo 15" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
-                    <div class="masonry-item" data-index="15"><img src="Image/IMGP5542.jpg" alt="Concert photo 16" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
-                    <div class="masonry-item" data-index="16"><img src="Image/IMGP5707.jpg" alt="Concert photo 17" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
-                    <div class="masonry-item" data-index="17"><img src="Image/IMGP5715.jpg" alt="Concert photo 18" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
-                    <div class="masonry-item" data-index="18"><img src="Image/T01.jpg" alt="Concert photo 19" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
-                    <div class="masonry-item" data-index="19"><img src="Image/T02.jpg" alt="Concert photo 20" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 3: Concert Videos (Feed Vertical) -->
-    <div id="modal-concert-video" class="custom-modal feed-modal">
-        <div class="modal-content modal-fullscreen">
-            <button class="modal-close" onclick="closeModal('modal-concert-video')"><i class="fas fa-times"></i></button>
-            <div class="modal-body feed-body">
-                <div class="video-feed-container">
-                    <!-- Vidéo 1 -->
-                    <div class="video-feed-item">
-                        <video preload="metadata" loop playsinline poster="Image/IMGP5707.jpg">
-                            <source src="Image/Recap PA pale .mp4" type="video/mp4">
-                        </video>
-                        <div class="feed-overlay">
-                            <h3><i class="fas fa-film"></i> Recap — PA Pale</h3>
-                            <p>Récapitulatif complet du concert.</p>
-                            <span class="video-tag">Récapitulatif</span>
-                            <div class="scroll-indicator">
-                                <i class="fas fa-chevron-down"></i>
-                                <span>Scrollez pour plus de vidéos</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Vidéo 2 -->
-                    <div class="video-feed-item">
-                        <video preload="metadata" loop playsinline poster="Image/T01.jpg">
-                            <source src="Image/M Abandonem.mp4" type="video/mp4">
-                        </video>
-                        <div class="feed-overlay">
-                            <h3><i class="fas fa-music"></i> M Abandonem</h3>
-                            <p>Captation live de la performance.</p>
-                            <span class="video-tag">Live Performance</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info animate-on-scroll">
-                    <span class="subtitle">Parlons de votre projet</span>
-                    <h2>Contactez-moi</h2>
-                    <p>Vous avez une idée, un projet ou vous souhaitez simplement échanger ? N'hésitez pas à me contacter par l'un des moyens ci-dessous.</p>
-                    
-                    <div class="contact-methods">
-                        <div class="method-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <a href="mailto:bradley.joseph@esih.edu">bradley.joseph@esih.edu</a>
-                            </div>
-                        </div>
-                        <div class="method-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Téléphone</h4>
-                                <a href="tel:+50948724750">+509 48724750</a>
-                            </div>
-                        </div>
-                        <div class="method-item">
-                            <i class="fab fa-linkedin"></i>
-                            <div>
-                                <h4>LinkedIn</h4>
-                                <a href="#" target="_blank">Bradley Joseph</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-                <div class="contact-form-container animate-on-scroll">
-                    <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" class="contact-form">
-                        <!-- Remplacez VOTRE_CLE_WEB3FORMS par la clé reçue sur web3forms.com -->
-                        <input type="hidden" name="access_key" value="VOTRE_CLE_WEB3FORMS">
-                        
-                        <div class="form-group">
-                            <input type="text" name="name" id="name" placeholder="Votre Nom" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" id="email" placeholder="Votre Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="subject" id="subject" placeholder="Sujet" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" id="message" rows="5" placeholder="Votre Message" required></textarea>
-                        </div>
-                        <button type="submit" id="submit-btn" class="btn btn-primary full-width">Envoyer le message</button>
-                        <div id="form-result" class="form-result"></div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2024 Bradley Joseph. Tous droits réservés.</p>
-                <div class="footer-links">
-                    <a href="#">Mentions Légales</a>
-                    <a href="#">Politique de Confidentialité</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
 </body>
+
 </html>
