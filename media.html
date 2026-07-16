@@ -19,10 +19,13 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/skills.css">
     <style>
         :root {
             /* Accent Ambre/Or pour le profil Média */
             --accent-color: #E8A427;
+            --accent-glow: rgba(232, 164, 39, 0.5);
+            --accent-rgb: 232, 164, 39;
         }
     </style>
 </head>
@@ -149,42 +152,210 @@
         </div>
     </section>
 
-    <!-- ── SERVICES ───────────────────────────── -->
+    <!-- ── SKILLS & CERTIFICATIONS (PREMIUM SECTION) ────────────────── -->
     <section id="skills" class="services section section-dark">
         <div class="container">
             <div class="services-head">
-                <p class="section-label reveal">Services Média</p>
-                <h2 class="section-title reveal">Ce que je crée.</h2>
+                <p class="section-label reveal">Skills & Certifications</p>
+                <h2 class="section-title reveal">My Expertise & <em>Journey.</em></h2>
             </div>
-            <div class="services-grid">
-                <div class="service-card reveal">
-                    <span class="service-num">01</span>
-                    <div class="service-icon"><i class="fas fa-camera"></i></div>
-                    <h3>Photographie Événementielle</h3>
-                    <p>Couverture complète de vos événements (concerts, conférences, mariages). Captation des moments
-                        clés avec une retouche professionnelle pour des souvenirs mémorables.</p>
+            
+            <div class="skills-wrapper">
+                <!-- SECTION 1 : SERVICES MEDIA -->
+                <div class="skills-section reveal">
+                    <div class="skills-sub-head">
+                        <h3 class="skills-sub-title">Services <span>Média</span></h3>
+                        <p class="skills-sub-desc">Ce que je propose pour donner vie à vos projets visuels.</p>
+                    </div>
+                    <div class="services-grid">
+                        <div class="service-card reveal">
+                            <span class="service-num">01</span>
+                            <div class="service-icon"><i class="fas fa-camera"></i></div>
+                            <h3>Photographie Événementielle</h3>
+                            <p>Couverture complète de vos événements (concerts, conférences, mariages). Captation des moments
+                                clés avec une retouche professionnelle pour des souvenirs mémorables.</p>
+                        </div>
+                        <div class="service-card reveal">
+                            <span class="service-num">02</span>
+                            <div class="service-icon"><i class="fas fa-video"></i></div>
+                            <h3>Vidéographie & Montage</h3>
+                            <p>Réalisation de clips vidéo, aftermovies d'événements et interviews. Montage dynamique, sound
+                                design et color grading pour un rendu cinématographique.</p>
+                        </div>
+                        <div class="service-card reveal">
+                            <span class="service-num">03</span>
+                            <div class="service-icon"><i class="fas fa-portrait"></i></div>
+                            <h3>Photographie de Portrait</h3>
+                            <p>Séances photo individuelles ou corporate. Mise en valeur de votre image personnelle ou
+                                professionnelle avec un éclairage soigné.</p>
+                        </div>
+                        <div class="service-card reveal">
+                            <span class="service-num">04</span>
+                            <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+                            <h3>Création de Contenu (Réseaux)</h3>
+                            <p>Création de visuels (photos, reels, designs) adaptés pour Instagram, TikTok et LinkedIn.
+                                Établissement d'une identité visuelle forte.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card reveal">
-                    <span class="service-num">02</span>
-                    <div class="service-icon"><i class="fas fa-video"></i></div>
-                    <h3>Vidéographie & Montage</h3>
-                    <p>Réalisation de clips vidéo, aftermovies d'événements et interviews. Montage dynamique, sound
-                        design et color grading pour un rendu cinématographique.</p>
+
+                <!-- SECTION 2 : MULTIMEDIA CREATION -->
+                <div class="skills-section multimedia-sec reveal">
+                    <div class="skills-sub-head">
+                        <h3 class="skills-sub-title">Multimedia <span>Creation</span></h3>
+                        <p class="skills-sub-desc">Visual storytelling, photographic assets, and digital media production.</p>
+                    </div>
+                    <div class="specialty-grid">
+                        <div class="specialty-card">
+                            <div class="specialty-icon-wrapper"><i class="fas fa-camera"></i></div>
+                            <h4 class="specialty-title">Photography</h4>
+                        </div>
+                        <div class="specialty-card">
+                            <div class="specialty-icon-wrapper"><i class="fas fa-video"></i></div>
+                            <h4 class="specialty-title">Videography</h4>
+                        </div>
+                        <div class="specialty-card">
+                            <div class="specialty-icon-wrapper"><i class="fas fa-film"></i></div>
+                            <h4 class="specialty-title">Video Editing</h4>
+                        </div>
+                        <div class="specialty-card">
+                            <div class="specialty-icon-wrapper"><i class="fab fa-adobe"></i></div>
+                            <h4 class="specialty-title">Adobe Photoshop</h4>
+                        </div>
+                        <div class="specialty-card">
+                            <div class="specialty-icon-wrapper"><i class="fas fa-file-signature"></i></div>
+                            <h4 class="specialty-title">Content Creation</h4>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card reveal">
-                    <span class="service-num">03</span>
-                    <div class="service-icon"><i class="fas fa-portrait"></i></div>
-                    <h3>Photographie de Portrait</h3>
-                    <p>Séances photo individuelles ou corporate. Mise en valeur de votre image personnelle ou
-                        professionnelle avec un éclairage soigné.</p>
+
+                <!-- SECTION 3 : PROFESSIONAL SKILLS -->
+                <div class="skills-section reveal">
+                    <div class="skills-sub-head">
+                        <h3 class="skills-sub-title">Professional <span>Skills</span></h3>
+                        <p class="skills-sub-desc">My core interpersonal skills, project leadership and operational values.</p>
+                    </div>
+                    <div class="badges-container">
+                        <div class="badge-item"><i class="fas fa-puzzle-piece"></i> Problem Solving</div>
+                        <div class="badge-item"><i class="fas fa-crown"></i> Leadership</div>
+                        <div class="badge-item"><i class="fas fa-comments"></i> Communication</div>
+                        <div class="badge-item"><i class="fas fa-users"></i> Teamwork</div>
+                        <div class="badge-item"><i class="fas fa-bullhorn"></i> Community Management</div>
+                        <div class="badge-item"><i class="fas fa-tasks"></i> Project Management</div>
+                        <div class="badge-item"><i class="fas fa-brain"></i> Critical Thinking</div>
+                        <div class="badge-item"><i class="fas fa-sync-alt"></i> Adaptability</div>
+                        <div class="badge-item"><i class="fas fa-headset"></i> Customer Support</div>
+                        <div class="badge-item"><i class="fas fa-hourglass-half"></i> Time Management</div>
+                    </div>
                 </div>
-                <div class="service-card reveal">
-                    <span class="service-num">04</span>
-                    <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
-                    <h3>Création de Contenu (Réseaux)</h3>
-                    <p>Création de visuels (photos, reels, designs) adaptés pour Instagram, TikTok et LinkedIn.
-                        Établissement d'une identité visuelle forte.</p>
+
+                <!-- SECTION 4 : CERTIFICATIONS TIMELINE -->
+                <div class="skills-section reveal">
+                    <div class="skills-sub-head">
+                        <h3 class="skills-sub-title">Certifications <span>Timeline</span></h3>
+                        <p class="skills-sub-desc">A log of my academic accomplishments and professional qualifications.</p>
+                    </div>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-line"></div>
+
+                        <!-- Cert 1 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <div class="cert-icon-box"><i class="fas fa-heartbeat"></i></div>
+                                <div class="cert-content">
+                                    <div class="cert-header">
+                                        <div class="cert-title-row">
+                                            <h4 class="cert-title">First Aid Certification</h4>
+                                            <span class="cert-date">Nov 2024</span>
+                                        </div>
+                                        <span class="cert-issuer">Haitian National Police (PNH)</span>
+                                    </div>
+                                    <p class="cert-desc">Certified in emergency first aid protocols, safety measures, and life-saving procedures under stressful situations.</p>
+                                    <span class="cert-btn">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cert 2 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <div class="cert-icon-box"><i class="fas fa-chart-line"></i></div>
+                                <div class="cert-content">
+                                    <div class="cert-header">
+                                        <div class="cert-title-row">
+                                            <h4 class="cert-title">Entrepreneurship & Digital Marketing</h4>
+                                            <span class="cert-date">May 2023</span>
+                                        </div>
+                                        <span class="cert-issuer">DiagTram</span>
+                                    </div>
+                                    <p class="cert-desc">Training in online positioning, company building fundamentals, digital product management, and media optimization strategies.</p>
+                                    <span class="cert-btn">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cert 3 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <div class="cert-icon-box"><i class="fas fa-network-wired"></i></div>
+                                <div class="cert-content">
+                                    <div class="cert-header">
+                                        <div class="cert-title-row">
+                                            <h4 class="cert-title">Ethernet Network Cabling</h4>
+                                            <span class="cert-date">Oct 2022</span>
+                                        </div>
+                                        <span class="cert-issuer">CFPH (Canado-Technique) / ISTAFF</span>
+                                    </div>
+                                    <p class="cert-desc">Hands-on certification in physical ethernet cable creation, speed validation, structural mapping, and signal integrity maintenance.</p>
+                                    <span class="cert-btn">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cert 4 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <div class="cert-icon-box"><i class="fas fa-unlock-alt"></i></div>
+                                <div class="cert-content">
+                                    <div class="cert-header">
+                                        <div class="cert-title-row">
+                                            <h4 class="cert-title">Cellular Decoding</h4>
+                                            <span class="cert-date">Mar 2023</span>
+                                        </div>
+                                        <span class="cert-issuer">ISTAFF</span>
+                                    </div>
+                                    <p class="cert-desc">Specialized technical training in decoding protocols, network frequency analysis, lock operations, and device system recovery.</p>
+                                    <span class="cert-btn">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cert 5 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <div class="cert-icon-box"><i class="fas fa-satellite-dish"></i></div>
+                                <div class="cert-content">
+                                    <div class="cert-header">
+                                        <div class="cert-title-row">
+                                            <h4 class="cert-title">Telecommunications</h4>
+                                            <span class="cert-date">2023</span>
+                                        </div>
+                                        <span class="cert-issuer">CFPH (Canado-Technique)</span>
+                                    </div>
+                                    <p class="cert-desc">Core training in telecommunication circuits, high-speed signals, wave theory, routing matrices, and infrastructure deployment.</p>
+                                    <span class="cert-btn">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -424,6 +595,7 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/skills.js"></script>
 </body>
 
 </html>

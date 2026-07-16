@@ -16,11 +16,14 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <style>
         :root {
             /* Surcharge de l'accent pour le profil Développeur (Bleu élégant) */
             --accent-color: #3b82f6;
             --accent-glow: rgba(59, 130, 246, 0.5);
+            --accent-rgb: 59, 130, 246;
         }
     </style>
 </head>
@@ -140,38 +143,670 @@
         </div>
     </section>
 
-    <!-- ── SERVICES ───────────────────────────── -->
+    <!-- ── SKILLS & CERTIFICATIONS (PREMIUM SECTION) ────────────────── -->
     <section id="skills" class="services section section-dark">
         <div class="container">
             <div class="services-head">
-                <p class="section-label reveal">Compétences</p>
-                <h2 class="section-title reveal">Stack Technique.</h2>
+                <p class="section-label reveal">Skills & Certifications</p>
+                <h2 class="section-title reveal">My Expertise & <em>Journey.</em></h2>
             </div>
-            <div class="services-grid">
-                <div class="service-card reveal">
-                    <span class="service-num">01</span>
-                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-                    <h3>Frontend Development</h3>
-                    <p>Création d'interfaces utilisateur modernes et réactives. Maîtrise de HTML5, CSS3 (animations, grid, flexbox), JavaScript Vanilla et initiation aux frameworks comme React.</p>
+            
+            <div class="skills-wrapper">
+                
+                <!-- SECTION 1 : TECHNICAL SKILLS -->
+                <div class="skills-section reveal">
+                    <div class="skills-sub-head">
+                        <h3 class="skills-sub-title">Technical <span>Stack</span></h3>
+                        <p class="skills-sub-desc">A curated list of web technologies I master, filterable by category.</p>
+                    </div>
+                    
+                    <!-- Tabs -->
+                    <div class="skills-tabs">
+                        <button class="tab-btn active" data-target="all">All Stack</button>
+                        <button class="tab-btn" data-target="frontend">Frontend</button>
+                        <button class="tab-btn" data-target="backend">Backend</button>
+                        <button class="tab-btn" data-target="database">Databases</button>
+                        <button class="tab-btn" data-target="tools">Tools</button>
+                    </div>
+                    
+                    <!-- Tech Cards Grid -->
+                    <div class="tech-grid">
+                        <!-- HTML5 -->
+                        <div class="tech-card" data-category="frontend">
+                            <div class="tech-card-header">
+                                <div class="tech-icon-name">
+                                    <i class="devicon-html5-plain"></i>
+                                    <span class="tech-name">HTML5</span>
+                                </div>
+                                <span class="tech-experience">3+ Years</span>
+                            </div>
+                            <p class="tech-desc">Semantic markup, SEO optimization, and standard web accessibility implementation.</p>
+                            <div class="tech-level-container">
+                                <div class="tech-level-meta">
+                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-pct">90%</span>
+                                </div>
+                                <div class="tech-progress-bar">
+                                    <div class="tech-progress-fill" data-level="90%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CSS3 -->
+                        <div class="tech-card" data-category="frontend">
+                            <div class="tech-card-header">
+                                <div class="tech-icon-name">
+                                    <i class="devicon-css3-plain"></i>
+                                    <span class="tech-name">CSS3</span>
+                                </div>
+                                <span class="tech-experience">3+ Years</span>
+                            </div>
+                            <p class="tech-desc">Modern layouts with Grid & Flexbox, smooth animations, keyframes, and custom transitions.</p>
+                            <div class="tech-level-container">
+                                <div class="tech-level-meta">
+                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-pct">85%</span>
+                                </div>
+                                <div class="tech-progress-bar">
+                                    <div class="tech-progress-fill" data-level="85%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- JavaScript -->
+                        <div class="tech-card" data-category="frontend">
+                            <div class="tech-card-header">
+                                <div class="tech-icon-name">
+                                    <i class="devicon-javascript-plain"></i>
+                                    <span class="tech-name">JavaScript</span>
+                                </div>
+                                <span class="tech-experience">2+ Years</span>
+                            </div>
+                            <p class="tech-desc">ES6+ specifications, DOM manipulation, asynchronous operations, AJAX/Fetch APIs.</p>
+                            <div class="tech-level-container">
+                                <div class="tech-level-meta">
+                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-pct">80%</span>
+                                </div>
+                                <div class="tech-progress-bar">
+                                    <div class="tech-progress-fill" data-level="80%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bootstrap -->
+                        <div class="tech-card" data-category="frontend">
+                            <div class="tech-card-header">
+                                <div class="tech-icon-name">
+                                    <i class="devicon-bootstrap-plain"></i>
+                                    <span class="tech-name">Bootstrap</span>
+                                </div>
+                                <span class="tech-experience">2+ Years</span>
+                            </div>
+                            <p class="tech-desc">Component system configuration, styling custom responsive web interfaces, and quick grids.</p>
+                            <div class="tech-level-container">
+                                <div class="tech-level-meta">
+                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-pct">75%</span>
+                                </div>
+                                <div class="tech-progress-bar">
+                                    <div class="tech-progress-fill" data-level="75%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- React.js -->
+                        <div class="tech-card" data-category="frontend">
+                            <div class="tech-card-header">
+                                <div class="tech-icon-name">
+                                    <i class="devicon-react-original"></i>
+                                    <span class="tech-name">React.js</span>
+                                </div>
+                                <span class="tech-experience">1+ Year</span>
+                            </div>
+                            <p class="tech-desc">Component-driven architecture, state management, hooks, and basic single-page applications.</p>
+                            <div class="tech-level-container">
+                                <div class="tech-level-meta">
+                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-pct">65%</span>
+                                </div>
+                                <div class="tech-progress-bar">
+                                    <div class="tech-progress-fill" data-level="65%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PHP -->
+                        <div class="tech-card" data-category="backend">
+                            <div class="tech-card-header">
+                                <div class="tech-icon-name">
+                                    <i class="devicon-php-plain"></i>
+                                    <span class="tech-name">PHP</span>
+                                </div>
+                                <span class="tech-experience">2+ Years</span>
+                            </div>
+                            <p class="tech-desc">Back-end architectures, secure sessions, MVC patterns, database integrations, and core logic.</p>
+                            <div class="tech-level-container">
+                                <div class="tech-level-meta">
+                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-pct">80%</span>
+                                </div>
+                                <div class="tech-progress-bar">
+                                    <div class="tech-progress-fill" data-level="80%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Node.js -->
+                        <div class="tech-card" data-category="backend">
+                            <div class="tech-card-header">
+                                <div class="tech-icon-name">
+                                    <i class="devicon-nodejs-plain"></i>
+                                    <span class="tech-name">Node.js</span>
+                                </div>
+                                <span class="tech-experience">1+ Year</span>
+                            </div>
+                            <p class="tech-desc">Designing API routes, package orchestration via npm, server scripts, and Express setups.</p>
+                            <div class="tech-level-container">
+                                <div class="tech-level-meta">
+                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-pct">60%</span>
+                                </div>
+                                <div class="tech-progress-bar">
+                                    <div class="tech-progress-fill" data-level="60%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Python -->
+                        <div class="tech-card" data-category="backend">
+                            <div class="tech-card-header">
+                                <div class="tech-icon-name">
+                                    <i class="devicon-python-plain"></i>
+                                    <span class="tech-name">Python</span>
+                                </div>
+                                <span class="tech-experience">1+ Year</span>
+                            </div>
+                            <p class="tech-desc">Automated scripting, data formatting, algorithmic problem-solving, and general programming.</p>
+                            <div class="tech-level-container">
+                                <div class="tech-level-meta">
+                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-pct">55%</span>
+                                </div>
+                                <div class="tech-progress-bar">
+                                    <div class="tech-progress-fill" data-level="55%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MySQL -->
+                        <div class="tech-card" data-category="database">
+                            <div class="tech-card-header">
+                                <div class="tech-icon-name">
+                                    <i class="devicon-mysql-plain"></i>
+                                    <span class="tech-name">MySQL</span>
+                                </div>
+                                <span class="tech-experience">2+ Years</span>
+                            </div>
+                            <p class="tech-desc">Relational schema designs, key constraints, complex query optimization, joins, and data backups.</p>
+                            <div class="tech-level-container">
+                                <div class="tech-level-meta">
+                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-pct">80%</span>
+                                </div>
+                                <div class="tech-progress-bar">
+                                    <div class="tech-progress-fill" data-level="80%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SQLite -->
+                        <div class="tech-card" data-category="database">
+                            <div class="tech-card-header">
+                                <div class="tech-icon-name">
+                                    <i class="devicon-sqlite-plain"></i>
+                                    <span class="tech-name">SQLite</span>
+                                </div>
+                                <span class="tech-experience">1+ Year</span>
+                            </div>
+                            <p class="tech-desc">Local client database modeling, file-based persistence for lightweight applications.</p>
+                            <div class="tech-level-container">
+                                <div class="tech-level-meta">
+                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-pct">65%</span>
+                                </div>
+                                <div class="tech-progress-bar">
+                                    <div class="tech-progress-fill" data-level="65%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Supabase -->
+                        <div class="tech-card" data-category="database">
+                            <div class="tech-card-header">
+                                <div class="tech-icon-name">
+                                    <i class="fas fa-bolt" style="color: #3ecf8e;"></i>
+                                    <span class="tech-name">Supabase</span>
+                                </div>
+                                <span class="tech-experience">New</span>
+                            </div>
+                            <p class="tech-desc">Postgres DB integration, API setups, auth workflows, and serverless real-time functions.</p>
+                            <div class="tech-level-container">
+                                <div class="tech-level-meta">
+                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-pct">55%</span>
+                                </div>
+                                <div class="tech-progress-bar">
+                                    <div class="tech-progress-fill" data-level="55%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Git -->
+                        <div class="tech-card" data-category="tools">
+                            <div class="tech-card-header">
+                                <div class="tech-icon-name">
+                                    <i class="devicon-git-plain"></i>
+                                    <span class="tech-name">Git</span>
+                                </div>
+                                <span class="tech-experience">2+ Years</span>
+                            </div>
+                            <p class="tech-desc">Local version control, commits, branching strategies, conflict resolution, and staging workflows.</p>
+                            <div class="tech-level-container">
+                                <div class="tech-level-meta">
+                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-pct">80%</span>
+                                </div>
+                                <div class="tech-progress-bar">
+                                    <div class="tech-progress-fill" data-level="80%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- GitHub -->
+                        <div class="tech-card" data-category="tools">
+                            <div class="tech-card-header">
+                                <div class="tech-icon-name">
+                                    <i class="devicon-github-original"></i>
+                                    <span class="tech-name">GitHub</span>
+                                </div>
+                                <span class="tech-experience">2+ Years</span>
+                            </div>
+                            <p class="tech-desc">Remote collaboration, pull request reviews, repository structuring, and CI/CD pipelines.</p>
+                            <div class="tech-level-container">
+                                <div class="tech-level-meta">
+                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-pct">80%</span>
+                                </div>
+                                <div class="tech-progress-bar">
+                                    <div class="tech-progress-fill" data-level="80%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- REST API -->
+                        <div class="tech-card" data-category="tools">
+                            <div class="tech-card-header">
+                                <div class="tech-icon-name">
+                                    <i class="fas fa-plug"></i>
+                                    <span class="tech-name">REST API</span>
+                                </div>
+                                <span class="tech-experience">2+ Years</span>
+                            </div>
+                            <p class="tech-desc">Integrating and designing clean server endpoints using JSON structures and HTTP methods.</p>
+                            <div class="tech-level-container">
+                                <div class="tech-level-meta">
+                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-pct">75%</span>
+                                </div>
+                                <div class="tech-progress-bar">
+                                    <div class="tech-progress-fill" data-level="75%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- XAMPP -->
+                        <div class="tech-card" data-category="tools">
+                            <div class="tech-card-header">
+                                <div class="tech-icon-name">
+                                    <i class="fas fa-server"></i>
+                                    <span class="tech-name">XAMPP</span>
+                                </div>
+                                <span class="tech-experience">2+ Years</span>
+                            </div>
+                            <p class="tech-desc">Managing local web servers, Apache configurations, and MySQL database panels.</p>
+                            <div class="tech-level-container">
+                                <div class="tech-level-meta">
+                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-pct">70%</span>
+                                </div>
+                                <div class="tech-progress-bar">
+                                    <div class="tech-progress-fill" data-level="70%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Netlify -->
+                        <div class="tech-card" data-category="tools">
+                            <div class="tech-card-header">
+                                <div class="tech-icon-name">
+                                    <i class="fas fa-cloud"></i>
+                                    <span class="tech-name">Netlify</span>
+                                </div>
+                                <span class="tech-experience">1+ Year</span>
+                            </div>
+                            <p class="tech-desc">Hosting web projects, configuring build settings, custom redirects, and DNS links.</p>
+                            <div class="tech-level-container">
+                                <div class="tech-level-meta">
+                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-pct">65%</span>
+                                </div>
+                                <div class="tech-progress-bar">
+                                    <div class="tech-progress-fill" data-level="65%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vercel -->
+                        <div class="tech-card" data-category="tools">
+                            <div class="tech-card-header">
+                                <div class="tech-icon-name">
+                                    <i class="devicon-vercel-original"></i>
+                                    <span class="tech-name">Vercel</span>
+                                </div>
+                                <span class="tech-experience">1+ Year</span>
+                            </div>
+                            <p class="tech-desc">Managing continuous integrations for frontend setups and building production builds.</p>
+                            <div class="tech-level-container">
+                                <div class="tech-level-meta">
+                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-pct">60%</span>
+                                </div>
+                                <div class="tech-progress-bar">
+                                    <div class="tech-progress-fill" data-level="60%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hostinger -->
+                        <div class="tech-card" data-category="tools">
+                            <div class="tech-card-header">
+                                <div class="tech-icon-name">
+                                    <i class="fas fa-globe"></i>
+                                    <span class="tech-name">Hostinger</span>
+                                </div>
+                                <span class="tech-experience">1+ Year</span>
+                            </div>
+                            <p class="tech-desc">Domain name configuration, setting up web email services, server panels, and file uploads via FTP.</p>
+                            <div class="tech-level-container">
+                                <div class="tech-level-meta">
+                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-pct">60%</span>
+                                </div>
+                                <div class="tech-progress-bar">
+                                    <div class="tech-progress-fill" data-level="60%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- QuickBooks -->
+                        <div class="tech-card" data-category="tools">
+                            <div class="tech-card-header">
+                                <div class="tech-icon-name">
+                                    <i class="fas fa-calculator"></i>
+                                    <span class="tech-name">QuickBooks</span>
+                                </div>
+                                <span class="tech-experience">1+ Year</span>
+                            </div>
+                            <p class="tech-desc">Integrating transactional software metrics, operational analysis, and database checks.</p>
+                            <div class="tech-level-container">
+                                <div class="tech-level-meta">
+                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-pct">55%</span>
+                                </div>
+                                <div class="tech-progress-bar">
+                                    <div class="tech-progress-fill" data-level="55%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card reveal">
-                    <span class="service-num">02</span>
-                    <div class="service-icon"><i class="fas fa-server"></i></div>
-                    <h3>Backend & APIs</h3>
-                    <p>Développement de logiques serveur robustes en PHP. Création d'APIs RESTful, gestion des sessions, authentification sécurisée et architecture MVC.</p>
+
+                <!-- SECTION 2 & 3 : SPECIALTIES (NETWORKING & MULTIMEDIA) -->
+                <div class="skills-section networking-sec reveal">
+                    <div class="skills-sub-head">
+                        <h3 class="skills-sub-title">Networking <span>Specialties</span></h3>
+                        <p class="skills-sub-desc">Hardware setups, cabling layout and telecommunication analysis.</p>
+                    </div>
+                    <div class="specialty-grid">
+                        <div class="specialty-card">
+                            <div class="specialty-icon-wrapper"><i class="fas fa-network-wired"></i></div>
+                            <h4 class="specialty-title">Ethernet Network Cabling</h4>
+                        </div>
+                        <div class="specialty-card">
+                            <div class="specialty-icon-wrapper"><i class="fas fa-satellite-dish"></i></div>
+                            <h4 class="specialty-title">Telecommunications</h4>
+                        </div>
+                        <div class="specialty-card">
+                            <div class="specialty-icon-wrapper"><i class="fas fa-sim-card"></i></div>
+                            <h4 class="specialty-title">Cellular Decoding</h4>
+                        </div>
+                        <div class="specialty-card">
+                            <div class="specialty-icon-wrapper"><i class="fas fa-microchip"></i></div>
+                            <h4 class="specialty-title">Computer Hardware</h4>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card reveal">
-                    <span class="service-num">03</span>
-                    <div class="service-icon"><i class="fas fa-database"></i></div>
-                    <h3>Bases de données</h3>
-                    <p>Modélisation et gestion de bases de données relationnelles MySQL. Requêtes SQL complexes, optimisation et intégrité des données.</p>
+
+                <!-- SECTION 4 : PROFESSIONAL SKILLS -->
+                <div class="skills-section reveal">
+                    <div class="skills-sub-head">
+                        <h3 class="skills-sub-title">Professional <span>Skills</span></h3>
+                        <p class="skills-sub-desc">My core interpersonal skills, project leadership and operational values.</p>
+                    </div>
+                    <div class="badges-container">
+                        <div class="badge-item"><i class="fas fa-puzzle-piece"></i> Problem Solving</div>
+                        <div class="badge-item"><i class="fas fa-crown"></i> Leadership</div>
+                        <div class="badge-item"><i class="fas fa-comments"></i> Communication</div>
+                        <div class="badge-item"><i class="fas fa-users"></i> Teamwork</div>
+                        <div class="badge-item"><i class="fas fa-bullhorn"></i> Community Management</div>
+                        <div class="badge-item"><i class="fas fa-tasks"></i> Project Management</div>
+                        <div class="badge-item"><i class="fas fa-brain"></i> Critical Thinking</div>
+                        <div class="badge-item"><i class="fas fa-sync-alt"></i> Adaptability</div>
+                        <div class="badge-item"><i class="fas fa-headset"></i> Customer Support</div>
+                        <div class="badge-item"><i class="fas fa-hourglass-half"></i> Time Management</div>
+                    </div>
                 </div>
-                <div class="service-card reveal">
-                    <span class="service-num">04</span>
-                    <div class="service-icon"><i class="fas fa-cogs"></i></div>
-                    <h3>Systèmes d'Information</h3>
-                    <p>Conception complète de systèmes de gestion (ERP, CRM légers). Digitalisation des processus métiers, de l'inventaire à la facturation.</p>
+
+                <!-- SECTION 5 : CERTIFICATIONS TIMELINE -->
+                <div class="skills-section reveal">
+                    <div class="skills-sub-head">
+                        <h3 class="skills-sub-title">Certifications <span>Timeline</span></h3>
+                        <p class="skills-sub-desc">A log of my academic accomplishments and professional qualifications.</p>
+                    </div>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-line"></div>
+
+                        <!-- Cert 1 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <div class="cert-icon-box"><i class="fas fa-heartbeat"></i></div>
+                                <div class="cert-content">
+                                    <div class="cert-header">
+                                        <div class="cert-title-row">
+                                            <h4 class="cert-title">First Aid Certification</h4>
+                                            <span class="cert-date">Nov 2024</span>
+                                        </div>
+                                        <span class="cert-issuer">Haitian National Police (PNH)</span>
+                                    </div>
+                                    <p class="cert-desc">Certified in emergency first aid protocols, safety measures, and life-saving procedures under stressful situations.</p>
+                                    <span class="cert-btn">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cert 2 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <div class="cert-icon-box"><i class="fas fa-chart-line"></i></div>
+                                <div class="cert-content">
+                                    <div class="cert-header">
+                                        <div class="cert-title-row">
+                                            <h4 class="cert-title">Entrepreneurship & Digital Marketing</h4>
+                                            <span class="cert-date">May 2023</span>
+                                        </div>
+                                        <span class="cert-issuer">DiagTram</span>
+                                    </div>
+                                    <p class="cert-desc">Training in online positioning, company building fundamentals, digital product management, and media optimization strategies.</p>
+                                    <span class="cert-btn">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cert 3 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <div class="cert-icon-box"><i class="fas fa-network-wired"></i></div>
+                                <div class="cert-content">
+                                    <div class="cert-header">
+                                        <div class="cert-title-row">
+                                            <h4 class="cert-title">Ethernet Network Cabling</h4>
+                                            <span class="cert-date">Oct 2022</span>
+                                        </div>
+                                        <span class="cert-issuer">CFPH (Canado-Technique) / ISTAFF</span>
+                                    </div>
+                                    <p class="cert-desc">Hands-on certification in physical ethernet cable creation, speed validation, structural mapping, and signal integrity maintenance.</p>
+                                    <span class="cert-btn">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cert 4 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <div class="cert-icon-box"><i class="fas fa-unlock-alt"></i></div>
+                                <div class="cert-content">
+                                    <div class="cert-header">
+                                        <div class="cert-title-row">
+                                            <h4 class="cert-title">Cellular Decoding</h4>
+                                            <span class="cert-date">Mar 2023</span>
+                                        </div>
+                                        <span class="cert-issuer">ISTAFF</span>
+                                    </div>
+                                    <p class="cert-desc">Specialized technical training in decoding protocols, network frequency analysis, lock operations, and device system recovery.</p>
+                                    <span class="cert-btn">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cert 5 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <div class="cert-icon-box"><i class="fas fa-satellite-dish"></i></div>
+                                <div class="cert-content">
+                                    <div class="cert-header">
+                                        <div class="cert-title-row">
+                                            <h4 class="cert-title">Telecommunications</h4>
+                                            <span class="cert-date">2023</span>
+                                        </div>
+                                        <span class="cert-issuer">CFPH (Canado-Technique)</span>
+                                    </div>
+                                    <p class="cert-desc">Core training in telecommunication circuits, high-speed signals, wave theory, routing matrices, and infrastructure deployment.</p>
+                                    <span class="cert-btn">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- SECTION 6 : EXPERTISE -->
+                <div class="skills-section reveal">
+                    <div class="skills-sub-head">
+                        <h3 class="skills-sub-title">Core <span>Expertise</span></h3>
+                        <p class="skills-sub-desc">The primary pillars that define my versatile professional capabilities.</p>
+                    </div>
+                    
+                    <div class="expertise-grid">
+                        <!-- Card 1 -->
+                        <div class="expertise-card">
+                            <div class="expertise-icon-box"><i class="fas fa-code"></i></div>
+                            <div class="expertise-details">
+                                <h4 class="expertise-title">Full Stack Web Development</h4>
+                                <p class="expertise-desc">Designing and building reliable end-to-end web applications. Implementing custom MVC architectures, authentication layers in PHP, responsive frontends in JS/Bootstrap, and structural React components.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="expertise-card">
+                            <div class="expertise-icon-box"><i class="fas fa-database"></i></div>
+                            <div class="expertise-details">
+                                <h4 class="expertise-title">Database Design</h4>
+                                <p class="expertise-desc">Modeling high-integrity relational schemas. Proficient in query optimizations, views, triggers, and transactions using MySQL, local SQLite backups, and modern cloud database configurations like Supabase.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="expertise-card">
+                            <div class="expertise-icon-box"><i class="fas fa-network-wired"></i></div>
+                            <div class="expertise-details">
+                                <h4 class="expertise-title">Networking</h4>
+                                <p class="expertise-desc">Managing physical and logic systems. Accomplished in structured ethernet cabling layout setups, general telecommunication signaling logic, signal validation, and hardware systems configurations.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="expertise-card">
+                            <div class="expertise-icon-box"><i class="fas fa-camera-retro"></i></div>
+                            <div class="expertise-details">
+                                <h4 class="expertise-title">Photography & Videography</h4>
+                                <p class="expertise-desc">Capturing high-end commercial visual assets. Mastering production camera configurations, visual framing, color grading, Photoshop design edits, and digital storytelling for video promotions.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="expertise-card">
+                            <div class="expertise-icon-box"><i class="fas fa-bullhorn"></i></div>
+                            <div class="expertise-details">
+                                <h4 class="expertise-title">Community Management</h4>
+                                <p class="expertise-desc">Directing public positioning, building community interactions, managing marketing platforms, and leading event orchestration across student-driven and corporate contexts.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 7 : STATISTICS -->
+                <div class="skills-section reveal">
+                    <div class="skills-sub-head">
+                        <h3 class="skills-sub-title">By The <span>Numbers</span></h3>
+                        <p class="skills-sub-desc">Key indicators summarizing my technical achievements and credentials.</p>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number"><span class="stat-counter" data-target="15">0</span>+</span>
+                            <span class="stat-label">Technologies</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number"><span class="stat-counter" data-target="5">0</span></span>
+                            <span class="stat-label">Certifications</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number"><span class="stat-counter" data-target="10">0</span>+</span>
+                            <span class="stat-label">Web Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number"><i class="fas fa-rocket"></i></span>
+                            <span class="stat-label">Full Stack Profile</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -297,5 +932,6 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/skills.js"></script>
 </body>
 </html>
