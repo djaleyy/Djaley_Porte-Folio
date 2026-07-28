@@ -4,18 +4,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bradley Joseph — Sélectionnez votre profil</title>
+    <title>Bradley Joseph — Sélectionnez votre profil / Select your profile</title>
     <meta name="description" content="Portfolio de Bradley Joseph — Développeur web et Créatif Média.">
+
+    <!-- Language Bootstrapping -->
+    <script>
+        (function() {
+            const lang = localStorage.getItem('portfolio-lang') || 'fr';
+            if (lang === 'en') {
+                document.documentElement.classList.add('lang-en');
+            } else {
+                document.documentElement.classList.remove('lang-en');
+            }
+        })();
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <!-- CSS -->
     <style>
+        /* Multi-language toggling */
+        html.lang-en .lang-fr {
+            display: none !important;
+        }
+        html:not(.lang-en) .lang-en {
+            display: none !important;
+        }
+
+        /* Minimal Language Switcher styling */
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            z-index: 1010;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: rgba(245, 241, 232, 0.6);
+            transition: 0.3s ease;
+            cursor: pointer;
+            padding: 2px 6px;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-weight: 700;
+            outline: none;
+        }
+
+        .lang-btn.active {
+            color: rgba(245, 241, 232, 1);
+        }
+
+        .lang-btn:hover:not(.active) {
+            color: rgba(245, 241, 232, 0.9);
+        }
+
+        .lang-divider {
+            color: rgba(245, 241, 232, 0.15);
+            pointer-events: none;
+        }
+
         :root {
             --bg-dark: #0A0A0A;
             --text-light: #F5F1E8;
@@ -33,7 +88,7 @@
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-dark);
             color: var(--text-light);
             overflow-x: hidden;
@@ -109,15 +164,18 @@
         }
 
         .intro-title {
-            font-family: 'DM Serif Display', serif;
-            font-size: clamp(2.5rem, 4vw, 4rem);
-            line-height: 1.1;
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.0;
+            letter-spacing: -0.04em;
             margin-bottom: 40px;
-            font-weight: 400;
         }
 
         .intro-title em {
             font-style: italic;
+            font-weight: 300;
             color: var(--accent-dev);
         }
 
@@ -253,26 +311,28 @@
 
         /* Selection Section */
         .split-section {
-            height: auto;
             min-height: 100vh;
             background-color: var(--bg-dark);
             position: relative;
             display: flex;
             flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 40px;
         }
 
         .selection-header {
             width: 100%;
-            padding: 100px 50px 40px;
+            max-width: 800px;
             text-align: center;
-            background-color: var(--bg-dark);
+            margin-bottom: 50px;
             z-index: 10;
         }
 
         .selection-header p {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             text-transform: uppercase;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.15em;
             color: rgba(245, 241, 232, 0.6);
             position: relative;
             display: inline-block;
@@ -289,28 +349,37 @@
             background-color: var(--accent-media);
         }
 
-        /* Split Container */
+        /* Portal Container */
         .split-container {
             display: flex;
-            width: 100vw;
-            height: 100vh;
+            justify-content: center;
+            gap: 40px;
+            width: 100%;
+            max-width: 1100px;
+            z-index: 2;
         }
 
-        /* Shared Styles for both sides */
+        /* Portal Card Style (Softer, rounded, floating) */
         .split-side {
             position: relative;
             flex: 1;
-            height: 100%;
+            max-width: 480px;
+            height: 550px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
             text-align: center;
             text-decoration: none;
             color: var(--text-light);
-            transition: var(--transition);
+            border-radius: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: #0E0E0E;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             overflow: hidden;
             cursor: pointer;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 40px 30px;
         }
 
         .split-side::before {
@@ -319,76 +388,128 @@
             inset: 0;
             background-size: cover;
             background-position: center;
-            opacity: 0.2;
-            transition: var(--transition);
+            opacity: 0.18;
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
             z-index: 1;
-            filter: contrast(110%);
+            filter: contrast(110%) grayscale(40%);
         }
 
+        /* Hover card transitions */
         .split-side:hover {
-            flex: 1.5;
+            transform: translateY(-12px);
+            border-color: rgba(255, 255, 255, 0.15);
         }
 
         .split-side:hover::before {
-            opacity: 0.5;
-            filter: grayscale(0%);
-            transform: scale(1.05);
+            opacity: 0.45;
+            filter: contrast(100%) grayscale(0%);
+            transform: scale(1.06);
         }
 
-        /* Dim the other side when hovering one */
-        .split-container:hover .split-side:not(:hover) {
-            flex: 0.5;
+        /* Ambient glows for each portal */
+        .side-dev:hover {
+            border-color: rgba(59, 130, 246, 0.35);
+            box-shadow: 0 30px 60px rgba(59, 130, 246, 0.12);
         }
 
-        .split-container:hover .split-side:not(:hover)::before {
-            opacity: 0.05;
+        .side-media:hover {
+            border-color: rgba(232, 164, 39, 0.35);
+            box-shadow: 0 30px 60px rgba(232, 164, 39, 0.12);
         }
 
+        /* Glass content gradient overlay inside card */
         .content {
             position: relative;
             z-index: 2;
-            transition: var(--transition);
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
+            width: 100%;
+            padding: 30px 20px;
+            background: linear-gradient(to top, rgba(10, 10, 10, 0.85) 0%, rgba(10, 10, 10, 0.4) 100%);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 20px;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: none;
         }
 
         .split-side:hover .content {
-            transform: scale(1.05);
+            border-color: rgba(255, 255, 255, 0.08);
+            background: linear-gradient(to top, rgba(10, 10, 10, 0.9) 0%, rgba(10, 10, 10, 0.5) 100%);
         }
 
         .split-side h2 {
-            font-family: 'DM Serif Display', serif;
-            font-size: clamp(2.5rem, 4vw, 4rem);
-            font-weight: 400;
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+            font-weight: 800;
+            text-transform: uppercase;
             letter-spacing: -0.02em;
         }
 
+        /* Dev and Media titles */
+        .side-dev h2 {
+            color: var(--text-light);
+        }
+
+        .side-media h2 {
+            color: var(--accent-media);
+        }
+
         .split-side p {
-            font-size: 1rem;
-            opacity: 0.7;
-            max-width: 300px;
-            font-weight: 300;
-            text-align: justify;
-            hyphens: auto;
+            font-size: 0.95rem;
+            opacity: 0.75;
+            max-width: 280px;
+            font-weight: 400;
+            text-align: center;
+            line-height: 1.5;
         }
 
         .enter-btn {
-            margin-top: 20px;
-            padding: 12px 30px;
-            border: 1px solid rgba(245, 241, 232, 0.3);
-            font-size: 0.85rem;
+            margin-top: 10px;
+            padding: 10px 28px;
+            border: 1px solid rgba(245, 241, 232, 0.15);
+            font-size: 0.8rem;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            transition: var(--transition);
-            opacity: 0;
-            transform: translateY(20px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border-radius: 30px;
+            color: var(--text-light);
+            background: transparent;
+            opacity: 0.8;
+            transform: translateY(0);
         }
 
-        .split-side:hover .enter-btn {
+        /* Hover animations for buttons */
+        .side-dev:hover .enter-btn {
+            background-color: var(--accent-dev);
+            color: var(--text-light);
+            border-color: var(--accent-dev);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
+            transform: translateY(-2px);
             opacity: 1;
-            transform: translateY(0);
+        }
+
+        .side-media:hover .enter-btn {
+            background-color: var(--accent-media);
+            color: var(--bg-dark);
+            border-color: var(--accent-media);
+            box-shadow: 0 8px 20px rgba(232, 164, 39, 0.25);
+            transform: translateY(-2px);
+            opacity: 1;
+        }
+
+        /* Developer Background Image */
+        .side-dev::before {
+            background-image: url('Image/hero_bg_1777007739091.png');
+        }
+
+        /* Media Background Image */
+        .side-media::before {
+            background-image: url('Image/Multi.jpeg');
         }
 
         /* Developer Side */
@@ -396,38 +517,10 @@
             background-color: #050505;
         }
 
-        .side-dev::before {
-            background-image: url('Image/hero_bg_1777007739091.png');
-        }
-
-        .side-dev h2 {
-            color: var(--text-light);
-        }
-
-        .side-dev:hover .enter-btn {
-            background-color: var(--accent-dev);
-            color: var(--text-light);
-            border-color: var(--accent-dev);
-        }
-
         /* Media Side */
         .side-media {
             background-color: #030303;
-            border-left: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .side-media::before {
-            background-image: url('Image/Multi.jpeg');
-        }
-
-        .side-media h2 {
-            color: var(--accent-media);
-        }
-
-        .side-media:hover .enter-btn {
-            background-color: var(--accent-media);
-            color: var(--bg-dark);
-            border-color: var(--accent-media);
+            border-left: none;
         }
 
         /* Mobile specific */
@@ -465,26 +558,82 @@
 
             .split-container {
                 flex-direction: column;
+                align-items: center;
+                gap: 30px;
             }
 
             .split-side {
                 width: 100%;
-                height: 50%;
+                max-width: 440px;
+                height: 420px;
+                border-radius: 20px;
+                padding: 30px 20px;
             }
 
             .split-side:hover {
-                flex: 1;
+                transform: translateY(-6px);
             }
 
-            .split-container:hover .split-side:not(:hover) {
-                flex: 1;
+            .content {
+                padding: 24px 16px;
+                gap: 12px;
+                border-radius: 16px;
+            }
+
+            .split-side h2 {
+                font-size: 1.6rem;
+            }
+
+            .split-side p {
+                font-size: 0.85rem;
+                max-width: 240px;
             }
 
             .enter-btn {
-                opacity: 1;
-                transform: translateY(0);
-                margin-top: 10px;
+                padding: 8px 20px;
+                font-size: 0.75rem;
+                margin-top: 5px;
             }
+        }
+
+        /* Social buttons */
+        .intro-socials {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            border: 1px solid rgba(245, 241, 232, 0.15);
+            color: var(--text-light);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: 0.3s ease;
+            background: transparent;
+        }
+
+        .social-btn i {
+            font-size: 1.1rem;
+            color: var(--accent-media); /* Yellow accent for media/creativity */
+        }
+
+        .social-btn:hover {
+            border-color: var(--accent-media);
+            background-color: var(--accent-media);
+            color: var(--bg-dark);
+            transform: translateY(-3px);
+        }
+        
+        .social-btn:hover i {
+            color: var(--bg-dark);
         }
     </style>
 </head>
@@ -492,8 +641,13 @@
 <body>
 
     <!-- ── NAVIGATION (Minimal) ────────────────── -->
-    <nav class="nav-minimal">
+    <nav class="nav-minimal" style="display: flex; justify-content: space-between; align-items: center;">
         <div class="logo">B<span>.</span>Joseph</div>
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang-btn="fr">FR</button>
+            <span class="lang-divider">|</span>
+            <button class="lang-btn" data-lang-btn="en">EN</button>
+        </div>
     </nav>
 
     <!-- ── INTRODUCTION SECTION ────────────────── -->
@@ -505,51 +659,72 @@
                 </div>
             </div>
             <div class="intro-content">
-                <span class="intro-label">Bonjour, je suis Bradley</span>
-                <h1 class="intro-title">Étudiant, Créatif & <em>Développeur.</em></h1>
+                <span class="intro-label">
+                    <span class="lang-fr">Bonjour, je suis Bradley</span>
+                    <span class="lang-en">Hello, I'm Bradley</span>
+                </span>
+                <h1 class="intro-title">
+                    <span class="lang-fr">Étudiant, Créatif & <em>Développeur.</em></span>
+                    <span class="lang-en">Student, Creative & <em>Developer.</em></span>
+                </h1>
                 <div class="intro-text">
-                    <p>Je suis un étudiant passionné par la technologie, la création visuelle et l’innovation numérique.
-                        Actuellement en formation à ESIH, j’évolue entre le développement web et la production
-                        multimédia, avec une approche centrée sur la créativité, la rigueur et l’impact.</p>
-                    <p>À travers mes projets, je combine design, vidéo, communication et programmation afin de créer des
-                        expériences modernes et engageantes. Que ce soit pour développer des applications, concevoir des
-                        identités visuelles, réaliser des contenus vidéo ou gérer des projets numériques, j’aime
-                        transformer des idées en solutions concrètes.</p>
-                    <p>En dehors du cadre académique, je suis également impliqué dans plusieurs initiatives étudiantes
-                        et communautaires où je mets mes compétences au service de l’organisation, de la communication
-                        et de la valorisation des événements.</p>
+                    <p class="lang-fr">Étudiant à l'ESIH, je conçois des solutions numériques et des contenus multimédias à la frontière du code et du design. Mon parcours me permet d'évoluer de manière transverse, alliant rigueur technique et créativité visuelle.</p>
+                    <p class="lang-fr">Mon but est de transformer vos idées en expériences interactives modernes, esthétiques et performantes. Que ce soit à travers le développement web ou la production de contenus médias, je cherche toujours à créer un impact fort et mémorable.</p>
+                    <p class="lang-en">As a student at ESIH, I design digital solutions and multimedia content at the intersection of development and design. My background allows me to bridge technical precision and visual creativity seamlessly.</p>
+                    <p class="lang-en">My goal is to transform your ideas into modern, aesthetic, and high-performance interactive experiences. Whether through web development or media production, I always strive to create a strong and memorable impact.</p>
                 </div>
 
-                <!-- Suppression des liens redondants pour une transition plus fluide -->
+                <div class="intro-socials">
+                    <a href="https://www.linkedin.com/in/bradley-djamy-joseph-5a27a4356" target="_blank" class="social-btn">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/djaleyy" target="_blank" class="social-btn">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
             </div>
         </div>
         <div class="scroll-hint">
             <div class="mouse"></div>
-            <span>Scroll pour choisir</span>
+            <span class="lang-fr">Scroll pour choisir</span>
+            <span class="lang-en">Scroll to choose</span>
         </div>
     </section>
 
     <!-- ── SELECTION SECTION ───────────────────── -->
     <section id="selection" class="split-section">
         <div class="selection-header">
-            <p>Découvrez maintenant l’univers qui vous intéresse le plus :</p>
+            <p class="lang-fr">Découvrez maintenant l’univers qui vous intéresse le plus :</p>
+            <p class="lang-en">Discover the universe that interests you the most:</p>
         </div>
         <div class="split-container">
             <!-- Developer Side -->
             <a href="developer.html" class="split-side side-dev">
                 <div class="content">
-                    <h2>Développeur</h2>
-                    <p>Architectures web, systèmes, et interfaces numériques.</p>
-                    <div class="enter-btn">Entrer le profil</div>
+                    <h2 class="lang-fr">Développeur</h2>
+                    <h2 class="lang-en">Developer</h2>
+                    <p class="lang-fr">Architectures web, systèmes, et interfaces numériques.</p>
+                    <p class="lang-en">Web architectures, systems, and digital interfaces.</p>
+                    <div class="enter-btn">
+                        <span class="lang-fr">Entrer le profil</span>
+                        <span class="lang-en">Enter profile</span>
+                    </div>
                 </div>
             </a>
 
             <!-- Media Side -->
             <a href="media.html" class="split-side side-media">
                 <div class="content">
-                    <h2>Créatif & Média</h2>
-                    <p>Photographie, vidéographie, et storytelling visuel.</p>
-                    <div class="enter-btn">Entrer le profil</div>
+                    <h2 class="lang-fr">Créatif & Média</h2>
+                    <h2 class="lang-en">Creative & Media</h2>
+                    <p class="lang-fr">Photographie, vidéographie, et storytelling visuel.</p>
+                    <p class="lang-en">Photography, videography, and visual storytelling.</p>
+                    <div class="enter-btn">
+                        <span class="lang-fr">Entrer le profil</span>
+                        <span class="lang-en">Enter profile</span>
+                    </div>
                 </div>
             </a>
         </div>
@@ -557,6 +732,44 @@
 
     <!-- FontAwesome for the new icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Script pour le changement de langue (index.html) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const langBtns = document.querySelectorAll('.lang-btn');
+            
+            const updateButtons = (lang) => {
+                langBtns.forEach(btn => {
+                    if (btn.getAttribute('data-lang-btn') === lang) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+            };
+
+            const setLang = (lang) => {
+                if (lang === 'en') {
+                    document.documentElement.classList.add('lang-en');
+                } else {
+                    document.documentElement.classList.remove('lang-en');
+                }
+                localStorage.setItem('portfolio-lang', lang);
+                updateButtons(lang);
+            };
+
+            // Initialisation
+            const currentLang = localStorage.getItem('portfolio-lang') || 'fr';
+            setLang(currentLang);
+
+            // Clics
+            langBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    setLang(btn.getAttribute('data-lang-btn'));
+                });
+            });
+        });
+    </script>
 
 </body>
 

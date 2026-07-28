@@ -9,8 +9,8 @@
     --border-color-hover: rgba(245, 241, 232, 0.18);
 
     /* Typography */
-    --font-sans: 'Plus Jakarta Sans', sans-serif;
-    --font-serif: 'DM Serif Display', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --font-serif: 'Montserrat', sans-serif;
 
     /* Transition */
     --transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -92,16 +92,20 @@ textarea {
 }
 
 .section-title {
-    font-family: var(--font-serif);
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 400;
-    line-height: 1.1;
+    font-family: var(--font-sans);
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
     margin-bottom: 60px;
 }
 
 .section-title em {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-style: italic;
+    font-weight: 300;
+    color: var(--accent-color);
 }
 
 /* Custom Cursor */
@@ -334,17 +338,19 @@ textarea {
 }
 
 .hero-title {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-size: clamp(3.5rem, 8vw, 6.5rem);
-    font-weight: 400;
-    line-height: 0.95;
-    letter-spacing: -0.03em;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
     margin-bottom: 30px;
 }
 
 .hero-title em {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-style: italic;
+    font-weight: 300;
     color: var(--accent-color);
 }
 
@@ -959,7 +965,7 @@ footer {
 
 .custom-modal.active {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
 
@@ -970,6 +976,7 @@ footer {
     max-width: 900px;
     position: relative;
     padding: 40px;
+    margin: 40px 0;
     animation: modalAnim 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -989,6 +996,7 @@ footer {
     max-width: 100vw;
     height: 100vh;
     padding: 0;
+    margin: 0;
     background-color: #000;
     border: none;
 }
@@ -998,13 +1006,23 @@ footer {
 }
 
 .modal-close {
-    position: absolute;
+    position: fixed;
     top: 30px;
     right: 30px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     cursor: pointer;
-    z-index: 10;
+    z-index: 2100;
     transition: var(--transition-fast);
+    background-color: rgba(10, 10, 10, 0.7);
+    border: 1px solid var(--border-color);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    backdrop-filter: blur(5px);
 }
 
 .modal-close:hover {
@@ -1338,6 +1356,12 @@ footer {
         font-size: 3.8rem;
     }
 
+    .hero-img-label {
+        left: 10px;
+        bottom: 10px;
+        padding: 8px 16px;
+    }
+
     .form-row {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -1352,4 +1376,94 @@ footer {
     .masonry-grid {
         columns: 1;
     }
+
+    /* Modal Adjustments on Mobile */
+    .custom-modal {
+        padding: 20px;
+    }
+
+    .modal-content {
+        padding: 35px 20px 20px;
+        margin: 20px 0;
+    }
+
+    .modal-close {
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .lb-content img {
+        max-width: 95vw;
+        max-height: 75vh;
+    }
+
+    .lb-close {
+        top: 20px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+    }
+
+    .lb-prev {
+        left: 10px;
+        width: 44px;
+        height: 44px;
+    }
+
+    .lb-next {
+        right: 10px;
+        width: 44px;
+        height: 44px;
+    }
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   LANGUAGE SWITCHER SYSTEM
+   ────────────────────────────────────────────────────────────────────────── */
+
+/* Bilingual layout toggles */
+html.lang-en .lang-fr {
+    display: none !important;
+}
+html:not(.lang-en) .lang-en {
+    display: none !important;
+}
+
+/* Minimal Language Switcher styling */
+.lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    z-index: 1010;
+}
+
+.lang-btn {
+    color: var(--text-secondary);
+    transition: var(--transition-fast);
+    cursor: pointer;
+    padding: 2px 6px;
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+.lang-btn.active {
+    color: var(--text-primary);
+    opacity: 1;
+}
+
+.lang-btn:hover:not(.active) {
+    color: var(--text-primary);
+    opacity: 0.9;
+}
+
+.lang-divider {
+    color: var(--border-color);
+    pointer-events: none;
 }

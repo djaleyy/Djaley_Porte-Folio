@@ -4,15 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bradley Joseph — Créatif & Média</title>
+    <title>Bradley Joseph — Créatif & Média / Creative & Media</title>
     <meta name="description" content="Portfolio de Bradley Joseph — Photographie, Vidéo et Création de Contenu.">
+
+    <!-- Language Bootstrapping -->
+    <script>
+        (function() {
+            const lang = localStorage.getItem('portfolio-lang') || 'fr';
+            if (lang === 'en') {
+                document.documentElement.classList.add('lang-en');
+            } else {
+                document.documentElement.classList.remove('lang-en');
+            }
+        })();
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=DM+Serif+Display:ital@0;1&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -40,11 +50,16 @@
             <a href="index.html" class="nav-logo" title="Retour au choix de profil"><i class="fas fa-arrow-left"
                     style="font-size: 0.9rem; margin-right: 10px;"></i> B<span>.</span>Joseph</a>
             <ul class="nav-links">
-                <li><a href="#projects">Work</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Services</a></li>
+                <li><a href="#projects"><span class="lang-fr">Projets</span><span class="lang-en">Projects</span></a></li>
+                <li><a href="#about"><span class="lang-fr">À propos</span><span class="lang-en">About</span></a></li>
+                <li><a href="#skills"><span class="lang-fr">Services</span><span class="lang-en">Services</span></a></li>
                 <li><a href="#contact" class="nav-cta">Contact</a></li>
             </ul>
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang-btn="fr">FR</button>
+                <span class="lang-divider">|</span>
+                <button class="lang-btn" data-lang-btn="en">EN</button>
+            </div>
             <button class="burger" id="burger" aria-label="Menu">
                 <span></span><span></span>
             </button>
@@ -54,13 +69,12 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu">
         <ul>
-            <li><a href="#projects" class="mm-link">Work</a></li>
-            <li><a href="#about" class="mm-link">About</a></li>
-            <li><a href="#skills" class="mm-link">Services</a></li>
+            <li><a href="#projects" class="mm-link"><span class="lang-fr">Projets</span><span class="lang-en">Projects</span></a></li>
+            <li><a href="#about" class="mm-link"><span class="lang-fr">À propos</span><span class="lang-en">About</span></a></li>
+            <li><a href="#skills" class="mm-link"><span class="lang-fr">Services</span><span class="lang-en">Services</span></a></li>
             <li><a href="#contact" class="mm-link">Contact</a></li>
             <li style="margin-top: 40px;"><a href="index.html" class="mm-link"
-                    style="font-size: 1.2rem; color: var(--text-secondary);"><i class="fas fa-arrow-left"></i> Changer
-                    de profil</a></li>
+                    style="font-size: 1.2rem; color: var(--text-secondary);"><i class="fas fa-arrow-left"></i> <span class="lang-fr">Changer de profil</span><span class="lang-en">Change profile</span></a></li>
         </ul>
     </div>
 
@@ -68,18 +82,31 @@
     <section id="home" class="hero">
         <div class="hero-grid container">
             <div class="hero-left">
-                <p class="hero-eyebrow reveal">Photographie & Vidéographie</p>
-                <h1 class="hero-title reveal">Visual<br><em>Storytelling.</em></h1>
-                <p class="hero-desc reveal">Je capture des instants uniques et crée du contenu visuel pour raconter vos
-                    histoires avec émotion et impact.</p>
+                <p class="hero-eyebrow reveal">
+                    <span class="lang-fr">Photographie & Vidéographie</span>
+                    <span class="lang-en">Photography & Videography</span>
+                </p>
+                <h1 class="hero-title reveal">Storytelling<br><em>Visuel.</em></h1>
+                <p class="hero-desc reveal">
+                    <span class="lang-fr">Je capture des instants uniques et crée du contenu visuel pour raconter vos histoires avec émotion et impact.</span>
+                    <span class="lang-en">I capture unique moments and create visual content to tell your stories with emotion and impact.</span>
+                </p>
                 <div class="hero-actions reveal">
-                    <a href="#projects" class="btn-primary">Voir mon travail</a>
-                    <a href="#contact" class="btn-ghost">Me contacter</a>
+                    <a href="#projects" class="btn-primary">
+                        <span class="lang-fr">Voir mon travail</span>
+                        <span class="lang-en">View my work</span>
+                    </a>
+                    <a href="#contact" class="btn-ghost">
+                        <span class="lang-fr">Me contacter</span>
+                        <span class="lang-en">Contact me</span>
+                    </a>
                 </div>
                 <div class="hero-meta reveal">
-                    <span>Créateur visuel</span>
+                    <span class="lang-fr">Créateur visuel</span>
+                    <span class="lang-en">Visual creator</span>
                     <span class="meta-dot"></span>
-                    <span>Événementiel & Portrait</span>
+                    <span class="lang-fr">Événementiel & Portrait</span>
+                    <span class="lang-en">Events & Portraits</span>
                 </div>
             </div>
             <div class="hero-right reveal">
@@ -87,13 +114,15 @@
                     <img src="Image/Multi.jpeg" alt="Bradley Joseph — Photographe" class="hero-img">
                     <div class="hero-img-label">
                         <span class="label-dot"></span>
-                        Disponible pour shootings
+                        <span class="lang-fr">Disponible pour shootings</span>
+                        <span class="lang-en">Available for shoots</span>
                     </div>
                 </div>
             </div>
         </div>
         <div class="hero-scroll">
-            <span>Scroll</span>
+            <span class="lang-fr">Défiler</span>
+            <span class="lang-en">Scroll</span>
             <div class="scroll-line"></div>
         </div>
     </section>
@@ -121,16 +150,24 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-left">
-                    <p class="section-label reveal">À propos</p>
-                    <h2 class="section-title reveal">Un oeil<br>créatif.</h2>
+                    <p class="section-label reveal">
+                        <span class="lang-fr">À propos</span>
+                        <span class="lang-en">About</span>
+                    </p>
+                    <h2 class="section-title reveal">
+                        <span class="lang-fr">Un oeil<br>créatif.</span>
+                        <span class="lang-en">A creative<br>eye.</span>
+                    </h2>
                     <div class="about-stats reveal">
                         <div class="astat">
                             <span class="astat-n">100+</span>
-                            <span class="astat-l">Événements<br>Couverts</span>
+                            <span class="astat-l lang-fr">Événements<br>Couverts</span>
+                            <span class="astat-l lang-en">Events<br>Covered</span>
                         </div>
                         <div class="astat">
-                            <span class="astat-n">2021</span>
-                            <span class="astat-l">Année de<br>Début</span>
+                            <span class="astat-n">2024</span>
+                            <span class="astat-l lang-fr">Année de<br>Début</span>
+                            <span class="astat-l lang-en">Starting<br>Year</span>
                         </div>
                     </div>
                 </div>
@@ -140,12 +177,14 @@
                             class="about-photo">
                     </div>
                     <div class="about-text reveal">
-                        <p>L'image est mon langage. À travers mon objectif, je cherche à figer l'émotion d'un concert,
-                            la personnalité d'un portrait ou l'énergie d'un événement corporate.</p>
-                        <p>Je prends en charge toute la chaîne de production : de la prise de vue au montage dynamique,
-                            en passant par l'étalonnage colorimétrique pour donner un rendu premium à vos médias.</p>
-                        <a href="#contact" class="btn-text">Discuter de votre vision <i
-                                class="fas fa-arrow-right"></i></a>
+                        <p class="lang-fr">L'image est mon langage. À travers mon objectif, je cherche à figer l'émotion d'un concert, la personnalité d'un portrait ou l'énergie d'un événement corporate.</p>
+                        <p class="lang-en">Images are my language. Through my lens, I strive to capture the emotion of a concert, the personality of a portrait, or the energy of a corporate event.</p>
+                        <p class="lang-fr">Je prends en charge toute la chaîne de production : de la prise de vue au montage dynamique, en passant par l'étalonnage colorimétrique pour donner un rendu premium à vos médias.</p>
+                        <p class="lang-en">I handle the entire production pipeline: from shooting to dynamic editing, including color grading to give a premium finish to your media.</p>
+                        <a href="#contact" class="btn-text">
+                            <span class="lang-fr">Discuter de votre vision <i class="fas fa-arrow-right"></i></span>
+                            <span class="lang-en">Discuss your vision <i class="fas fa-arrow-right"></i></span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -156,45 +195,61 @@
     <section id="skills" class="services section section-dark">
         <div class="container">
             <div class="services-head">
-                <p class="section-label reveal">Skills & Certifications</p>
-                <h2 class="section-title reveal">My Expertise & <em>Journey.</em></h2>
+                <p class="section-label reveal">
+                    <span class="lang-fr">Compétences & Certifications</span>
+                    <span class="lang-en">Skills & Certifications</span>
+                </p>
+                <h2 class="section-title reveal">
+                    <span class="lang-fr">Mon expertise & <em>Mon parcours.</em></span>
+                    <span class="lang-en">My Expertise & <em>My Journey.</em></span>
+                </h2>
             </div>
             
             <div class="skills-wrapper">
                 <!-- SECTION 1 : SERVICES MEDIA -->
                 <div class="skills-section reveal">
                     <div class="skills-sub-head">
-                        <h3 class="skills-sub-title">Services <span>Média</span></h3>
-                        <p class="skills-sub-desc">Ce que je propose pour donner vie à vos projets visuels.</p>
+                        <h3 class="skills-sub-title">
+                            <span class="lang-fr">Services <span>Média</span></span>
+                            <span class="lang-en">Media <span>Services</span></span>
+                        </h3>
+                        <p class="skills-sub-desc">
+                            <span class="lang-fr">Ce que je propose pour donner vie à vos projets visuels.</span>
+                            <span class="lang-en">What I offer to bring your visual projects to life.</span>
+                        </p>
                     </div>
                     <div class="services-grid">
                         <div class="service-card reveal">
                             <span class="service-num">01</span>
                             <div class="service-icon"><i class="fas fa-camera"></i></div>
-                            <h3>Photographie Événementielle</h3>
-                            <p>Couverture complète de vos événements (concerts, conférences, mariages). Captation des moments
-                                clés avec une retouche professionnelle pour des souvenirs mémorables.</p>
+                            <h3 class="lang-fr">Photographie Événementielle</h3>
+                            <h3 class="lang-en">Event Photography</h3>
+                            <p class="lang-fr">Couverture complète de vos événements (concerts, conférences, mariages). Captation des moments clés avec une retouche professionnelle pour des souvenirs mémorables.</p>
+                            <p class="lang-en">Full coverage of your events (concerts, conferences, weddings). Capturing key moments with professional editing for memorable memories.</p>
                         </div>
                         <div class="service-card reveal">
                             <span class="service-num">02</span>
                             <div class="service-icon"><i class="fas fa-video"></i></div>
-                            <h3>Vidéographie & Montage</h3>
-                            <p>Réalisation de clips vidéo, aftermovies d'événements et interviews. Montage dynamique, sound
-                                design et color grading pour un rendu cinématographique.</p>
+                            <h3 class="lang-fr">Vidéographie & Montage</h3>
+                            <h3 class="lang-en">Videography & Editing</h3>
+                            <p class="lang-fr">Réalisation de clips vidéo, aftermovies d'événements et interviews. Montage dynamique, sound design et color grading pour un rendu cinématographique.</p>
+                            <p class="lang-en">Creation of video clips, event aftermovies, and interviews. Dynamic editing, sound design, and color grading for a cinematic look.</p>
                         </div>
                         <div class="service-card reveal">
                             <span class="service-num">03</span>
                             <div class="service-icon"><i class="fas fa-portrait"></i></div>
-                            <h3>Photographie de Portrait</h3>
-                            <p>Séances photo individuelles ou corporate. Mise en valeur de votre image personnelle ou
-                                professionnelle avec un éclairage soigné.</p>
+                            <h3 class="lang-fr">Photographie de Portrait</h3>
+                            <h3 class="lang-en">Portrait Photography</h3>
+                            <p class="lang-fr">Séances photo individuelles ou corporate. Mise en valeur de votre image personnelle ou professionnelle avec un éclairage soigné.</p>
+                            <p class="lang-en">Individual or corporate photo sessions. Highlighting your personal or professional image with careful lighting.</p>
                         </div>
                         <div class="service-card reveal">
                             <span class="service-num">04</span>
                             <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
-                            <h3>Création de Contenu (Réseaux)</h3>
-                            <p>Création de visuels (photos, reels, designs) adaptés pour Instagram, TikTok et LinkedIn.
-                                Établissement d'une identité visuelle forte.</p>
+                            <h3 class="lang-fr">Création de Contenu (Réseaux)</h3>
+                            <h3 class="lang-en">Content Creation (Social)</h3>
+                            <p class="lang-fr">Création de visuels (photos, reels, designs) adaptés pour Instagram, TikTok et LinkedIn. Établissement d'une identité visuelle forte.</p>
+                            <p class="lang-en">Creating visuals (photos, reels, designs) tailored for Instagram, TikTok, and LinkedIn. Building a strong visual identity.</p>
                         </div>
                     </div>
                 </div>
@@ -202,21 +257,36 @@
                 <!-- SECTION 2 : MULTIMEDIA CREATION -->
                 <div class="skills-section multimedia-sec reveal">
                     <div class="skills-sub-head">
-                        <h3 class="skills-sub-title">Multimedia <span>Creation</span></h3>
-                        <p class="skills-sub-desc">Visual storytelling, photographic assets, and digital media production.</p>
+                        <h3 class="skills-sub-title">
+                            <span class="lang-fr">Création <span>Multimédia</span></span>
+                            <span class="lang-en">Multimedia <span>Creation</span></span>
+                        </h3>
+                        <p class="skills-sub-desc">
+                            <span class="lang-fr">Storytelling visuel, production d'images et création de contenus numériques.</span>
+                            <span class="lang-en">Visual storytelling, photographic assets, and digital media production.</span>
+                        </p>
                     </div>
                     <div class="specialty-grid">
                         <div class="specialty-card">
                             <div class="specialty-icon-wrapper"><i class="fas fa-camera"></i></div>
-                            <h4 class="specialty-title">Photography</h4>
+                            <h4 class="specialty-title">
+                                <span class="lang-fr">Photographie</span>
+                                <span class="lang-en">Photography</span>
+                            </h4>
                         </div>
                         <div class="specialty-card">
                             <div class="specialty-icon-wrapper"><i class="fas fa-video"></i></div>
-                            <h4 class="specialty-title">Videography</h4>
+                            <h4 class="specialty-title">
+                                <span class="lang-fr">Vidéographie</span>
+                                <span class="lang-en">Videography</span>
+                            </h4>
                         </div>
                         <div class="specialty-card">
                             <div class="specialty-icon-wrapper"><i class="fas fa-film"></i></div>
-                            <h4 class="specialty-title">Video Editing</h4>
+                            <h4 class="specialty-title">
+                                <span class="lang-fr">Montage Vidéo</span>
+                                <span class="lang-en">Video Editing</span>
+                            </h4>
                         </div>
                         <div class="specialty-card">
                             <div class="specialty-icon-wrapper"><i class="fab fa-adobe"></i></div>
@@ -224,7 +294,10 @@
                         </div>
                         <div class="specialty-card">
                             <div class="specialty-icon-wrapper"><i class="fas fa-file-signature"></i></div>
-                            <h4 class="specialty-title">Content Creation</h4>
+                            <h4 class="specialty-title">
+                                <span class="lang-fr">Création de Contenu</span>
+                                <span class="lang-en">Content Creation</span>
+                            </h4>
                         </div>
                     </div>
                 </div>
@@ -232,28 +305,80 @@
                 <!-- SECTION 3 : PROFESSIONAL SKILLS -->
                 <div class="skills-section reveal">
                     <div class="skills-sub-head">
-                        <h3 class="skills-sub-title">Professional <span>Skills</span></h3>
-                        <p class="skills-sub-desc">My core interpersonal skills, project leadership and operational values.</p>
+                        <h3 class="skills-sub-title">
+                            <span class="lang-fr">Compétences <span>Professionnelles</span></span>
+                            <span class="lang-en">Professional <span>Skills</span></span>
+                        </h3>
+                        <p class="skills-sub-desc">
+                            <span class="lang-fr">Mes aptitudes interpersonnelles, mon leadership de projet et mes valeurs opérationnelles.</span>
+                            <span class="lang-en">My core interpersonal skills, project leadership and operational values.</span>
+                        </p>
                     </div>
                     <div class="badges-container">
-                        <div class="badge-item"><i class="fas fa-puzzle-piece"></i> Problem Solving</div>
-                        <div class="badge-item"><i class="fas fa-crown"></i> Leadership</div>
-                        <div class="badge-item"><i class="fas fa-comments"></i> Communication</div>
-                        <div class="badge-item"><i class="fas fa-users"></i> Teamwork</div>
-                        <div class="badge-item"><i class="fas fa-bullhorn"></i> Community Management</div>
-                        <div class="badge-item"><i class="fas fa-tasks"></i> Project Management</div>
-                        <div class="badge-item"><i class="fas fa-brain"></i> Critical Thinking</div>
-                        <div class="badge-item"><i class="fas fa-sync-alt"></i> Adaptability</div>
-                        <div class="badge-item"><i class="fas fa-headset"></i> Customer Support</div>
-                        <div class="badge-item"><i class="fas fa-hourglass-half"></i> Time Management</div>
+                        <div class="badge-item">
+                            <i class="fas fa-puzzle-piece"></i>
+                            <span class="lang-fr">Résolution de problèmes</span>
+                            <span class="lang-en">Problem Solving</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-crown"></i>
+                            <span class="lang-fr">Leadership</span>
+                            <span class="lang-en">Leadership</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-comments"></i>
+                            <span class="lang-fr">Communication</span>
+                            <span class="lang-en">Communication</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-users"></i>
+                            <span class="lang-fr">Travail d'équipe</span>
+                            <span class="lang-en">Teamwork</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-bullhorn"></i>
+                            <span class="lang-fr">Gestion de communauté</span>
+                            <span class="lang-en">Community Management</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-tasks"></i>
+                            <span class="lang-fr">Gestion de projet</span>
+                            <span class="lang-en">Project Management</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-brain"></i>
+                            <span class="lang-fr">Esprit critique</span>
+                            <span class="lang-en">Critical Thinking</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-sync-alt"></i>
+                            <span class="lang-fr">Adaptabilité</span>
+                            <span class="lang-en">Adaptability</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-headset"></i>
+                            <span class="lang-fr">Support client</span>
+                            <span class="lang-en">Customer Support</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-hourglass-half"></i>
+                            <span class="lang-fr">Gestion du temps</span>
+                            <span class="lang-en">Time Management</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- SECTION 4 : CERTIFICATIONS TIMELINE -->
                 <div class="skills-section reveal">
                     <div class="skills-sub-head">
-                        <h3 class="skills-sub-title">Certifications <span>Timeline</span></h3>
-                        <p class="skills-sub-desc">A log of my academic accomplishments and professional qualifications.</p>
+                        <h3 class="skills-sub-title">
+                            <span class="lang-fr">Chronologie <span>des Certifications</span></span>
+                            <span class="lang-en">Certifications <span>Timeline</span></span>
+                        </h3>
+                        <p class="skills-sub-desc">
+                            <span class="lang-fr">Un registre de mes réalisations académiques et de mes qualifications professionnelles.</span>
+                            <span class="lang-en">A log of my academic accomplishments and professional qualifications.</span>
+                        </p>
                     </div>
                     
                     <div class="timeline-container">
@@ -267,13 +392,23 @@
                                 <div class="cert-content">
                                     <div class="cert-header">
                                         <div class="cert-title-row">
-                                            <h4 class="cert-title">First Aid Certification</h4>
+                                            <h4 class="cert-title">
+                                                <span class="lang-fr">Certification de Secourisme</span>
+                                                <span class="lang-en">First Aid Certification</span>
+                                            </h4>
                                             <span class="cert-date">Nov 2024</span>
                                         </div>
-                                        <span class="cert-issuer">Haitian National Police (PNH)</span>
+                                        <span class="cert-issuer">
+                                            <span class="lang-fr">Police Nationale d'Haïti (PNH)</span>
+                                            <span class="lang-en">Haitian National Police (PNH)</span>
+                                        </span>
                                     </div>
-                                    <p class="cert-desc">Certified in emergency first aid protocols, safety measures, and life-saving procedures under stressful situations.</p>
-                                    <span class="cert-btn">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                    <p class="cert-desc lang-fr">Certifié en protocoles de premiers secours d'urgence, mesures de sécurité et procédures de sauvetage dans des situations critiques.</p>
+                                    <p class="cert-desc lang-en">Certified in emergency first aid protocols, safety measures, and life-saving procedures under stressful situations.</p>
+                                    <span class="cert-btn">
+                                        <span class="lang-fr">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                        <span class="lang-en">View certificate <i class="fas fa-arrow-right"></i></span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -286,13 +421,20 @@
                                 <div class="cert-content">
                                     <div class="cert-header">
                                         <div class="cert-title-row">
-                                            <h4 class="cert-title">Entrepreneurship & Digital Marketing</h4>
-                                            <span class="cert-date">May 2023</span>
+                                            <h4 class="cert-title">
+                                                <span class="lang-fr">Entrepreneuriat & Marketing Digital</span>
+                                                <span class="lang-en">Entrepreneurship & Digital Marketing</span>
+                                            </h4>
+                                            <span class="cert-date">Mai 2023</span>
                                         </div>
                                         <span class="cert-issuer">DiagTram</span>
                                     </div>
-                                    <p class="cert-desc">Training in online positioning, company building fundamentals, digital product management, and media optimization strategies.</p>
-                                    <span class="cert-btn">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                    <p class="cert-desc lang-fr">Formation au positionnement en ligne, aux fondamentaux de création d'entreprise, à la gestion de produits numériques et aux stratégies média.</p>
+                                    <p class="cert-desc lang-en">Training in online positioning, company building fundamentals, digital product management, and media optimization strategies.</p>
+                                    <span class="cert-btn">
+                                        <span class="lang-fr">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                        <span class="lang-en">View certificate <i class="fas fa-arrow-right"></i></span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -305,13 +447,20 @@
                                 <div class="cert-content">
                                     <div class="cert-header">
                                         <div class="cert-title-row">
-                                            <h4 class="cert-title">Ethernet Network Cabling</h4>
+                                            <h4 class="cert-title">
+                                                <span class="lang-fr">Câblage Réseau Ethernet</span>
+                                                <span class="lang-en">Ethernet Network Cabling</span>
+                                            </h4>
                                             <span class="cert-date">Oct 2022</span>
                                         </div>
                                         <span class="cert-issuer">CFPH (Canado-Technique) / ISTAFF</span>
                                     </div>
-                                    <p class="cert-desc">Hands-on certification in physical ethernet cable creation, speed validation, structural mapping, and signal integrity maintenance.</p>
-                                    <span class="cert-btn">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                    <p class="cert-desc lang-fr">Certification pratique pour la création de câbles Ethernet physiques, la validation de vitesse de transfert et la maintenance de l'intégrité du signal.</p>
+                                    <p class="cert-desc lang-en">Hands-on certification in physical ethernet cable creation, speed validation, structural mapping, and signal integrity maintenance.</p>
+                                    <span class="cert-btn">
+                                        <span class="lang-fr">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                        <span class="lang-en">View certificate <i class="fas fa-arrow-right"></i></span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -324,13 +473,20 @@
                                 <div class="cert-content">
                                     <div class="cert-header">
                                         <div class="cert-title-row">
-                                            <h4 class="cert-title">Cellular Decoding</h4>
+                                            <h4 class="cert-title">
+                                                <span class="lang-fr">Décodage Cellulaire</span>
+                                                <span class="lang-en">Cellular Decoding</span>
+                                            </h4>
                                             <span class="cert-date">Mar 2023</span>
                                         </div>
                                         <span class="cert-issuer">ISTAFF</span>
                                     </div>
-                                    <p class="cert-desc">Specialized technical training in decoding protocols, network frequency analysis, lock operations, and device system recovery.</p>
-                                    <span class="cert-btn">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                    <p class="cert-desc lang-fr">Formation technique spécialisée dans les protocoles de décodage, l'analyse des fréquences réseau et la récupération de systèmes mobiles.</p>
+                                    <p class="cert-desc lang-en">Specialized technical training in decoding protocols, network frequency analysis, lock operations, and device system recovery.</p>
+                                    <span class="cert-btn">
+                                        <span class="lang-fr">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                        <span class="lang-en">View certificate <i class="fas fa-arrow-right"></i></span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -343,13 +499,20 @@
                                 <div class="cert-content">
                                     <div class="cert-header">
                                         <div class="cert-title-row">
-                                            <h4 class="cert-title">Telecommunications</h4>
+                                            <h4 class="cert-title">
+                                                <span class="lang-fr">Télécommunications</span>
+                                                <span class="lang-en">Telecommunications</span>
+                                            </h4>
                                             <span class="cert-date">2023</span>
                                         </div>
                                         <span class="cert-issuer">CFPH (Canado-Technique)</span>
                                     </div>
-                                    <p class="cert-desc">Core training in telecommunication circuits, high-speed signals, wave theory, routing matrices, and infrastructure deployment.</p>
-                                    <span class="cert-btn">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                    <p class="cert-desc lang-fr">Formation fondamentale sur les circuits de télécommunication, les signaux haute fréquence, la théorie des ondes et le déploiement d'infrastructures.</p>
+                                    <p class="cert-desc lang-en">Core training in telecommunication circuits, high-speed signals, wave theory, routing matrices, and infrastructure deployment.</p>
+                                    <span class="cert-btn">
+                                        <span class="lang-fr">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                        <span class="lang-en">View certificate <i class="fas fa-arrow-right"></i></span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -364,25 +527,34 @@
     <section id="projects" class="work section">
         <div class="container">
             <div class="work-head">
-                <p class="section-label reveal">Portfolio Visuel</p>
-                <h2 class="section-title reveal">Mes galeries.</h2>
+                <p class="section-label reveal">
+                    <span class="lang-fr">Portfolio Visuel</span>
+                    <span class="lang-en">Visual Portfolio</span>
+                </p>
+                <h2 class="section-title reveal">
+                    <span class="lang-fr">Mes galeries.</span>
+                    <span class="lang-en">My galleries.</span>
+                </h2>
             </div>
 
             <div class="work-grid">
                 <div class="work-card reveal">
                     <div class="work-img">
-                        <img src="Image/IMGP5707.jpg" alt="Concert Live Photography">
+                        <img src="Image/IMGP5707.jpg" alt="Photographie de Concert Live">
                         <div class="work-overlay">
                             <div class="work-tags">
-                                <span>Photographie</span><span>Concert</span>
+                                <span class="lang-fr">Photographie</span><span class="lang-en">Photography</span><span>Concert</span>
                             </div>
                         </div>
                     </div>
                     <div class="work-info">
-                        <h3>Galerie — Concert Live</h3>
-                        <p>Couverture photographique d'événements musicaux. Capturer l'émotion du moment.</p>
+                        <h3 class="lang-fr">Galerie — Concert Live</h3>
+                        <h3 class="lang-en">Gallery — Live Concert</h3>
+                        <p class="lang-fr">Couverture photographique d'événements musicaux. Capturer l'émotion du moment.</p>
+                        <p class="lang-en">Photographic coverage of music events. Capturing the emotion of the moment.</p>
                         <button class="work-btn" onclick="openModal('modal-concert-photo')">
-                            Ouvrir la galerie <i class="fas fa-images"></i>
+                            <span class="lang-fr">Ouvrir la galerie <i class="fas fa-images"></i></span>
+                            <span class="lang-en">Open gallery <i class="fas fa-images"></i></span>
                         </button>
                     </div>
                 </div>
@@ -392,16 +564,40 @@
                         <img src="Image/Screenshot 2026-04-24 140923.png" alt="Portfolio Vidéo">
                         <div class="work-overlay">
                             <div class="work-tags">
-                                <span>Vidéographie</span><span>Montage</span>
+                                <span class="lang-fr">Vidéographie</span><span class="lang-en">Videography</span><span class="lang-fr">Montage</span><span class="lang-en">Editing</span>
                             </div>
                         </div>
                         <div class="work-play"><i class="fas fa-play"></i></div>
                     </div>
                     <div class="work-info">
-                        <h3>Portfolio Vidéo</h3>
-                        <p>Récapitulatifs d'événements, captations live et créations dynamiques.</p>
+                        <h3 class="lang-fr">Portfolio Vidéo</h3>
+                        <h3 class="lang-en">Video Portfolio</h3>
+                        <p class="lang-fr">Récapitulatifs d'événements, captations live et créations dynamiques.</p>
+                        <p class="lang-en">Event recaps, live captures, and dynamic creations.</p>
                         <button class="work-btn">
-                            Voir les vidéos <i class="fas fa-play-circle"></i>
+                            <span class="lang-fr">Voir les vidéos <i class="fas fa-play-circle"></i></span>
+                            <span class="lang-en">Watch videos <i class="fas fa-play-circle"></i></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="work-card reveal">
+                    <div class="work-img">
+                        <img src="Image/FB_IMG_1782668313905.jpg" alt="Conférence Annuelle AJEBBS2">
+                        <div class="work-overlay">
+                            <div class="work-tags">
+                                <span class="lang-fr">Événementiel</span><span class="lang-en">Event</span><span class="lang-fr">Coordination</span><span class="lang-en">Coordination</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="lang-fr">Conférence Annuelle AJEBBS2</h3>
+                        <h3 class="lang-en">AJEBBS2 Annual Conference</h3>
+                        <p class="lang-fr">Coorganisateur & Coordinateur d'événement. Coordination d'équipe et suivi opérationnel.</p>
+                        <p class="lang-en">Co-organizer & Event Coordinator. Team coordination and operational support.</p>
+                        <button class="work-btn" onclick="openModal('modal-ajebbs2')">
+                            <span class="lang-fr">Ouvrir la galerie <i class="fas fa-images"></i></span>
+                            <span class="lang-en">Open gallery <i class="fas fa-images"></i></span>
                         </button>
                     </div>
                 </div>
@@ -417,18 +613,12 @@
             <button class="modal-close" onclick="closeModal('modal-concert-photo')"><i
                     class="fas fa-times"></i></button>
             <div class="modal-header">
-                <h2>Galerie Photo — Concert Live</h2>
+                <h2>
+                    <span class="lang-fr">Galerie Photo — Concert Live</span>
+                    <span class="lang-en">Photo Gallery — Live Concert</span>
+                </h2>
             </div>
             <div class="modal-body">
-                <div id="lightbox" class="lightbox">
-                    <button class="lb-close" id="lb-close"><i class="fas fa-times"></i></button>
-                    <button class="lb-prev" id="lb-prev"><i class="fas fa-chevron-left"></i></button>
-                    <button class="lb-next" id="lb-next"><i class="fas fa-chevron-right"></i></button>
-                    <div class="lb-content">
-                        <img id="lb-img" src="" alt="">
-                        <div class="lb-counter" id="lb-counter"></div>
-                    </div>
-                </div>
                 <div class="masonry-grid" id="masonry-grid">
                     <div class="masonry-item" data-index="0"><img src="Image/3.jpg" alt="Concert photo 1"
                             loading="lazy">
@@ -528,13 +718,24 @@
                         </video>
                         <div class="feed-overlay">
                             <h3><i class="fas fa-film"></i> Recap — PA Pale</h3>
-                            <p>Extrait du récapitulatif complet du concert.</p>
-                             <span class="video-tag">Récapitulatif</span>
-                             <br>
-                             <a href="METTRE_LIEN_DRIVE_RECAP_ICI" target="_blank" class="btn-primary"
-                                 style="margin-top: 15px; display: inline-block; background-color: var(--accent-color); color: var(--bg-dark); border:none;"><i
-                                     class="fas fa-external-link-alt"></i> Voir la vidéo complète sur Drive</a>
-                             <div class="feed-scroll-hint"><i class="fas fa-chevron-down"></i><span>Scroll</span></div>
+                            <p class="lang-fr">Extrait du récapitulatif complet du concert.</p>
+                            <p class="lang-en">Excerpt from the full concert recap.</p>
+                            <span class="video-tag">
+                                <span class="lang-fr">Récapitulatif</span>
+                                <span class="lang-en">Recap</span>
+                            </span>
+                            <br>
+                            <a href="METTRE_LIEN_DRIVE_RECAP_ICI" target="_blank" class="btn-primary"
+                                 style="margin-top: 15px; display: inline-block; background-color: var(--accent-color); color: var(--bg-dark); border:none;">
+                                 <i class="fas fa-external-link-alt"></i> 
+                                 <span class="lang-fr">Voir la vidéo complète sur Drive</span>
+                                 <span class="lang-en">Watch full video on Drive</span>
+                            </a>
+                            <div class="feed-scroll-hint">
+                                <i class="fas fa-chevron-down"></i>
+                                <span class="lang-fr">Défiler</span>
+                                <span class="lang-en">Scroll</span>
+                            </div>
                         </div>
                     </div>
                     <div class="video-feed-item">
@@ -543,14 +744,66 @@
                         </video>
                         <div class="feed-overlay">
                             <h3><i class="fas fa-music"></i> M Abandonem</h3>
-                            <p>Extrait de la performance live.</p>
-                             <span class="video-tag">Live Performance</span>
-                             <br>
-                             <a href="METTRE_LIEN_DRIVE_ABANDONEM_ICI" target="_blank" class="btn-primary"
-                                 style="margin-top: 15px; display: inline-block; background-color: var(--accent-color); color: var(--bg-dark); border:none;"><i
-                                     class="fas fa-external-link-alt"></i> Voir la vidéo complète sur Drive</a>
+                            <p class="lang-fr">Extrait de la performance live.</p>
+                            <p class="lang-en">Excerpt from the live performance.</p>
+                            <span class="video-tag">
+                                <span class="lang-fr">Performance Live</span>
+                                <span class="lang-en">Live Performance</span>
+                            </span>
+                            <br>
+                            <a href="METTRE_LIEN_DRIVE_ABANDONEM_ICI" target="_blank" class="btn-primary"
+                                 style="margin-top: 15px; display: inline-block; background-color: var(--accent-color); color: var(--bg-dark); border:none;">
+                                 <i class="fas fa-external-link-alt"></i> 
+                                 <span class="lang-fr">Voir la vidéo complète sur Drive</span>
+                                 <span class="lang-en">Watch full video on Drive</span>
+                            </a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: AJEBBS2 Gallery -->
+    <div id="modal-ajebbs2" class="custom-modal">
+        <div class="modal-content modal-large">
+            <button class="modal-close" onclick="closeModal('modal-ajebbs2')"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <h2>
+                    <span class="lang-fr">Coordinateur — Conférence Annuelle AJEBBS2</span>
+                    <span class="lang-en">Coordinator — AJEBBS2 Annual Conference</span>
+                </h2>
+                <div style="margin-top: 20px; color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem; text-align: justify; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    <div class="lang-fr">
+                        <p style="margin-bottom: 15px;">J'ai coorganisé une semaine de la <strong>Conférence Annuelle AJEBBS2</strong> aux côtés de <strong>Pamela Lafortune</strong> et <strong>Samuel David Vilma</strong>. Ensemble, nous avons assuré la planification, la coordination et l'exécution d'un programme d'une semaine comprenant des conférences, des activités spirituelles et des moments de rassemblement communautaire.</p>
+                        <p style="margin-bottom: 15px;">Mes responsabilités incluaient la coordination des équipes, la planification des activités, la gestion de la logistique, le suivi opérationnel ainsi que la communication entre les différents responsables afin d'assurer le bon déroulement de l'événement.</p>
+                        <p>Cette expérience m'a permis de développer des compétences solides en <strong>gestion de projet</strong>, <strong>leadership</strong>, <strong>coordination d'équipe</strong>, <strong>organisation d'événements</strong>, <strong>communication</strong> et <strong>résolution de problèmes</strong>.</p>
+                    </div>
+                    <div class="lang-en">
+                        <p style="margin-bottom: 15px;">I co-organized a week of the <strong>AJEBBS2 Annual Conference</strong> alongside <strong>Pamela Lafortune</strong> and <strong>Samuel David Vilma</strong>. Together, we managed the planning, coordination, and execution of a week-long program consisting of conferences, spiritual activities, and community gatherings.</p>
+                        <p style="margin-bottom: 15px;">My responsibilities included team coordination, activity scheduling, logistics management, operational follow-ups, and communication among the various leaders to ensure the smooth progress of the event.</p>
+                        <p>This experience allowed me to develop strong skills in <strong>project management</strong>, <strong>leadership</strong>, <strong>team coordination</strong>, <strong>event organization</strong>, <strong>communication</strong>, and <strong>problem solving</strong>.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="masonry-grid">
+                    <div class="masonry-item"><img src="Image/FB_IMG_1782668313905.jpg" alt="AJEBBS2 Photo 1" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
+                    <div class="masonry-item"><img src="Image/FB_IMG_1782668126198.jpg" alt="AJEBBS2 Photo 2" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
+                    <div class="masonry-item"><img src="Image/FB_IMG_1782668118831.jpg" alt="AJEBBS2 Photo 3" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
+                    <div class="masonry-item"><img src="Image/FB_IMG_1782668072258.jpg" alt="AJEBBS2 Photo 4" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
+                    <div class="masonry-item"><img src="Image/FB_IMG_1782484650712.jpg" alt="AJEBBS2 Photo 5" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
+                    <div class="masonry-item"><img src="Image/FB_IMG_1782484624854.jpg" alt="AJEBBS2 Photo 6" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
+                    <div class="masonry-item"><img src="Image/FB_IMG_1782484606556.jpg" alt="AJEBBS2 Photo 7" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
+                    <div class="masonry-item"><img src="Image/FB_IMG_1782484570233.jpg" alt="AJEBBS2 Photo 8" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
+                    <div class="masonry-item"><img src="Image/FB_IMG_1782484525943.jpg" alt="AJEBBS2 Photo 9" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
+                    <div class="masonry-item"><img src="Image/FB_IMG_1782301845505.jpg" alt="AJEBBS2 Photo 10" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
+                    <div class="masonry-item"><img src="Image/FB_IMG_1782484535169.jpg" alt="AJEBBS2 Photo 11" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
+                    <div class="masonry-item"><img src="Image/FB_IMG_1782484546318.jpg" alt="AJEBBS2 Photo 12" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
+                    <div class="masonry-item"><img src="Image/FB_IMG_1782301838178.jpg" alt="AJEBBS2 Photo 13" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
+                    <div class="masonry-item"><img src="Image/FB_IMG_1782211681884.jpg" alt="AJEBBS2 Photo 14" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
+                    <div class="masonry-item"><img src="Image/FB_IMG_1782140914849.jpg" alt="AJEBBS2 Photo 15" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
+                    <div class="masonry-item"><img src="Image/FB_IMG_1782140823831.jpg" alt="AJEBBS2 Photo 16" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
                 </div>
             </div>
         </div>
@@ -562,8 +815,14 @@
             <div class="contact-grid">
                 <div class="contact-left">
                     <p class="section-label reveal">Contact</p>
-                    <h2 class="section-title reveal">Travaillons<br>ensemble.</h2>
-                    <p class="contact-desc reveal">Besoin d'un oeil créatif pour votre prochain projet visuel ?</p>
+                    <h2 class="section-title reveal">
+                        <span class="lang-fr">Travaillons<br>ensemble.</span>
+                        <span class="lang-en">Let's work<br>together.</span>
+                    </h2>
+                    <p class="contact-desc reveal">
+                        <span class="lang-fr">Besoin d'un oeil créatif pour votre prochain projet visuel ?</span>
+                        <span class="lang-en">Need a creative eye for your next visual project?</span>
+                    </p>
                     <div class="contact-methods reveal">
                         <a href="mailto:josephdjamy26@gmail.com" class="cmethod">
                             <i class="fas fa-envelope"></i>
@@ -573,9 +832,13 @@
                             <i class="fas fa-phone"></i>
                             <span>+509 48724750</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/bradley-djamy-joseph" target="_blank" class="cmethod">
+                        <a href="https://www.linkedin.com/in/bradley-djamy-joseph-5a27a4356" target="_blank" class="cmethod">
                             <i class="fab fa-linkedin"></i>
                             <span>Bradley DJamy Joseph</span>
+                        </a>
+                        <a href="https://github.com/djaleyy" target="_blank" class="cmethod">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub (djaleyy)</span>
                         </a>
                     </div>
                 </div>
@@ -587,12 +850,29 @@
     <footer>
         <div class="container footer-inner">
             <span class="footer-logo">B<span>.</span>Joseph</span>
-            <p class="footer-copy">© 2025 Bradley Joseph — Tous droits réservés.</p>
+            <p class="footer-copy">
+                <span class="lang-fr">© 2025 Bradley Joseph — Tous droits réservés.</span>
+                <span class="lang-en">© 2025 Bradley Joseph — All rights reserved.</span>
+            </p>
             <div class="footer-links">
-                <a href="index.html">Changer de profil</a>
+                <a href="index.html">
+                    <span class="lang-fr">Changer de profil</span>
+                    <span class="lang-en">Change profile</span>
+                </a>
             </div>
         </div>
     </footer>
+
+    <!-- Root Lightbox Overlay (Shared by all galleries) -->
+    <div id="lightbox" class="lightbox">
+        <button class="lb-close" id="lb-close"><i class="fas fa-times"></i></button>
+        <button class="lb-prev" id="lb-prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="lb-next" id="lb-next"><i class="fas fa-chevron-right"></i></button>
+        <div class="lb-content">
+            <img id="lb-img" src="" alt="">
+            <div class="lb-counter" id="lb-counter"></div>
+        </div>
+    </div>
 
     <script src="js/main.js"></script>
     <script src="js/skills.js"></script>

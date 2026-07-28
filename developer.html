@@ -3,13 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bradley Joseph — Développeur Web & Systèmes</title>
+    <title>Bradley Joseph — Développeur Web & Systèmes / Web & Systems Developer</title>
     <meta name="description" content="Portfolio de Bradley Joseph — Développeur web et concepteur de systèmes.">
+
+    <!-- Language Bootstrapping -->
+    <script>
+        (function() {
+            const lang = localStorage.getItem('portfolio-lang') || 'fr';
+            if (lang === 'en') {
+                document.documentElement.classList.add('lang-en');
+            } else {
+                document.documentElement.classList.remove('lang-en');
+            }
+        })();
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -36,11 +48,16 @@
         <div class="nav-inner">
             <a href="index.html" class="nav-logo" title="Retour au choix de profil"><i class="fas fa-arrow-left" style="font-size: 0.9rem; margin-right: 10px;"></i> B<span>.</span>Joseph</a>
             <ul class="nav-links">
-                <li><a href="#projects">Work</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects"><span class="lang-fr">Projets</span><span class="lang-en">Projects</span></a></li>
+                <li><a href="#about"><span class="lang-fr">À propos</span><span class="lang-en">About</span></a></li>
+                <li><a href="#skills"><span class="lang-fr">Compétences</span><span class="lang-en">Skills</span></a></li>
                 <li><a href="#contact" class="nav-cta">Contact</a></li>
             </ul>
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang-btn="fr">FR</button>
+                <span class="lang-divider">|</span>
+                <button class="lang-btn" data-lang-btn="en">EN</button>
+            </div>
             <button class="burger" id="burger" aria-label="Menu">
                 <span></span><span></span>
             </button>
@@ -50,11 +67,11 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu">
         <ul>
-            <li><a href="#projects" class="mm-link">Work</a></li>
-            <li><a href="#about" class="mm-link">About</a></li>
-            <li><a href="#skills" class="mm-link">Skills</a></li>
+            <li><a href="#projects" class="mm-link"><span class="lang-fr">Projets</span><span class="lang-en">Projects</span></a></li>
+            <li><a href="#about" class="mm-link"><span class="lang-fr">À propos</span><span class="lang-en">About</span></a></li>
+            <li><a href="#skills" class="mm-link"><span class="lang-fr">Compétences</span><span class="lang-en">Skills</span></a></li>
             <li><a href="#contact" class="mm-link">Contact</a></li>
-            <li style="margin-top: 40px;"><a href="index.html" class="mm-link" style="font-size: 1.2rem; color: var(--text-secondary);"><i class="fas fa-arrow-left"></i> Changer de profil</a></li>
+            <li style="margin-top: 40px;"><a href="index.html" class="mm-link" style="font-size: 1.2rem; color: var(--text-secondary);"><i class="fas fa-arrow-left"></i> <span class="lang-fr">Changer de profil</span><span class="lang-en">Change profile</span></a></li>
         </ul>
     </div>
 
@@ -62,12 +79,24 @@
     <section id="home" class="hero">
         <div class="hero-grid container">
             <div class="hero-left">
-                <p class="hero-eyebrow reveal">Développeur & Architecte Web</p>
+                <p class="hero-eyebrow reveal">
+                    <span class="lang-fr">Développeur & Architecte Web</span>
+                    <span class="lang-en">Developer & Web Architect</span>
+                </p>
                 <h1 class="hero-title reveal">Code.<br><em>Logic.</em></h1>
-                <p class="hero-desc reveal">Je conçois des architectures solides et des interfaces web interactives pour résoudre des problèmes complexes.</p>
+                <p class="hero-desc reveal">
+                    <span class="lang-fr">Je conçois des architectures solides et des interfaces web interactives pour résoudre des problèmes complexes.</span>
+                    <span class="lang-en">I design solid architectures and interactive web interfaces to solve complex problems.</span>
+                </p>
                 <div class="hero-actions reveal">
-                    <a href="#projects" class="btn-primary">Voir mon code</a>
-                    <a href="#contact" class="btn-ghost">Me contacter</a>
+                    <a href="#projects" class="btn-primary">
+                        <span class="lang-fr">Voir mon code</span>
+                        <span class="lang-en">View my code</span>
+                    </a>
+                    <a href="#contact" class="btn-ghost">
+                        <span class="lang-fr">Me contacter</span>
+                        <span class="lang-en">Contact me</span>
+                    </a>
                 </div>
                 <div class="hero-meta reveal">
                     <span>Tech Stack</span>
@@ -82,13 +111,15 @@
                     <img src="Image/Photo pro.png" alt="Bradley Joseph — Développeur" class="hero-img">
                     <div class="hero-img-label" style="background-color: var(--bg-darker);">
                         <i class="fas fa-code" style="color: var(--accent-color);"></i>
-                        Full-Stack Developer
+                        <span class="lang-fr">Développeur Full-Stack</span>
+                        <span class="lang-en">Full-Stack Developer</span>
                     </div>
                 </div>
             </div>
         </div>
         <div class="hero-scroll">
-            <span>Scroll</span>
+            <span class="lang-fr">Défiler</span>
+            <span class="lang-en">Scroll</span>
             <div class="scroll-line"></div>
         </div>
     </section>
@@ -116,16 +147,24 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-left">
-                    <p class="section-label reveal">À propos</p>
-                    <h2 class="section-title reveal">Logique &<br>Performance.</h2>
+                    <p class="section-label reveal">
+                        <span class="lang-fr">À propos</span>
+                        <span class="lang-en">About</span>
+                    </p>
+                    <h2 class="section-title reveal">
+                        <span class="lang-fr">Logique &<br>Performance.</span>
+                        <span class="lang-en">Logic &<br>Performance.</span>
+                    </h2>
                     <div class="about-stats reveal">
                         <div class="astat">
                             <span class="astat-n">10+</span>
-                            <span class="astat-l">Projets Web<br>Déployés</span>
+                            <span class="astat-l lang-fr">Projets Web<br>Déployés</span>
+                            <span class="astat-l lang-en">Deployed<br>Web Projects</span>
                         </div>
                         <div class="astat">
                             <span class="astat-n">ESIH</span>
-                            <span class="astat-l">Formation<br>Ingénierie</span>
+                            <span class="astat-l lang-fr">Formation<br>Ingénierie</span>
+                            <span class="astat-l lang-en">Engineering<br>Education</span>
                         </div>
                     </div>
                 </div>
@@ -134,9 +173,14 @@
                         <img src="Image/hero_bg_1777007739091.png" alt="Setup Code" class="about-photo">
                     </div>
                     <div class="about-text reveal">
-                        <p>Étudiant à l'ESIH, je me spécialise dans le développement d'applications web robustes et scalables. Mon approche allie une forte compréhension algorithmique à une passion pour les interfaces fluides.</p>
-                        <p>Qu'il s'agisse de concevoir une base de données complexe ou d'intégrer une maquette pixel-perfect, je mets un point d'honneur à écrire un code propre, maintenable et optimisé.</p>
-                        <a href="#contact" class="btn-text">Discuter de technique <i class="fas fa-arrow-right"></i></a>
+                        <p class="lang-fr">Étudiant à l'ESIH, je me spécialise dans le développement d'applications web robustes et scalables. Mon approche allie une forte compréhension algorithmique à une passion pour les interfaces fluides.</p>
+                        <p class="lang-en">As a student at ESIH, I specialize in building robust and scalable web applications. My approach combines a strong algorithmic foundation with a passion for fluid user interfaces.</p>
+                        <p class="lang-fr">Qu'il s'agisse de concevoir une base de données complexe ou d'intégrer une maquette pixel-perfect, je mets un point d'honneur à écrire un code propre, maintenable et optimisé.</p>
+                        <p class="lang-en">Whether designing a complex database schema or integrating a pixel-perfect mockup, I prioritize writing clean, maintainable, and optimized code.</p>
+                        <a href="#contact" class="btn-text">
+                            <span class="lang-fr">Discuter de technique <i class="fas fa-arrow-right"></i></span>
+                            <span class="lang-en">Let's talk tech <i class="fas fa-arrow-right"></i></span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -147,8 +191,14 @@
     <section id="skills" class="services section section-dark">
         <div class="container">
             <div class="services-head">
-                <p class="section-label reveal">Skills & Certifications</p>
-                <h2 class="section-title reveal">My Expertise & <em>Journey.</em></h2>
+                <p class="section-label reveal">
+                    <span class="lang-fr">Compétences & Certifications</span>
+                    <span class="lang-en">Skills & Certifications</span>
+                </p>
+                <h2 class="section-title reveal">
+                    <span class="lang-fr">Mon expertise & <em>Mon parcours.</em></span>
+                    <span class="lang-en">My Expertise & <em>My Journey.</em></span>
+                </h2>
             </div>
             
             <div class="skills-wrapper">
@@ -156,17 +206,32 @@
                 <!-- SECTION 1 : TECHNICAL SKILLS -->
                 <div class="skills-section reveal">
                     <div class="skills-sub-head">
-                        <h3 class="skills-sub-title">Technical <span>Stack</span></h3>
-                        <p class="skills-sub-desc">A curated list of web technologies I master, filterable by category.</p>
+                        <h3 class="skills-sub-title">
+                            <span class="lang-fr">Stack <span>technique</span></span>
+                            <span class="lang-en">Technical <span>Stack</span></span>
+                        </h3>
+                        <p class="skills-sub-desc">
+                            <span class="lang-fr">Une sélection des technologies web que je maîtrise, filtrables par catégorie.</span>
+                            <span class="lang-en">A curated selection of web technologies I master, filterable by category.</span>
+                        </p>
                     </div>
                     
                     <!-- Tabs -->
                     <div class="skills-tabs">
-                        <button class="tab-btn active" data-target="all">All Stack</button>
+                        <button class="tab-btn active" data-target="all">
+                            <span class="lang-fr">Toutes</span>
+                            <span class="lang-en">All</span>
+                        </button>
                         <button class="tab-btn" data-target="frontend">Frontend</button>
                         <button class="tab-btn" data-target="backend">Backend</button>
-                        <button class="tab-btn" data-target="database">Databases</button>
-                        <button class="tab-btn" data-target="tools">Tools</button>
+                        <button class="tab-btn" data-target="database">
+                            <span class="lang-fr">Bases de données</span>
+                            <span class="lang-en">Databases</span>
+                        </button>
+                        <button class="tab-btn" data-target="tools">
+                            <span class="lang-fr">Outils</span>
+                            <span class="lang-en">Tools</span>
+                        </button>
                     </div>
                     
                     <!-- Tech Cards Grid -->
@@ -178,12 +243,19 @@
                                     <i class="devicon-html5-plain"></i>
                                     <span class="tech-name">HTML5</span>
                                 </div>
-                                <span class="tech-experience">3+ Years</span>
+                                <span class="tech-experience">
+                                    <span class="lang-fr">3+ ans</span>
+                                    <span class="lang-en">3+ Years</span>
+                                </span>
                             </div>
-                            <p class="tech-desc">Semantic markup, SEO optimization, and standard web accessibility implementation.</p>
+                            <p class="tech-desc lang-fr">Balisage sémantique, optimisation SEO et intégration des standards d'accessibilité web.</p>
+                            <p class="tech-desc lang-en">Semantic markup, SEO optimization, and standard web accessibility implementation.</p>
                             <div class="tech-level-container">
                                 <div class="tech-level-meta">
-                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-label">
+                                        <span class="lang-fr">Maîtrise</span>
+                                        <span class="lang-en">Proficiency</span>
+                                    </span>
                                     <span class="tech-level-pct">90%</span>
                                 </div>
                                 <div class="tech-progress-bar">
@@ -199,12 +271,19 @@
                                     <i class="devicon-css3-plain"></i>
                                     <span class="tech-name">CSS3</span>
                                 </div>
-                                <span class="tech-experience">3+ Years</span>
+                                <span class="tech-experience">
+                                    <span class="lang-fr">3+ ans</span>
+                                    <span class="lang-en">3+ Years</span>
+                                </span>
                             </div>
-                            <p class="tech-desc">Modern layouts with Grid & Flexbox, smooth animations, keyframes, and custom transitions.</p>
+                            <p class="tech-desc lang-fr">Mises en page modernes avec Grid & Flexbox, animations fluides, keyframes et transitions personnalisées.</p>
+                            <p class="tech-desc lang-en">Modern layouts with Grid & Flexbox, smooth animations, keyframes, and custom transitions.</p>
                             <div class="tech-level-container">
                                 <div class="tech-level-meta">
-                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-label">
+                                        <span class="lang-fr">Maîtrise</span>
+                                        <span class="lang-en">Proficiency</span>
+                                    </span>
                                     <span class="tech-level-pct">85%</span>
                                 </div>
                                 <div class="tech-progress-bar">
@@ -220,12 +299,19 @@
                                     <i class="devicon-javascript-plain"></i>
                                     <span class="tech-name">JavaScript</span>
                                 </div>
-                                <span class="tech-experience">2+ Years</span>
+                                <span class="tech-experience">
+                                    <span class="lang-fr">2+ ans</span>
+                                    <span class="lang-en">2+ Years</span>
+                                </span>
                             </div>
-                            <p class="tech-desc">ES6+ specifications, DOM manipulation, asynchronous operations, AJAX/Fetch APIs.</p>
+                            <p class="tech-desc lang-fr">Spécifications ES6+, manipulation du DOM, asynchronisme et API AJAX/Fetch.</p>
+                            <p class="tech-desc lang-en">ES6+ specifications, DOM manipulation, asynchronous operations, and AJAX/Fetch APIs.</p>
                             <div class="tech-level-container">
                                 <div class="tech-level-meta">
-                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-label">
+                                        <span class="lang-fr">Maîtrise</span>
+                                        <span class="lang-en">Proficiency</span>
+                                    </span>
                                     <span class="tech-level-pct">80%</span>
                                 </div>
                                 <div class="tech-progress-bar">
@@ -241,12 +327,19 @@
                                     <i class="devicon-bootstrap-plain"></i>
                                     <span class="tech-name">Bootstrap</span>
                                 </div>
-                                <span class="tech-experience">2+ Years</span>
+                                <span class="tech-experience">
+                                    <span class="lang-fr">2+ ans</span>
+                                    <span class="lang-en">2+ Years</span>
+                                </span>
                             </div>
-                            <p class="tech-desc">Component system configuration, styling custom responsive web interfaces, and quick grids.</p>
+                            <p class="tech-desc lang-fr">Configuration de composants, stylisation d'interfaces web adaptatives et mise en place rapide de grilles.</p>
+                            <p class="tech-desc lang-en">Component system configuration, styling custom responsive web interfaces, and quick grids.</p>
                             <div class="tech-level-container">
                                 <div class="tech-level-meta">
-                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-label">
+                                        <span class="lang-fr">Maîtrise</span>
+                                        <span class="lang-en">Proficiency</span>
+                                    </span>
                                     <span class="tech-level-pct">75%</span>
                                 </div>
                                 <div class="tech-progress-bar">
@@ -262,12 +355,19 @@
                                     <i class="devicon-react-original"></i>
                                     <span class="tech-name">React.js</span>
                                 </div>
-                                <span class="tech-experience">1+ Year</span>
+                                <span class="tech-experience">
+                                    <span class="lang-fr">1+ an</span>
+                                    <span class="lang-en">1+ Year</span>
+                                </span>
                             </div>
-                            <p class="tech-desc">Component-driven architecture, state management, hooks, and basic single-page applications.</p>
+                            <p class="tech-desc lang-fr">Architecture orientée composants, gestion d'état, hooks et développement d'applications mono-page basiques.</p>
+                            <p class="tech-desc lang-en">Component-driven architecture, state management, hooks, and basic single-page applications.</p>
                             <div class="tech-level-container">
                                 <div class="tech-level-meta">
-                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-label">
+                                        <span class="lang-fr">Maîtrise</span>
+                                        <span class="lang-en">Proficiency</span>
+                                    </span>
                                     <span class="tech-level-pct">65%</span>
                                 </div>
                                 <div class="tech-progress-bar">
@@ -283,12 +383,19 @@
                                     <i class="devicon-php-plain"></i>
                                     <span class="tech-name">PHP</span>
                                 </div>
-                                <span class="tech-experience">2+ Years</span>
+                                <span class="tech-experience">
+                                    <span class="lang-fr">2+ ans</span>
+                                    <span class="lang-en">2+ Years</span>
+                                </span>
                             </div>
-                            <p class="tech-desc">Back-end architectures, secure sessions, MVC patterns, database integrations, and core logic.</p>
+                            <p class="tech-desc lang-fr">Architectures back-end, sessions sécurisées, structure MVC, intégration de bases de données et logique métier.</p>
+                            <p class="tech-desc lang-en">Back-end architectures, secure sessions, MVC patterns, database integrations, and core logic.</p>
                             <div class="tech-level-container">
                                 <div class="tech-level-meta">
-                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-label">
+                                        <span class="lang-fr">Maîtrise</span>
+                                        <span class="lang-en">Proficiency</span>
+                                    </span>
                                     <span class="tech-level-pct">80%</span>
                                 </div>
                                 <div class="tech-progress-bar">
@@ -304,12 +411,19 @@
                                     <i class="devicon-nodejs-plain"></i>
                                     <span class="tech-name">Node.js</span>
                                 </div>
-                                <span class="tech-experience">1+ Year</span>
+                                <span class="tech-experience">
+                                    <span class="lang-fr">1+ an</span>
+                                    <span class="lang-en">1+ Year</span>
+                                </span>
                             </div>
-                            <p class="tech-desc">Designing API routes, package orchestration via npm, server scripts, and Express setups.</p>
+                            <p class="tech-desc lang-fr">Conception de routes d'API, orchestration de paquets via npm, scripts serveurs et configuration Express.</p>
+                            <p class="tech-desc lang-en">Designing API routes, package orchestration via npm, server scripts, and Express setups.</p>
                             <div class="tech-level-container">
                                 <div class="tech-level-meta">
-                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-label">
+                                        <span class="lang-fr">Maîtrise</span>
+                                        <span class="lang-en">Proficiency</span>
+                                    </span>
                                     <span class="tech-level-pct">60%</span>
                                 </div>
                                 <div class="tech-progress-bar">
@@ -325,12 +439,19 @@
                                     <i class="devicon-python-plain"></i>
                                     <span class="tech-name">Python</span>
                                 </div>
-                                <span class="tech-experience">1+ Year</span>
+                                <span class="tech-experience">
+                                    <span class="lang-fr">1+ an</span>
+                                    <span class="lang-en">1+ Year</span>
+                                </span>
                             </div>
-                            <p class="tech-desc">Automated scripting, data formatting, algorithmic problem-solving, and general programming.</p>
+                            <p class="tech-desc lang-fr">Scripts automatisés, formatage de données, résolution de problèmes algorithmiques et programmation générale.</p>
+                            <p class="tech-desc lang-en">Automated scripting, data formatting, algorithmic problem-solving, and general programming.</p>
                             <div class="tech-level-container">
                                 <div class="tech-level-meta">
-                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-label">
+                                        <span class="lang-fr">Maîtrise</span>
+                                        <span class="lang-en">Proficiency</span>
+                                    </span>
                                     <span class="tech-level-pct">55%</span>
                                 </div>
                                 <div class="tech-progress-bar">
@@ -346,12 +467,19 @@
                                     <i class="devicon-mysql-plain"></i>
                                     <span class="tech-name">MySQL</span>
                                 </div>
-                                <span class="tech-experience">2+ Years</span>
+                                <span class="tech-experience">
+                                    <span class="lang-fr">2+ ans</span>
+                                    <span class="lang-en">2+ Years</span>
+                                </span>
                             </div>
-                            <p class="tech-desc">Relational schema designs, key constraints, complex query optimization, joins, and data backups.</p>
+                            <p class="tech-desc lang-fr">Conception de schémas relationnels, contraintes de clés, optimisation de requêtes complexes, jointures et sauvegardes.</p>
+                            <p class="tech-desc lang-en">Relational schema designs, key constraints, complex query optimization, joins, and data backups.</p>
                             <div class="tech-level-container">
                                 <div class="tech-level-meta">
-                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-label">
+                                        <span class="lang-fr">Maîtrise</span>
+                                        <span class="lang-en">Proficiency</span>
+                                    </span>
                                     <span class="tech-level-pct">80%</span>
                                 </div>
                                 <div class="tech-progress-bar">
@@ -367,12 +495,19 @@
                                     <i class="devicon-sqlite-plain"></i>
                                     <span class="tech-name">SQLite</span>
                                 </div>
-                                <span class="tech-experience">1+ Year</span>
+                                <span class="tech-experience">
+                                    <span class="lang-fr">1+ an</span>
+                                    <span class="lang-en">1+ Year</span>
+                                </span>
                             </div>
-                            <p class="tech-desc">Local client database modeling, file-based persistence for lightweight applications.</p>
+                            <p class="tech-desc lang-fr">Modélisation de bases de données locales, persistance basée sur fichiers pour applications légères.</p>
+                            <p class="tech-desc lang-en">Local client database modeling, file-based persistence for lightweight applications.</p>
                             <div class="tech-level-container">
                                 <div class="tech-level-meta">
-                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-label">
+                                        <span class="lang-fr">Maîtrise</span>
+                                        <span class="lang-en">Proficiency</span>
+                                    </span>
                                     <span class="tech-level-pct">65%</span>
                                 </div>
                                 <div class="tech-progress-bar">
@@ -388,12 +523,19 @@
                                     <i class="fas fa-bolt" style="color: #3ecf8e;"></i>
                                     <span class="tech-name">Supabase</span>
                                 </div>
-                                <span class="tech-experience">New</span>
+                                <span class="tech-experience">
+                                    <span class="lang-fr">Récent</span>
+                                    <span class="lang-en">Recent</span>
+                                </span>
                             </div>
-                            <p class="tech-desc">Postgres DB integration, API setups, auth workflows, and serverless real-time functions.</p>
+                            <p class="tech-desc lang-fr">Intégration de base de données Postgres, configuration d'API, authentification et fonctions temps réel sans serveur.</p>
+                            <p class="tech-desc lang-en">Postgres DB integration, API setups, auth workflows, and serverless real-time functions.</p>
                             <div class="tech-level-container">
                                 <div class="tech-level-meta">
-                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-label">
+                                        <span class="lang-fr">Maîtrise</span>
+                                        <span class="lang-en">Proficiency</span>
+                                    </span>
                                     <span class="tech-level-pct">55%</span>
                                 </div>
                                 <div class="tech-progress-bar">
@@ -409,12 +551,19 @@
                                     <i class="devicon-git-plain"></i>
                                     <span class="tech-name">Git</span>
                                 </div>
-                                <span class="tech-experience">2+ Years</span>
+                                <span class="tech-experience">
+                                    <span class="lang-fr">2+ ans</span>
+                                    <span class="lang-en">2+ Years</span>
+                                </span>
                             </div>
-                            <p class="tech-desc">Local version control, commits, branching strategies, conflict resolution, and staging workflows.</p>
+                            <p class="tech-desc lang-fr">Contrôle de version en local, commits, stratégies de branches, résolution de conflits et workflows d'indexation.</p>
+                            <p class="tech-desc lang-en">Local version control, commits, branching strategies, conflict resolution, and staging workflows.</p>
                             <div class="tech-level-container">
                                 <div class="tech-level-meta">
-                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-label">
+                                        <span class="lang-fr">Maîtrise</span>
+                                        <span class="lang-en">Proficiency</span>
+                                    </span>
                                     <span class="tech-level-pct">80%</span>
                                 </div>
                                 <div class="tech-progress-bar">
@@ -430,12 +579,19 @@
                                     <i class="devicon-github-original"></i>
                                     <span class="tech-name">GitHub</span>
                                 </div>
-                                <span class="tech-experience">2+ Years</span>
+                                <span class="tech-experience">
+                                    <span class="lang-fr">2+ ans</span>
+                                    <span class="lang-en">2+ Years</span>
+                                </span>
                             </div>
-                            <p class="tech-desc">Remote collaboration, pull request reviews, repository structuring, and CI/CD pipelines.</p>
+                            <p class="tech-desc lang-fr">Collaboration à distance, revues de pull requests, structuration de dépôts et pipelines de CI/CD.</p>
+                            <p class="tech-desc lang-en">Remote collaboration, pull request reviews, repository structuring, and CI/CD pipelines.</p>
                             <div class="tech-level-container">
                                 <div class="tech-level-meta">
-                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-label">
+                                        <span class="lang-fr">Maîtrise</span>
+                                        <span class="lang-en">Proficiency</span>
+                                    </span>
                                     <span class="tech-level-pct">80%</span>
                                 </div>
                                 <div class="tech-progress-bar">
@@ -451,12 +607,19 @@
                                     <i class="fas fa-plug"></i>
                                     <span class="tech-name">REST API</span>
                                 </div>
-                                <span class="tech-experience">2+ Years</span>
+                                <span class="tech-experience">
+                                    <span class="lang-fr">2+ ans</span>
+                                    <span class="lang-en">2+ Years</span>
+                                </span>
                             </div>
-                            <p class="tech-desc">Integrating and designing clean server endpoints using JSON structures and HTTP methods.</p>
+                            <p class="tech-desc lang-fr">Intégration et conception de points de terminaison d'API propres avec structures JSON et méthodes HTTP.</p>
+                            <p class="tech-desc lang-en">Integrating and designing clean server endpoints using JSON structures and HTTP methods.</p>
                             <div class="tech-level-container">
                                 <div class="tech-level-meta">
-                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-label">
+                                        <span class="lang-fr">Maîtrise</span>
+                                        <span class="lang-en">Proficiency</span>
+                                    </span>
                                     <span class="tech-level-pct">75%</span>
                                 </div>
                                 <div class="tech-progress-bar">
@@ -472,12 +635,19 @@
                                     <i class="fas fa-server"></i>
                                     <span class="tech-name">XAMPP</span>
                                 </div>
-                                <span class="tech-experience">2+ Years</span>
+                                <span class="tech-experience">
+                                    <span class="lang-fr">2+ ans</span>
+                                    <span class="lang-en">2+ Years</span>
+                                </span>
                             </div>
-                            <p class="tech-desc">Managing local web servers, Apache configurations, and MySQL database panels.</p>
+                            <p class="tech-desc lang-fr">Gestion de serveurs web locaux, configurations d'Apache et panneaux de base de données MySQL.</p>
+                            <p class="tech-desc lang-en">Managing local web servers, Apache configurations, and MySQL database panels.</p>
                             <div class="tech-level-container">
                                 <div class="tech-level-meta">
-                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-label">
+                                        <span class="lang-fr">Maîtrise</span>
+                                        <span class="lang-en">Proficiency</span>
+                                    </span>
                                     <span class="tech-level-pct">70%</span>
                                 </div>
                                 <div class="tech-progress-bar">
@@ -493,12 +663,19 @@
                                     <i class="fas fa-cloud"></i>
                                     <span class="tech-name">Netlify</span>
                                 </div>
-                                <span class="tech-experience">1+ Year</span>
+                                <span class="tech-experience">
+                                    <span class="lang-fr">1+ an</span>
+                                    <span class="lang-en">1+ Year</span>
+                                </span>
                             </div>
-                            <p class="tech-desc">Hosting web projects, configuring build settings, custom redirects, and DNS links.</p>
+                            <p class="tech-desc lang-fr">Hébergement de projets web, configuration des paramètres de build, redirections personnalisées et DNS.</p>
+                            <p class="tech-desc lang-en">Hosting web projects, configuring build settings, custom redirects, and DNS links.</p>
                             <div class="tech-level-container">
                                 <div class="tech-level-meta">
-                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-label">
+                                        <span class="lang-fr">Maîtrise</span>
+                                        <span class="lang-en">Proficiency</span>
+                                    </span>
                                     <span class="tech-level-pct">65%</span>
                                 </div>
                                 <div class="tech-progress-bar">
@@ -514,12 +691,19 @@
                                     <i class="devicon-vercel-original"></i>
                                     <span class="tech-name">Vercel</span>
                                 </div>
-                                <span class="tech-experience">1+ Year</span>
+                                <span class="tech-experience">
+                                    <span class="lang-fr">1+ an</span>
+                                    <span class="lang-en">1+ Year</span>
+                                </span>
                             </div>
-                            <p class="tech-desc">Managing continuous integrations for frontend setups and building production builds.</p>
+                            <p class="tech-desc lang-fr">Gestion du déploiement continu pour les applications frontend et configuration des builds de production.</p>
+                            <p class="tech-desc lang-en">Managing continuous integrations for frontend setups and building production builds.</p>
                             <div class="tech-level-container">
                                 <div class="tech-level-meta">
-                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-label">
+                                        <span class="lang-fr">Maîtrise</span>
+                                        <span class="lang-en">Proficiency</span>
+                                    </span>
                                     <span class="tech-level-pct">60%</span>
                                 </div>
                                 <div class="tech-progress-bar">
@@ -535,12 +719,19 @@
                                     <i class="fas fa-globe"></i>
                                     <span class="tech-name">Hostinger</span>
                                 </div>
-                                <span class="tech-experience">1+ Year</span>
+                                <span class="tech-experience">
+                                    <span class="lang-fr">1+ an</span>
+                                    <span class="lang-en">1+ Year</span>
+                                </span>
                             </div>
-                            <p class="tech-desc">Domain name configuration, setting up web email services, server panels, and file uploads via FTP.</p>
+                            <p class="tech-desc lang-fr">Configuration de noms de domaine, configuration de messageries web, panneaux d'administration et transferts de fichiers FTP.</p>
+                            <p class="tech-desc lang-en">Domain name configuration, setting up web email services, server panels, and file uploads via FTP.</p>
                             <div class="tech-level-container">
                                 <div class="tech-level-meta">
-                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-label">
+                                        <span class="lang-fr">Maîtrise</span>
+                                        <span class="lang-en">Proficiency</span>
+                                    </span>
                                     <span class="tech-level-pct">60%</span>
                                 </div>
                                 <div class="tech-progress-bar">
@@ -556,12 +747,19 @@
                                     <i class="fas fa-calculator"></i>
                                     <span class="tech-name">QuickBooks</span>
                                 </div>
-                                <span class="tech-experience">1+ Year</span>
+                                <span class="tech-experience">
+                                    <span class="lang-fr">1+ an</span>
+                                    <span class="lang-en">1+ Year</span>
+                                </span>
                             </div>
-                            <p class="tech-desc">Integrating transactional software metrics, operational analysis, and database checks.</p>
+                            <p class="tech-desc lang-fr">Intégration de données financières, analyses d'activité et audits de conformité.</p>
+                            <p class="tech-desc lang-en">Integrating transactional software metrics, operational analysis, and database checks.</p>
                             <div class="tech-level-container">
                                 <div class="tech-level-meta">
-                                    <span class="tech-level-label">Proficiency</span>
+                                    <span class="tech-level-label">
+                                        <span class="lang-fr">Maîtrise</span>
+                                        <span class="lang-en">Proficiency</span>
+                                    </span>
                                     <span class="tech-level-pct">55%</span>
                                 </div>
                                 <div class="tech-progress-bar">
@@ -575,25 +773,43 @@
                 <!-- SECTION 2 & 3 : SPECIALTIES (NETWORKING & MULTIMEDIA) -->
                 <div class="skills-section networking-sec reveal">
                     <div class="skills-sub-head">
-                        <h3 class="skills-sub-title">Networking <span>Specialties</span></h3>
-                        <p class="skills-sub-desc">Hardware setups, cabling layout and telecommunication analysis.</p>
+                        <h3 class="skills-sub-title">
+                            <span class="lang-fr">Spécialités <span>Réseau</span></span>
+                            <span class="lang-en">Networking <span>Specialties</span></span>
+                        </h3>
+                        <p class="skills-sub-desc">
+                            <span class="lang-fr">Configurations matérielles, schémas de câblage et analyse de télécommunications.</span>
+                            <span class="lang-en">Hardware setups, cabling layout and telecommunication analysis.</span>
+                        </p>
                     </div>
                     <div class="specialty-grid">
                         <div class="specialty-card">
                             <div class="specialty-icon-wrapper"><i class="fas fa-network-wired"></i></div>
-                            <h4 class="specialty-title">Ethernet Network Cabling</h4>
+                            <h4 class="specialty-title">
+                                <span class="lang-fr">Câblage Réseau Ethernet</span>
+                                <span class="lang-en">Ethernet Network Cabling</span>
+                            </h4>
                         </div>
                         <div class="specialty-card">
                             <div class="specialty-icon-wrapper"><i class="fas fa-satellite-dish"></i></div>
-                            <h4 class="specialty-title">Telecommunications</h4>
+                            <h4 class="specialty-title">
+                                <span class="lang-fr">Télécommunications</span>
+                                <span class="lang-en">Telecommunications</span>
+                            </h4>
                         </div>
                         <div class="specialty-card">
                             <div class="specialty-icon-wrapper"><i class="fas fa-sim-card"></i></div>
-                            <h4 class="specialty-title">Cellular Decoding</h4>
+                            <h4 class="specialty-title">
+                                <span class="lang-fr">Décodage Cellulaire</span>
+                                <span class="lang-en">Cellular Decoding</span>
+                            </h4>
                         </div>
                         <div class="specialty-card">
                             <div class="specialty-icon-wrapper"><i class="fas fa-microchip"></i></div>
-                            <h4 class="specialty-title">Computer Hardware</h4>
+                            <h4 class="specialty-title">
+                                <span class="lang-fr">Matériel Informatique</span>
+                                <span class="lang-en">Computer Hardware</span>
+                            </h4>
                         </div>
                     </div>
                 </div>
@@ -601,28 +817,80 @@
                 <!-- SECTION 4 : PROFESSIONAL SKILLS -->
                 <div class="skills-section reveal">
                     <div class="skills-sub-head">
-                        <h3 class="skills-sub-title">Professional <span>Skills</span></h3>
-                        <p class="skills-sub-desc">My core interpersonal skills, project leadership and operational values.</p>
+                        <h3 class="skills-sub-title">
+                            <span class="lang-fr">Compétences <span>Professionnelles</span></span>
+                            <span class="lang-en">Professional <span>Skills</span></span>
+                        </h3>
+                        <p class="skills-sub-desc">
+                            <span class="lang-fr">Mes aptitudes interpersonnelles, mon leadership de projet et mes valeurs opérationnelles.</span>
+                            <span class="lang-en">My core interpersonal skills, project leadership and operational values.</span>
+                        </p>
                     </div>
                     <div class="badges-container">
-                        <div class="badge-item"><i class="fas fa-puzzle-piece"></i> Problem Solving</div>
-                        <div class="badge-item"><i class="fas fa-crown"></i> Leadership</div>
-                        <div class="badge-item"><i class="fas fa-comments"></i> Communication</div>
-                        <div class="badge-item"><i class="fas fa-users"></i> Teamwork</div>
-                        <div class="badge-item"><i class="fas fa-bullhorn"></i> Community Management</div>
-                        <div class="badge-item"><i class="fas fa-tasks"></i> Project Management</div>
-                        <div class="badge-item"><i class="fas fa-brain"></i> Critical Thinking</div>
-                        <div class="badge-item"><i class="fas fa-sync-alt"></i> Adaptability</div>
-                        <div class="badge-item"><i class="fas fa-headset"></i> Customer Support</div>
-                        <div class="badge-item"><i class="fas fa-hourglass-half"></i> Time Management</div>
+                        <div class="badge-item">
+                            <i class="fas fa-puzzle-piece"></i>
+                            <span class="lang-fr">Résolution de problèmes</span>
+                            <span class="lang-en">Problem Solving</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-crown"></i>
+                            <span class="lang-fr">Leadership</span>
+                            <span class="lang-en">Leadership</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-comments"></i>
+                            <span class="lang-fr">Communication</span>
+                            <span class="lang-en">Communication</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-users"></i>
+                            <span class="lang-fr">Travail d'équipe</span>
+                            <span class="lang-en">Teamwork</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-bullhorn"></i>
+                            <span class="lang-fr">Gestion de communauté</span>
+                            <span class="lang-en">Community Management</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-tasks"></i>
+                            <span class="lang-fr">Gestion de projet</span>
+                            <span class="lang-en">Project Management</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-brain"></i>
+                            <span class="lang-fr">Esprit critique</span>
+                            <span class="lang-en">Critical Thinking</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-sync-alt"></i>
+                            <span class="lang-fr">Adaptabilité</span>
+                            <span class="lang-en">Adaptability</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-headset"></i>
+                            <span class="lang-fr">Support client</span>
+                            <span class="lang-en">Customer Support</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-hourglass-half"></i>
+                            <span class="lang-fr">Gestion du temps</span>
+                            <span class="lang-en">Time Management</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- SECTION 5 : CERTIFICATIONS TIMELINE -->
                 <div class="skills-section reveal">
                     <div class="skills-sub-head">
-                        <h3 class="skills-sub-title">Certifications <span>Timeline</span></h3>
-                        <p class="skills-sub-desc">A log of my academic accomplishments and professional qualifications.</p>
+                        <h3 class="skills-sub-title">
+                            <span class="lang-fr">Chronologie <span>des Certifications</span></span>
+                            <span class="lang-en">Certifications <span>Timeline</span></span>
+                        </h3>
+                        <p class="skills-sub-desc">
+                            <span class="lang-fr">Un registre de mes réalisations académiques et de mes qualifications professionnelles.</span>
+                            <span class="lang-en">A log of my academic accomplishments and professional qualifications.</span>
+                        </p>
                     </div>
                     
                     <div class="timeline-container">
@@ -636,13 +904,23 @@
                                 <div class="cert-content">
                                     <div class="cert-header">
                                         <div class="cert-title-row">
-                                            <h4 class="cert-title">First Aid Certification</h4>
+                                            <h4 class="cert-title">
+                                                <span class="lang-fr">Certification de Secourisme</span>
+                                                <span class="lang-en">First Aid Certification</span>
+                                            </h4>
                                             <span class="cert-date">Nov 2024</span>
                                         </div>
-                                        <span class="cert-issuer">Haitian National Police (PNH)</span>
+                                        <span class="cert-issuer">
+                                            <span class="lang-fr">Police Nationale d'Haïti (PNH)</span>
+                                            <span class="lang-en">Haitian National Police (PNH)</span>
+                                        </span>
                                     </div>
-                                    <p class="cert-desc">Certified in emergency first aid protocols, safety measures, and life-saving procedures under stressful situations.</p>
-                                    <span class="cert-btn">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                    <p class="cert-desc lang-fr">Certifié en protocoles de premiers secours d'urgence, mesures de sécurité et procédures de sauvetage dans des situations critiques.</p>
+                                    <p class="cert-desc lang-en">Certified in emergency first aid protocols, safety measures, and life-saving procedures under stressful situations.</p>
+                                    <span class="cert-btn">
+                                        <span class="lang-fr">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                        <span class="lang-en">View certificate <i class="fas fa-arrow-right"></i></span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -655,13 +933,20 @@
                                 <div class="cert-content">
                                     <div class="cert-header">
                                         <div class="cert-title-row">
-                                            <h4 class="cert-title">Entrepreneurship & Digital Marketing</h4>
-                                            <span class="cert-date">May 2023</span>
+                                            <h4 class="cert-title">
+                                                <span class="lang-fr">Entrepreneuriat & Marketing Digital</span>
+                                                <span class="lang-en">Entrepreneurship & Digital Marketing</span>
+                                            </h4>
+                                            <span class="cert-date">Mai 2023</span>
                                         </div>
                                         <span class="cert-issuer">DiagTram</span>
                                     </div>
-                                    <p class="cert-desc">Training in online positioning, company building fundamentals, digital product management, and media optimization strategies.</p>
-                                    <span class="cert-btn">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                    <p class="cert-desc lang-fr">Formation au positionnement en ligne, aux fondamentaux de création d'entreprise, à la gestion de produits numériques et aux stratégies média.</p>
+                                    <p class="cert-desc lang-en">Training in online positioning, company building fundamentals, digital product management, and media optimization strategies.</p>
+                                    <span class="cert-btn">
+                                        <span class="lang-fr">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                        <span class="lang-en">View certificate <i class="fas fa-arrow-right"></i></span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -674,13 +959,20 @@
                                 <div class="cert-content">
                                     <div class="cert-header">
                                         <div class="cert-title-row">
-                                            <h4 class="cert-title">Ethernet Network Cabling</h4>
+                                            <h4 class="cert-title">
+                                                <span class="lang-fr">Câblage Réseau Ethernet</span>
+                                                <span class="lang-en">Ethernet Network Cabling</span>
+                                            </h4>
                                             <span class="cert-date">Oct 2022</span>
                                         </div>
                                         <span class="cert-issuer">CFPH (Canado-Technique) / ISTAFF</span>
                                     </div>
-                                    <p class="cert-desc">Hands-on certification in physical ethernet cable creation, speed validation, structural mapping, and signal integrity maintenance.</p>
-                                    <span class="cert-btn">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                    <p class="cert-desc lang-fr">Certification pratique pour la création de câbles Ethernet physiques, la validation de vitesse de transfert et la maintenance de l'intégrité du signal.</p>
+                                    <p class="cert-desc lang-en">Hands-on certification in physical ethernet cable creation, speed validation, structural mapping, and signal integrity maintenance.</p>
+                                    <span class="cert-btn">
+                                        <span class="lang-fr">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                        <span class="lang-en">View certificate <i class="fas fa-arrow-right"></i></span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -693,13 +985,20 @@
                                 <div class="cert-content">
                                     <div class="cert-header">
                                         <div class="cert-title-row">
-                                            <h4 class="cert-title">Cellular Decoding</h4>
+                                            <h4 class="cert-title">
+                                                <span class="lang-fr">Décodage Cellulaire</span>
+                                                <span class="lang-en">Cellular Decoding</span>
+                                            </h4>
                                             <span class="cert-date">Mar 2023</span>
                                         </div>
                                         <span class="cert-issuer">ISTAFF</span>
                                     </div>
-                                    <p class="cert-desc">Specialized technical training in decoding protocols, network frequency analysis, lock operations, and device system recovery.</p>
-                                    <span class="cert-btn">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                    <p class="cert-desc lang-fr">Formation technique spécialisée dans les protocoles de décodage, l'analyse des fréquences réseau et la récupération de systèmes mobiles.</p>
+                                    <p class="cert-desc lang-en">Specialized technical training in decoding protocols, network frequency analysis, lock operations, and device system recovery.</p>
+                                    <span class="cert-btn">
+                                        <span class="lang-fr">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                        <span class="lang-en">View certificate <i class="fas fa-arrow-right"></i></span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -712,13 +1011,20 @@
                                 <div class="cert-content">
                                     <div class="cert-header">
                                         <div class="cert-title-row">
-                                            <h4 class="cert-title">Telecommunications</h4>
+                                            <h4 class="cert-title">
+                                                <span class="lang-fr">Télécommunications</span>
+                                                <span class="lang-en">Telecommunications</span>
+                                            </h4>
                                             <span class="cert-date">2023</span>
                                         </div>
                                         <span class="cert-issuer">CFPH (Canado-Technique)</span>
                                     </div>
-                                    <p class="cert-desc">Core training in telecommunication circuits, high-speed signals, wave theory, routing matrices, and infrastructure deployment.</p>
-                                    <span class="cert-btn">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                    <p class="cert-desc lang-fr">Formation fondamentale sur les circuits de télécommunication, les signaux haute fréquence, la théorie des ondes et le déploiement d'infrastructures.</p>
+                                    <p class="cert-desc lang-en">Core training in telecommunication circuits, high-speed signals, wave theory, routing matrices, and infrastructure deployment.</p>
+                                    <span class="cert-btn">
+                                        <span class="lang-fr">Voir le certificat <i class="fas fa-arrow-right"></i></span>
+                                        <span class="lang-en">View certificate <i class="fas fa-arrow-right"></i></span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -728,8 +1034,14 @@
                 <!-- SECTION 6 : EXPERTISE -->
                 <div class="skills-section reveal">
                     <div class="skills-sub-head">
-                        <h3 class="skills-sub-title">Core <span>Expertise</span></h3>
-                        <p class="skills-sub-desc">The primary pillars that define my versatile professional capabilities.</p>
+                        <h3 class="skills-sub-title">
+                            <span class="lang-fr">Expertise <span>Principale</span></span>
+                            <span class="lang-en">Core <span>Expertise</span></span>
+                        </h3>
+                        <p class="skills-sub-desc">
+                            <span class="lang-fr">Les piliers majeurs qui définissent mes compétences professionnelles polyvalentes.</span>
+                            <span class="lang-en">The primary pillars that define my versatile professional capabilities.</span>
+                        </p>
                     </div>
                     
                     <div class="expertise-grid">
@@ -737,8 +1049,12 @@
                         <div class="expertise-card">
                             <div class="expertise-icon-box"><i class="fas fa-code"></i></div>
                             <div class="expertise-details">
-                                <h4 class="expertise-title">Full Stack Web Development</h4>
-                                <p class="expertise-desc">Designing and building reliable end-to-end web applications. Implementing custom MVC architectures, authentication layers in PHP, responsive frontends in JS/Bootstrap, and structural React components.</p>
+                                <h4 class="expertise-title">
+                                    <span class="lang-fr">Développement Web Full-Stack</span>
+                                    <span class="lang-en">Full Stack Web Development</span>
+                                </h4>
+                                <p class="expertise-desc lang-fr">Conception et développement d'applications web complètes et fiables. Implémentation d'architectures MVC sur mesure, de systèmes d'authentification en PHP, d'interfaces dynamiques en JS/Bootstrap, et de composants structurels sous React.</p>
+                                <p class="expertise-desc lang-en">Designing and building reliable end-to-end web applications. Implementing custom MVC architectures, authentication layers in PHP, responsive frontends in JS/Bootstrap, and structural React components.</p>
                             </div>
                         </div>
 
@@ -746,8 +1062,12 @@
                         <div class="expertise-card">
                             <div class="expertise-icon-box"><i class="fas fa-database"></i></div>
                             <div class="expertise-details">
-                                <h4 class="expertise-title">Database Design</h4>
-                                <p class="expertise-desc">Modeling high-integrity relational schemas. Proficient in query optimizations, views, triggers, and transactions using MySQL, local SQLite backups, and modern cloud database configurations like Supabase.</p>
+                                <h4 class="expertise-title">
+                                    <span class="lang-fr">Conception de Bases de Données</span>
+                                    <span class="lang-en">Database Design</span>
+                                </h4>
+                                <p class="expertise-desc lang-fr">Modélisation de schémas relationnels de haute intégrité. Maîtrise de l'optimisation des requêtes complexes, des vues, déclencheurs (triggers) et transactions en MySQL, SQLite et solutions cloud telles que Supabase.</p>
+                                <p class="expertise-desc lang-en">Modeling high-integrity relational schemas. Proficient in query optimizations, views, triggers, and transactions using MySQL, local SQLite backups, and modern cloud database configurations like Supabase.</p>
                             </div>
                         </div>
 
@@ -755,8 +1075,12 @@
                         <div class="expertise-card">
                             <div class="expertise-icon-box"><i class="fas fa-network-wired"></i></div>
                             <div class="expertise-details">
-                                <h4 class="expertise-title">Networking</h4>
-                                <p class="expertise-desc">Managing physical and logic systems. Accomplished in structured ethernet cabling layout setups, general telecommunication signaling logic, signal validation, and hardware systems configurations.</p>
+                                <h4 class="expertise-title">
+                                    <span class="lang-fr">Gestion de Réseaux</span>
+                                    <span class="lang-en">Networking</span>
+                                </h4>
+                                <p class="expertise-desc lang-fr">Gestion de systèmes physiques et logiques. Expérience confirmée dans la mise en place de câblages Ethernet structurés, dans les principes de signalisation de télécommunication, la validation de signaux et les configurations matérielles.</p>
+                                <p class="expertise-desc lang-en">Managing physical and logic systems. Accomplished in structured ethernet cabling layout setups, general telecommunication signaling logic, signal validation, and hardware systems configurations.</p>
                             </div>
                         </div>
 
@@ -764,8 +1088,12 @@
                         <div class="expertise-card">
                             <div class="expertise-icon-box"><i class="fas fa-camera-retro"></i></div>
                             <div class="expertise-details">
-                                <h4 class="expertise-title">Photography & Videography</h4>
-                                <p class="expertise-desc">Capturing high-end commercial visual assets. Mastering production camera configurations, visual framing, color grading, Photoshop design edits, and digital storytelling for video promotions.</p>
+                                <h4 class="expertise-title">
+                                    <span class="lang-fr">Photographie & Vidéographie</span>
+                                    <span class="lang-en">Photography & Videography</span>
+                                </h4>
+                                <p class="expertise-desc lang-fr">Création de contenus visuels haut de gamme. Maîtrise des configurations de caméras, du cadrage, de l'étalonnage colorimétrique, de l'édition Photoshop et du storytelling visuel pour la promotion vidéo.</p>
+                                <p class="expertise-desc lang-en">Capturing high-end commercial visual assets. Mastering production camera configurations, visual framing, color grading, Photoshop design edits, and digital storytelling for video promotions.</p>
                             </div>
                         </div>
 
@@ -773,8 +1101,12 @@
                         <div class="expertise-card">
                             <div class="expertise-icon-box"><i class="fas fa-bullhorn"></i></div>
                             <div class="expertise-details">
-                                <h4 class="expertise-title">Community Management</h4>
-                                <p class="expertise-desc">Directing public positioning, building community interactions, managing marketing platforms, and leading event orchestration across student-driven and corporate contexts.</p>
+                                <h4 class="expertise-title">
+                                    <span class="lang-fr">Gestion de Communauté</span>
+                                    <span class="lang-en">Community Management</span>
+                                </h4>
+                                <p class="expertise-desc lang-fr">Direction de stratégies de communication numérique, animation d'audiences en ligne, gestion de plateformes sociales et orchestration d'événements associatifs ou d'entreprises.</p>
+                                <p class="expertise-desc lang-en">Directing public positioning, building community interactions, managing marketing platforms, and leading event orchestration across student-driven and corporate contexts.</p>
                             </div>
                         </div>
                     </div>
@@ -783,8 +1115,14 @@
                 <!-- SECTION 7 : STATISTICS -->
                 <div class="skills-section reveal">
                     <div class="skills-sub-head">
-                        <h3 class="skills-sub-title">By The <span>Numbers</span></h3>
-                        <p class="skills-sub-desc">Key indicators summarizing my technical achievements and credentials.</p>
+                        <h3 class="skills-sub-title">
+                            <span class="lang-fr">Quelques <span>Chiffres</span></span>
+                            <span class="lang-en">By The <span>Numbers</span></span>
+                        </h3>
+                        <p class="skills-sub-desc">
+                            <span class="lang-fr">Indicateurs clés résumant mes réalisations techniques et mes qualifications.</span>
+                            <span class="lang-en">Key indicators summarizing my technical achievements and credentials.</span>
+                        </p>
                     </div>
                     
                     <div class="stats-grid">
@@ -798,11 +1136,17 @@
                         </div>
                         <div class="stat-item">
                             <span class="stat-number"><span class="stat-counter" data-target="10">0</span>+</span>
-                            <span class="stat-label">Web Projects</span>
+                            <span class="stat-label">
+                                <span class="lang-fr">Projets Web</span>
+                                <span class="lang-en">Web Projects</span>
+                            </span>
                         </div>
                         <div class="stat-item">
                             <span class="stat-number"><i class="fas fa-rocket"></i></span>
-                            <span class="stat-label">Full Stack Profile</span>
+                            <span class="stat-label">
+                                <span class="lang-fr">Profil Full-Stack</span>
+                                <span class="lang-en">Full Stack Profile</span>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -815,8 +1159,14 @@
     <section id="projects" class="work section">
         <div class="container">
             <div class="work-head">
-                <p class="section-label reveal">Projets Dev</p>
-                <h2 class="section-title reveal">Mes réalisations.</h2>
+                <p class="section-label reveal">
+                    <span class="lang-fr">Projets Dev</span>
+                    <span class="lang-en">Dev Projects</span>
+                </p>
+                <h2 class="section-title reveal">
+                    <span class="lang-fr">Mes réalisations.</span>
+                    <span class="lang-en">My achievements.</span>
+                </h2>
             </div>
             <div class="work-grid">
 
@@ -831,9 +1181,11 @@
                     </div>
                     <div class="work-info">
                         <h3>Système Paulinog Multiservice</h3>
-                        <p>Application de gestion opérationnelle complète — suivi d'activités, inventaire, facturation et rapports.</p>
+                        <p class="lang-fr">Application de gestion opérationnelle complète — suivi d'activités, inventaire, facturation et rapports.</p>
+                        <p class="lang-en">Complete operational management application — activity tracking, inventory, billing, and reports.</p>
                         <button class="work-btn" onclick="openModal('modal-paulinog')">
-                            Voir la démo vidéo <i class="fas fa-play"></i>
+                            <span class="lang-fr">Voir la démo vidéo <i class="fas fa-play"></i></span>
+                            <span class="lang-en">Watch video demo <i class="fas fa-play"></i></span>
                         </button>
                     </div>
                 </div>
@@ -849,9 +1201,11 @@
                     </div>
                     <div class="work-info">
                         <h3>Système d'archivage — Rankont-edu</h3>
-                        <p>Plateforme de digitalisation et d'organisation des archives scolaires permettant des recherches rapides et sécurisées.</p>
+                        <p class="lang-fr">Plateforme de digitalisation et d'organisation des archives scolaires permettant des recherches rapides et sécurisées.</p>
+                        <p class="lang-en">Platform for digitalizing and organizing school archives enabling fast and secure searches.</p>
                         <button class="work-btn" onclick="openModal('modal-rankont')">
-                            Voir la démo vidéo <i class="fas fa-play"></i>
+                            <span class="lang-fr">Voir la démo vidéo <i class="fas fa-play"></i></span>
+                            <span class="lang-en">Watch video demo <i class="fas fa-play"></i></span>
                         </button>
                     </div>
                 </div>
@@ -870,7 +1224,11 @@
                         <source src="Image/Paulinog.mp4" type="video/mp4">
                     </video>
                     <div class="video-action-overlay">
-                        <a href="METTRE_LIEN_DRIVE_PAULINOG_ICI" target="_blank" class="btn-primary" style="background-color: var(--accent-color); color: var(--text-light); border:none;"><i class="fas fa-external-link-alt"></i> Voir la vidéo complète sur Drive</a>
+                        <a href="METTRE_LIEN_DRIVE_PAULINOG_ICI" target="_blank" class="btn-primary" style="background-color: var(--accent-color); color: var(--text-light); border:none;">
+                            <i class="fas fa-external-link-alt"></i> 
+                            <span class="lang-fr">Voir la vidéo complète sur Drive</span>
+                            <span class="lang-en">Watch the full video on Drive</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -886,7 +1244,11 @@
                         <source src="Image/Rankont-edu.mp4" type="video/mp4">
                     </video>
                     <div class="video-action-overlay">
-                        <a href="METTRE_LIEN_DRIVE_RANKONT_ICI" target="_blank" class="btn-primary" style="background-color: var(--accent-color); color: var(--text-light); border:none;"><i class="fas fa-external-link-alt"></i> Voir la vidéo complète sur Drive</a>
+                        <a href="METTRE_LIEN_DRIVE_RANKONT_ICI" target="_blank" class="btn-primary" style="background-color: var(--accent-color); color: var(--text-light); border:none;">
+                            <i class="fas fa-external-link-alt"></i> 
+                            <span class="lang-fr">Voir la vidéo complète sur Drive</span>
+                            <span class="lang-en">Watch the full video on Drive</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -899,8 +1261,14 @@
             <div class="contact-grid">
                 <div class="contact-left">
                     <p class="section-label reveal">Contact</p>
-                    <h2 class="section-title reveal">Travaillons<br>ensemble.</h2>
-                    <p class="contact-desc reveal">Besoin d'un développeur pour concrétiser votre idée logicielle ?</p>
+                    <h2 class="section-title reveal">
+                        <span class="lang-fr">Travaillons<br>ensemble.</span>
+                        <span class="lang-en">Let's work<br>together.</span>
+                    </h2>
+                    <p class="contact-desc reveal">
+                        <span class="lang-fr">Besoin d'un développeur pour concrétiser votre idée logicielle ?</span>
+                        <span class="lang-en">Need a developer to bring your software idea to life?</span>
+                    </p>
                     <div class="contact-methods reveal">
                         <a href="mailto:josephdjamy26@gmail.com" class="cmethod">
                             <i class="fas fa-envelope"></i>
@@ -910,9 +1278,13 @@
                             <i class="fas fa-phone"></i>
                             <span>+509 48724750</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/bradley-djamy-joseph" target="_blank" class="cmethod">
+                        <a href="https://www.linkedin.com/in/bradley-djamy-joseph-5a27a4356" target="_blank" class="cmethod">
                             <i class="fab fa-linkedin"></i>
                             <span>Bradley DJamy Joseph</span>
+                        </a>
+                        <a href="https://github.com/djaleyy" target="_blank" class="cmethod">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub (djaleyy)</span>
                         </a>
                     </div>
                 </div>
@@ -924,9 +1296,15 @@
     <footer>
         <div class="container footer-inner">
             <span class="footer-logo">B<span>.</span>Joseph</span>
-            <p class="footer-copy">© 2025 Bradley Joseph — Tous droits réservés.</p>
+            <p class="footer-copy">
+                <span class="lang-fr">© 2025 Bradley Joseph — Tous droits réservés.</span>
+                <span class="lang-en">© 2025 Bradley Joseph — All rights reserved.</span>
+            </p>
             <div class="footer-links">
-                <a href="index.html">Changer de profil</a>
+                <a href="index.html">
+                    <span class="lang-fr">Changer de profil</span>
+                    <span class="lang-en">Change profile</span>
+                </a>
             </div>
         </div>
     </footer>

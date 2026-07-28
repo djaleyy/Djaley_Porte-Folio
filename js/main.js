@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Custom Cursor
+    // Custom Cursor (Desktop Only for Performance & Sizing)
     const cursor = document.getElementById('cursor');
+    const isMobileDevice = window.matchMedia('(max-width: 768px)').matches;
     let mouseX = 0, mouseY = 0;
     let cursorX = 0, cursorY = 0;
 
-    if (cursor) {
+    if (cursor && !isMobileDevice) {
         document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
@@ -25,6 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
             target.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
             target.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
         });
+    } else if (cursor && isMobileDevice) {
+        cursor.style.display = 'none';
     }
 
     // Scroll Effects (Navbar & Reveal)
@@ -69,9 +72,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (burger.classList.contains('active')) {
                 spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
                 spans[1].style.transform = 'rotate(-45deg) translate(1px, -2px)';
+                document.body.style.overflow = 'hidden'; // Avoid background scroll
             } else {
                 spans[0].style.transform = 'none';
                 spans[1].style.transform = 'none';
+                document.body.style.overflow = ''; // Restore background scroll
             }
         });
 
@@ -82,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const spans = burger.querySelectorAll('span');
                 spans[0].style.transform = 'none';
                 spans[1].style.transform = 'none';
+                document.body.style.overflow = ''; // Restore background scroll
             });
         });
     }
@@ -217,28 +223,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const lbPrev = document.getElementById('lb-prev');
     const lbNext = document.getElementById('lb-next');
 
-    const masonryItems = document.querySelectorAll('.masonry-item');
-    const imagesData = Array.from(masonryItems).map(item => {
-        const img = item.querySelector('img');
-        return { src: img.src, alt: img.alt };
-    });
-
+    let activeGalleryImages = [];
     let currentLbIndex = 0;
 
     const updateLightbox = () => {
-        if (lbImg && lbCounter) {
-            lbImg.src = imagesData[currentLbIndex].src;
-            lbImg.alt = imagesData[currentLbIndex].alt;
-            lbCounter.innerText = `${currentLbIndex + 1} / ${imagesData.length}`;
+        if (lbImg && lbCounter && activeGalleryImages.length > 0) {
+            lbImg.src = activeGalleryImages[currentLbIndex].src;
+            lbImg.alt = activeGalleryImages[currentLbIndex].alt;
+            lbCounter.innerText = `${currentLbIndex + 1} / ${activeGalleryImages.length}`;
         }
     };
 
-    masonryItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const index = parseInt(item.getAttribute('data-index'), 10);
-            currentLbIndex = index;
-            updateLightbox();
-            if (lightbox) lightbox.classList.add('active');
+    // Attach click listeners to all masonry grids dynamically
+    document.querySelectorAll('.masonry-grid').forEach(grid => {
+        const items = grid.querySelectorAll('.masonry-item');
+        const gridImages = Array.from(items).map(item => {
+            const img = item.querySelector('img');
+            return { src: img.src, alt: img.alt };
+        });
+
+        items.forEach((item, index) => {
+            // Ensure we set data-index correctly relative to this grid
+            item.setAttribute('data-index', index);
+            item.addEventListener('click', () => {
+                activeGalleryImages = gridImages;
+                currentLbIndex = index;
+                updateLightbox();
+                if (lightbox) lightbox.classList.add('active');
+            });
         });
     });
 
@@ -250,15 +262,98 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (lbPrev) {
         lbPrev.addEventListener('click', () => {
-            currentLbIndex = (currentLbIndex - 1 + imagesData.length) % imagesData.length;
-            updateLightbox();
+            if (activeGalleryImages.length > 0) {
+                currentLbIndex = (currentLbIndex - 1 + activeGalleryImages.length) % activeGalleryImages.length;
+                updateLightbox();
+            }
         });
     }
 
     if (lbNext) {
         lbNext.addEventListener('click', () => {
-            currentLbIndex = (currentLbIndex + 1) % imagesData.length;
-            updateLightbox();
+            if (activeGalleryImages.length > 0) {
+                currentLbIndex = (currentLbIndex + 1) % activeGalleryImages.length;
+                updateLightbox();
+            }
         });
     }
+
+    // Touch Swipe Gestures for Lightbox
+    if (lightbox) {
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        lightbox.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        lightbox.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleLightboxSwipe();
+        }, { passive: true });
+
+        const handleLightboxSwipe = () => {
+            if (activeGalleryImages.length === 0) return;
+            const swipeDistance = touchEndX - touchStartX;
+            const threshold = 50; // px
+
+            if (swipeDistance < -threshold) {
+                // Swipe Left -> Next Image
+                currentLbIndex = (currentLbIndex + 1) % activeGalleryImages.length;
+                updateLightbox();
+            } else if (swipeDistance > threshold) {
+                // Swipe Right -> Prev Image
+                currentLbIndex = (currentLbIndex - 1 + activeGalleryImages.length) % activeGalleryImages.length;
+                updateLightbox();
+            }
+        };
+    }
+
+    // Touch/Click Toggle for Video Play/Pause (Resolves autoplay issues and enables control on mobile)
+    const videos = document.querySelectorAll('video');
+    videos.forEach(video => {
+        video.addEventListener('click', () => {
+            if (video.paused) {
+                video.play().catch(err => console.log("Video playback blocked:", err));
+            } else {
+                video.pause();
+            }
+        });
+    });
+
+    // Language Switcher Logic
+    const langBtns = document.querySelectorAll('.lang-btn');
+
+    const updateActiveButton = (lang) => {
+        langBtns.forEach(btn => {
+            if (btn.getAttribute('data-lang-btn') === lang) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+    };
+
+    const setLanguage = (lang) => {
+        if (lang === 'en') {
+            document.documentElement.classList.add('lang-en');
+        } else {
+            document.documentElement.classList.remove('lang-en');
+        }
+        localStorage.setItem('portfolio-lang', lang);
+        updateActiveButton(lang);
+    };
+
+    // Initialize switcher state on load
+    const currentLang = localStorage.getItem('portfolio-lang') || 'fr';
+    setLanguage(currentLang);
+
+    // Bind click events
+    langBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const selectedLang = btn.getAttribute('data-lang-btn');
+            setLanguage(selectedLang);
+        });
+    });
 });
+
