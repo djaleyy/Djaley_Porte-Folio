@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         animateCursor();
 
         // Hover states
-        const hoverTargets = document.querySelectorAll('a, button, .work-card, .service-card, .masonry-item, .burger');
+        const hoverTargets = document.querySelectorAll('a, button, .work-card, .service-card, .masonry-item, .burger, .filter-btn');
         hoverTargets.forEach(target => {
             target.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
             target.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
@@ -105,7 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const submitBtn = document.getElementById('submit-btn');
 
             if (submitBtn) {
-                submitBtn.innerText = "Envoi en cours...";
+                const isEn = document.documentElement.classList.contains('lang-en');
+                submitBtn.innerText = isEn ? "Sending..." : "Envoi en cours...";
                 submitBtn.disabled = true;
             }
 
@@ -123,22 +124,25 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(async (response) => {
                 let jsonResponse = await response.json();
+                const isEn = document.documentElement.classList.contains('lang-en');
                 if (response.status === 200) {
-                    formResult.innerText = "✓ Message envoyé avec succès.";
+                    formResult.innerText = isEn ? "✓ Message sent successfully." : "✓ Message envoyé avec succès.";
                     formResult.classList.add("success");
                     contactForm.reset();
                 } else {
-                    formResult.innerText = "✗ Erreur: " + jsonResponse.message;
+                    formResult.innerText = (isEn ? "✗ Error: " : "✗ Erreur: ") + jsonResponse.message;
                     formResult.classList.add("error");
                 }
             })
             .catch(() => {
-                formResult.innerText = "✗ Une erreur est survenue.";
+                const isEn = document.documentElement.classList.contains('lang-en');
+                formResult.innerText = isEn ? "✗ An error occurred." : "✗ Une erreur est survenue.";
                 formResult.classList.add("error");
             })
             .finally(() => {
                 if (submitBtn) {
-                    submitBtn.innerText = "Envoyer le message";
+                    const isEn = document.documentElement.classList.contains('lang-en');
+                    submitBtn.innerText = isEn ? "Send Message" : "Envoyer le message";
                     submitBtn.disabled = false;
                 }
                 setTimeout(() => {
@@ -355,5 +359,33 @@ document.addEventListener('DOMContentLoaded', () => {
             setLanguage(selectedLang);
         });
     });
+
+    // Portfolio Filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const workCards = document.querySelectorAll('.work-card');
+
+    if (filterBtns.length > 0 && workCards.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active class
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                workCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = '';
+                        setTimeout(() => {
+                            card.classList.add('appear');
+                        }, 50);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
+
 });
 

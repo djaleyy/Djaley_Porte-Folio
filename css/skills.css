@@ -275,8 +275,11 @@
     transition: var(--transition-fast);
 }
 
-.specialty-icon-wrapper i {
+.specialty-icon-wrapper i,
+.specialty-icon-wrapper svg.specialty-svg {
     font-size: 1.5rem;
+    width: 24px;
+    height: 24px;
     color: var(--sec-accent);
     transition: transform 0.3s ease;
 }
@@ -286,7 +289,8 @@
     border-color: var(--sec-accent);
 }
 
-.specialty-card:hover .specialty-icon-wrapper i {
+.specialty-card:hover .specialty-icon-wrapper i,
+.specialty-card:hover .specialty-icon-wrapper svg.specialty-svg {
     color: #000;
     transform: scale(1.1);
 }

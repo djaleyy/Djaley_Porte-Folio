@@ -83,12 +83,12 @@ textarea {
 }
 
 .section-label {
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.15em;
     color: var(--accent-color);
     margin-bottom: 20px;
-    font-weight: 500;
+    font-weight: 800;
 }
 
 .section-title {
@@ -441,8 +441,10 @@ textarea {
 .hero-scroll {
     position: absolute;
     bottom: 40px;
-    left: 40px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 15px;
     font-size: 0.8rem;
@@ -452,8 +454,8 @@ textarea {
 }
 
 .scroll-line {
-    width: 40px;
-    height: 1px;
+    width: 1px;
+    height: 40px;
     background-color: var(--border-color);
     position: relative;
     overflow: hidden;
@@ -467,29 +469,29 @@ textarea {
     width: 100%;
     height: 100%;
     background-color: var(--accent-color);
-    transform: scaleX(0);
-    transform-origin: left;
+    transform: scaleY(0);
+    transform-origin: top;
     animation: scrollLineAnim 2s infinite ease-in-out;
 }
 
 @keyframes scrollLineAnim {
     0% {
-        transform: scaleX(0);
-        transform-origin: left;
+        transform: scaleY(0);
+        transform-origin: top;
     }
 
     50% {
-        transform: scaleX(1);
-        transform-origin: left;
+        transform: scaleY(1);
+        transform-origin: top;
     }
 
     50.1% {
-        transform-origin: right;
+        transform-origin: bottom;
     }
 
     100% {
-        transform: scaleX(0);
-        transform-origin: right;
+        transform: scaleY(0);
+        transform-origin: bottom;
     }
 }
 
@@ -666,20 +668,56 @@ textarea {
     padding-bottom: 10px;
 }
 
+/* Portfolio Filters */
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 40px 0 60px;
+}
+
+.filter-btn {
+    padding: 10px 24px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 40px;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.filter-btn.active, .filter-btn:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-glow);
+    background-color: rgba(232, 164, 39, 0.03);
+}
+
 .work-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
-}
-
-.work-grid .work-card:nth-child(3) {
-    grid-column: span 2;
+    gap: 40px;
 }
 
 .work-card {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
+    background-color: rgba(15, 15, 15, 0.5);
+    border: 1px solid var(--border-color);
+    padding: 24px;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.work-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-color);
+    box-shadow: 0 15px 40px rgba(232, 164, 39, 0.08);
 }
 
 .work-img {
@@ -783,18 +821,19 @@ textarea {
 
 /* CONTACT SECTION */
 .contact-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: start;
+    text-align: left;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .contact-left {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .contact-desc {
@@ -911,26 +950,141 @@ textarea {
     color: #ef4444;
 }
 
-/* FOOTER */
+/* PREMIUM FOOTER REDESIGN */
 footer {
-    padding: 60px 0;
+    padding: 100px 0 40px;
+    background-color: var(--bg-darker);
     border-top: 1px solid var(--border-color);
-    background-color: var(--bg-color);
+    position: relative;
+    overflow: hidden;
 }
 
-.footer-inner {
+/* Subtle background accent glow in footer */
+footer::before {
+    content: '';
+    position: absolute;
+    top: -150px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(var(--accent-rgb), 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.footer-col {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.brand-col {
+    max-width: 420px;
 }
 
 .footer-logo {
-    font-weight: 800;
-    font-size: 1.1rem;
+    font-weight: 900;
+    font-size: 1.8rem;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
 }
 
 .footer-logo span {
     color: var(--accent-color);
+}
+
+.footer-tagline {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.footer-col-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent-color);
+}
+
+.footer-nav-list, .footer-contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-nav-list a, .footer-contact-list a {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    transition: var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-nav-list a:hover {
+    color: var(--accent-color);
+    transform: translateX(5px);
+}
+
+.footer-contact-list a:hover {
+    color: var(--text-primary);
+}
+
+.footer-contact-list i {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+}
+
+.footer-socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.footer-socials a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(245, 241, 232, 0.02);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    transition: var(--transition-fast);
+}
+
+.footer-socials a:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    background-color: rgba(var(--accent-rgb), 0.05);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(var(--accent-rgb), 0.15);
+}
+
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border-color) 10%, var(--border-color) 90%, transparent);
+    margin-bottom: 30px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .footer-copy {
@@ -938,15 +1092,62 @@ footer {
     color: var(--text-secondary);
 }
 
-.footer-links {
-    display: flex;
-    gap: 30px;
+.change-profile-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    padding: 8px 18px;
+    border-radius: 4px;
+    transition: var(--transition-fast);
 }
 
-.footer-links a:hover {
-    color: var(--text-primary);
+.change-profile-btn:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    background-color: rgba(var(--accent-rgb), 0.03);
+    box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.1);
+}
+
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 1.5fr 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 80px 0 30px;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+    
+    .brand-col {
+        max-width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .footer-col {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 /* MODALS */
@@ -1324,6 +1525,12 @@ footer {
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 60px;
+        text-align: center;
+    }
+
+    .contact-left {
+        align-items: center;
+        text-align: center;
     }
 
     .masonry-grid {
@@ -1369,8 +1576,15 @@ footer {
 
     .footer-inner {
         flex-direction: column;
-        gap: 20px;
+        gap: 30px;
         text-align: center;
+    }
+
+    .footer-top, .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
     }
 
     .masonry-grid {

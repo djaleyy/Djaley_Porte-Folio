@@ -917,10 +917,10 @@
                                     </div>
                                     <p class="cert-desc lang-fr">Certifié en protocoles de premiers secours d'urgence, mesures de sécurité et procédures de sauvetage dans des situations critiques.</p>
                                     <p class="cert-desc lang-en">Certified in emergency first aid protocols, safety measures, and life-saving procedures under stressful situations.</p>
-                                    <span class="cert-btn">
+                                    <a href="document/Police%20secours.pdf" target="_blank" class="cert-btn">
                                         <span class="lang-fr">Voir le certificat <i class="fas fa-arrow-right"></i></span>
                                         <span class="lang-en">View certificate <i class="fas fa-arrow-right"></i></span>
-                                    </span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -943,10 +943,10 @@
                                     </div>
                                     <p class="cert-desc lang-fr">Formation au positionnement en ligne, aux fondamentaux de création d'entreprise, à la gestion de produits numériques et aux stratégies média.</p>
                                     <p class="cert-desc lang-en">Training in online positioning, company building fundamentals, digital product management, and media optimization strategies.</p>
-                                    <span class="cert-btn">
+                                    <a href="document/MArketing%20Digital.pdf" target="_blank" class="cert-btn">
                                         <span class="lang-fr">Voir le certificat <i class="fas fa-arrow-right"></i></span>
                                         <span class="lang-en">View certificate <i class="fas fa-arrow-right"></i></span>
-                                    </span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -969,10 +969,10 @@
                                     </div>
                                     <p class="cert-desc lang-fr">Certification pratique pour la création de câbles Ethernet physiques, la validation de vitesse de transfert et la maintenance de l'intégrité du signal.</p>
                                     <p class="cert-desc lang-en">Hands-on certification in physical ethernet cable creation, speed validation, structural mapping, and signal integrity maintenance.</p>
-                                    <span class="cert-btn">
+                                    <a href="document/CAbalage%20Reseau%20Ethernet.pdf" target="_blank" class="cert-btn">
                                         <span class="lang-fr">Voir le certificat <i class="fas fa-arrow-right"></i></span>
                                         <span class="lang-en">View certificate <i class="fas fa-arrow-right"></i></span>
-                                    </span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -995,10 +995,10 @@
                                     </div>
                                     <p class="cert-desc lang-fr">Formation technique spécialisée dans les protocoles de décodage, l'analyse des fréquences réseau et la récupération de systèmes mobiles.</p>
                                     <p class="cert-desc lang-en">Specialized technical training in decoding protocols, network frequency analysis, lock operations, and device system recovery.</p>
-                                    <span class="cert-btn">
+                                    <a href="document/Decodage%20cellulaire%20.pdf" target="_blank" class="cert-btn">
                                         <span class="lang-fr">Voir le certificat <i class="fas fa-arrow-right"></i></span>
                                         <span class="lang-en">View certificate <i class="fas fa-arrow-right"></i></span>
-                                    </span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -1021,10 +1021,10 @@
                                     </div>
                                     <p class="cert-desc lang-fr">Formation fondamentale sur les circuits de télécommunication, les signaux haute fréquence, la théorie des ondes et le déploiement d'infrastructures.</p>
                                     <p class="cert-desc lang-en">Core training in telecommunication circuits, high-speed signals, wave theory, routing matrices, and infrastructure deployment.</p>
-                                    <span class="cert-btn">
+                                    <a href="document/Telecommunication.pdf" target="_blank" class="cert-btn">
                                         <span class="lang-fr">Voir le certificat <i class="fas fa-arrow-right"></i></span>
                                         <span class="lang-en">View certificate <i class="fas fa-arrow-right"></i></span>
-                                    </span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -1288,23 +1288,90 @@
                         </a>
                     </div>
                 </div>
+                <div class="contact-right reveal">
+                    <form class="contact-form" id="contact-form">
+                        <!-- Veuillez insérer votre clé Web3Forms ci-dessous / Please insert your Web3Forms key below -->
+                        <input type="hidden" name="access_key" value="6ce07aed-631e-4be8-aa3a-d09c3b976a17">
+                        <div class="form-group">
+                            <label for="form-name">
+                                <span class="lang-fr">Nom Complet</span>
+                                <span class="lang-en">Full Name</span>
+                            </label>
+                            <input type="text" id="form-name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-subject">
+                                <span class="lang-fr">Sujet / Projet</span>
+                                <span class="lang-en">Subject / Project</span>
+                            </label>
+                            <input type="text" id="form-subject" name="subject" placeholder="Collaboration, Site Web, Application..." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-message">
+                                <span class="lang-fr">Votre Message</span>
+                                <span class="lang-en">Your Message</span>
+                            </label>
+                            <textarea id="form-message" name="message" rows="5" placeholder="Décrivez votre besoin technique..." required></textarea>
+                        </div>
+                        <button type="submit" id="submit-btn" class="btn-primary" style="display: flex; align-items: center; justify-content: center; gap: 10px; border: none; background-color: var(--accent-color); color: var(--bg-dark); cursor: pointer; padding: 16px 30px; font-weight: 700; width: 100%;">
+                            <i class="fas fa-paper-plane" style="font-size: 1.1rem;"></i>
+                            <span class="lang-fr">Envoyer le message</span>
+                            <span class="lang-en">Send Message</span>
+                        </button>
+                        <div id="form-result" class="form-result"></div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ── FOOTER ─────────────────────────────── -->
     <footer>
-        <div class="container footer-inner">
-            <span class="footer-logo">B<span>.</span>Joseph</span>
-            <p class="footer-copy">
-                <span class="lang-fr">© 2025 Bradley Joseph — Tous droits réservés.</span>
-                <span class="lang-en">© 2025 Bradley Joseph — All rights reserved.</span>
-            </p>
-            <div class="footer-links">
-                <a href="index.html">
-                    <span class="lang-fr">Changer de profil</span>
-                    <span class="lang-en">Change profile</span>
-                </a>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: Brand & Bio -->
+                <div class="footer-col brand-col">
+                    <span class="footer-logo">B<span>.</span>Joseph</span>
+                    <p class="footer-tagline">
+                        <span class="lang-fr">Développeur Full-Stack & Intégrateur Web indépendant. Je conçois des applications web modernes, performantes et centrées sur l'expérience utilisateur.</span>
+                        <span class="lang-en">Independent Full-Stack Developer & Web Integrator. I design modern, performant, and user-centric web applications.</span>
+                    </p>
+                </div>
+                <!-- Column 2: Navigation -->
+                <div class="footer-col links-col">
+                    <h4 class="footer-col-title">Navigation</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="#projects"><span class="lang-fr">Projets</span><span class="lang-en">Projects</span></a></li>
+                        <li><a href="#about"><span class="lang-fr">À propos</span><span class="lang-en">About</span></a></li>
+                        <li><a href="#skills"><span class="lang-fr">Compétences</span><span class="lang-en">Skills</span></a></li>
+                    </ul>
+                </div>
+                <!-- Column 3: Contact & Networks -->
+                <div class="footer-col contact-col">
+                    <h4 class="footer-col-title">Contact & Reseaux</h4>
+                    <ul class="footer-contact-list">
+                        <li><a href="mailto:josephdjamy26@gmail.com"><i class="fas fa-envelope"></i> josephdjamy26@gmail.com</a></li>
+                        <li><a href="tel:+50948724750"><i class="fas fa-phone"></i> +509 48724750</a></li>
+                    </ul>
+                    <div class="footer-socials">
+                        <a href="https://www.linkedin.com/in/bradley-djamy-joseph-5a27a4356" title="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/djaleyy" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copy">
+                    <span class="lang-fr">© 2026 Bradley Joseph — Tous droits réservés.</span>
+                    <span class="lang-en">© 2026 Bradley Joseph — All rights reserved.</span>
+                </p>
+                <div class="footer-extra-links">
+                    <a href="index.html" class="change-profile-btn">
+                        <i class="fas fa-random"></i> <span class="lang-fr">Changer de profil</span><span class="lang-en">Change profile</span>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
