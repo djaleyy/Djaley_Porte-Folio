@@ -1681,3 +1681,18 @@ html:not(.lang-en) .lang-en {
     color: var(--border-color);
     pointer-events: none;
 }
+
+/* Fix for Footer Social Icons */
+.footer-socials a i {
+    font-family: 'Font Awesome 6 Brands', 'Font Awesome 5 Brands', 'Font Awesome', sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    display: inline-block !important;
+    color: var(--text-primary) !important;
+    font-size: 1.1rem;
+    transition: var(--transition-fast);
+}
+
+.footer-socials a:hover i {
+    color: var(--accent-color) !important;
+}

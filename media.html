@@ -19,13 +19,18 @@
         })();
     </script>
 
-    <!-- Fonts -->
+    <!-- Resource Hints & Loading Optimization -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-    <!-- Icons -->
+    
+    <!-- Preload critical stylesheets -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" as="style">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -456,7 +461,7 @@
                                             </h4>
                                             <span class="cert-date">Oct 2022</span>
                                         </div>
-                                        <span class="cert-issuer">CFPH (Canado-Technique) / ISTAFF</span>
+                                        <span class="cert-issuer">ESIH / Professeur Albert St-Illien</span>
                                     </div>
                                     <p class="cert-desc lang-fr">Certification pratique pour la création de câbles Ethernet physiques, la validation de vitesse de transfert et la maintenance de l'intégrité du signal.</p>
                                     <p class="cert-desc lang-en">Hands-on certification in physical ethernet cable creation, speed validation, structural mapping, and signal integrity maintenance.</p>
@@ -550,9 +555,6 @@
                 <button class="filter-btn" data-filter="videos">
                     <span class="lang-fr">Vidéos</span><span class="lang-en">Videos</span>
                 </button>
-                <button class="filter-btn" data-filter="design">
-                    <span class="lang-fr">Design Graphique</span><span class="lang-en">Graphic Design</span>
-                </button>
             </div>
 
             <div class="work-grid">
@@ -614,27 +616,6 @@
                         <p class="lang-fr">Coorganisateur & Coordinateur d'événement. Coordination d'équipe et suivi opérationnel.</p>
                         <p class="lang-en">Co-organizer & Event Coordinator. Team coordination and operational support.</p>
                         <button class="work-btn" onclick="openModal('modal-ajebbs2')">
-                            <span class="lang-fr">Ouvrir la galerie <i class="fas fa-images"></i></span>
-                            <span class="lang-en">Open gallery <i class="fas fa-images"></i></span>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="work-card reveal" data-category="design">
-                    <div class="work-img">
-                        <img src="Image/photoshop_gallery_cover.png" alt="Créations Photoshop">
-                        <div class="work-overlay">
-                            <div class="work-tags">
-                                <span class="lang-fr">Design Graphique</span><span class="lang-en">Graphic Design</span><span>Photoshop</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="work-info">
-                        <h3 class="lang-fr">Créations & Retouche Photo</h3>
-                        <h3 class="lang-en">Creations & Photo Editing</h3>
-                        <p class="lang-fr">Compositions artistiques, retouches avancées et conceptions graphiques.</p>
-                        <p class="lang-en">Artistic composites, advanced editing, and graphic design.</p>
-                        <button class="work-btn" onclick="openModal('modal-photoshop')">
                             <span class="lang-fr">Ouvrir la galerie <i class="fas fa-images"></i></span>
                             <span class="lang-en">Open gallery <i class="fas fa-images"></i></span>
                         </button>
@@ -881,31 +862,6 @@
                     <div class="masonry-item"><img src="Image/FB_IMG_1782211681884.jpg" alt="AJEBBS2 Photo 14" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
                     <div class="masonry-item"><img src="Image/FB_IMG_1782140914849.jpg" alt="AJEBBS2 Photo 15" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
                     <div class="masonry-item"><img src="Image/FB_IMG_1782140823831.jpg" alt="AJEBBS2 Photo 16" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal: Photoshop Gallery -->
-    <div id="modal-photoshop" class="custom-modal">
-        <div class="modal-content modal-large">
-            <button class="modal-close" onclick="closeModal('modal-photoshop')"><i class="fas fa-times"></i></button>
-            <div class="modal-header">
-                <h2>
-                    <span class="lang-fr">Galerie — Adobe Photoshop</span>
-                    <span class="lang-en">Gallery — Adobe Photoshop</span>
-                </h2>
-                <p style="margin-top: 15px; color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem; text-align: justify; max-width: 900px; margin-left: auto; margin-right: auto;">
-                    <span class="lang-fr">Une sélection de mes travaux de création graphique, manipulation de photos et retouches numériques réalisées sous Adobe Photoshop. Chaque pièce est conçue pour raconter une histoire ou sublimer un produit à travers des techniques de composition avancées, d'étalonnage et d'effets visuels.</span>
-                    <span class="lang-en">A selection of my graphic design, photo manipulation, and digital editing works made using Adobe Photoshop. Each piece is designed to tell a story or enhance a product through advanced compositing, color grading, and visual effects.</span>
-                </p>
-            </div>
-            <div class="modal-body">
-                <div class="masonry-grid">
-                    <div class="masonry-item"><img src="Image/photoshop_gallery_cover.png" alt="Photoshop Composition 1" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
-                    <div class="masonry-item"><img src="Image/photoshop_design_1.png" alt="Photoshop Composition 2" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
-                    <div class="masonry-item"><img src="Image/photoshop_design_2.png" alt="Photoshop Composition 3" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
-                    <div class="masonry-item"><img src="Image/multimedia_visual_1777007790130.png" alt="Photoshop Composition 4" loading="lazy"><div class="photo-overlay"><i class="fas fa-expand"></i></div></div>
                 </div>
             </div>
         </div>

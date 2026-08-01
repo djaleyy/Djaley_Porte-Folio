@@ -158,13 +158,7 @@
 }
 
 .tech-experience {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--text-secondary);
-    background-color: rgba(245, 241, 232, 0.04);
-    padding: 3px 8px;
-    border-radius: 2px;
+    display: none;
 }
 
 .tech-desc {

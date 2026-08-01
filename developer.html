@@ -18,13 +18,18 @@
         })();
     </script>
 
-    <!-- Fonts -->
+    <!-- Resource Hints & Loading Optimization -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-    <!-- Icons -->
+    
+    <!-- Preload critical stylesheets -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" as="style">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -111,8 +116,8 @@
                     <img src="Image/Photo pro.png" alt="Bradley Joseph — Développeur" class="hero-img">
                     <div class="hero-img-label" style="background-color: var(--bg-darker);">
                         <i class="fas fa-code" style="color: var(--accent-color);"></i>
-                        <span class="lang-fr">Développeur Full-Stack</span>
-                        <span class="lang-en">Full-Stack Developer</span>
+                        <span class="lang-fr">Développeur Front-End</span>
+                        <span class="lang-en">Front-End Developer</span>
                     </div>
                 </div>
             </div>
@@ -157,7 +162,7 @@
                     </h2>
                     <div class="about-stats reveal">
                         <div class="astat">
-                            <span class="astat-n">10+</span>
+                            <span class="astat-n">3+</span>
                             <span class="astat-l lang-fr">Projets Web<br>Déployés</span>
                             <span class="astat-l lang-en">Deployed<br>Web Projects</span>
                         </div>
@@ -170,7 +175,7 @@
                 </div>
                 <div class="about-right">
                     <div class="about-photo-wrap reveal">
-                        <img src="Image/hero_bg_1777007739091.png" alt="Setup Code" class="about-photo">
+                        <img src="Image/djaley_coding.png" alt="Bradley Joseph — Photo" class="about-photo">
                     </div>
                     <div class="about-text reveal">
                         <p class="lang-fr">Étudiant à l'ESIH, je me spécialise dans le développement d'applications web robustes et scalables. Mon approche allie une forte compréhension algorithmique à une passion pour les interfaces fluides.</p>
@@ -312,10 +317,10 @@
                                         <span class="lang-fr">Maîtrise</span>
                                         <span class="lang-en">Proficiency</span>
                                     </span>
-                                    <span class="tech-level-pct">80%</span>
+                                    <span class="tech-level-pct">75%</span>
                                 </div>
                                 <div class="tech-progress-bar">
-                                    <div class="tech-progress-fill" data-level="80%"></div>
+                                    <div class="tech-progress-fill" data-level="75%"></div>
                                 </div>
                             </div>
                         </div>
@@ -340,10 +345,10 @@
                                         <span class="lang-fr">Maîtrise</span>
                                         <span class="lang-en">Proficiency</span>
                                     </span>
-                                    <span class="tech-level-pct">75%</span>
+                                    <span class="tech-level-pct">70%</span>
                                 </div>
                                 <div class="tech-progress-bar">
-                                    <div class="tech-progress-fill" data-level="75%"></div>
+                                    <div class="tech-progress-fill" data-level="70%"></div>
                                 </div>
                             </div>
                         </div>
@@ -760,10 +765,10 @@
                                         <span class="lang-fr">Maîtrise</span>
                                         <span class="lang-en">Proficiency</span>
                                     </span>
-                                    <span class="tech-level-pct">55%</span>
+                                    <span class="tech-level-pct">80%</span>
                                 </div>
                                 <div class="tech-progress-bar">
-                                    <div class="tech-progress-fill" data-level="55%"></div>
+                                    <div class="tech-progress-fill" data-level="80%"></div>
                                 </div>
                             </div>
                         </div>
@@ -965,7 +970,7 @@
                                             </h4>
                                             <span class="cert-date">Oct 2022</span>
                                         </div>
-                                        <span class="cert-issuer">CFPH (Canado-Technique) / ISTAFF</span>
+                                        <span class="cert-issuer">ESIH / Professeur Albert St-Illien</span>
                                     </div>
                                     <p class="cert-desc lang-fr">Certification pratique pour la création de câbles Ethernet physiques, la validation de vitesse de transfert et la maintenance de l'intégrité du signal.</p>
                                     <p class="cert-desc lang-en">Hands-on certification in physical ethernet cable creation, speed validation, structural mapping, and signal integrity maintenance.</p>
@@ -1050,11 +1055,11 @@
                             <div class="expertise-icon-box"><i class="fas fa-code"></i></div>
                             <div class="expertise-details">
                                 <h4 class="expertise-title">
-                                    <span class="lang-fr">Développement Web Full-Stack</span>
-                                    <span class="lang-en">Full Stack Web Development</span>
+                                    <span class="lang-fr">Développement Web Front-End</span>
+                                    <span class="lang-en">Front End Web Development</span>
                                 </h4>
-                                <p class="expertise-desc lang-fr">Conception et développement d'applications web complètes et fiables. Implémentation d'architectures MVC sur mesure, de systèmes d'authentification en PHP, d'interfaces dynamiques en JS/Bootstrap, et de composants structurels sous React.</p>
-                                <p class="expertise-desc lang-en">Designing and building reliable end-to-end web applications. Implementing custom MVC architectures, authentication layers in PHP, responsive frontends in JS/Bootstrap, and structural React components.</p>
+                                <p class="expertise-desc lang-fr">Intégration et développement d'interfaces web interactives et modernes. Conception d'architectures orientées composants avec React, création de layouts adaptatifs avec Bootstrap, et animation d'éléments dynamiques avec Vanilla JavaScript.</p>
+                                <p class="expertise-desc lang-en">Integration and development of interactive and modern web interfaces. Designing component-driven architectures with React, crafting responsive layouts with Bootstrap, and animating dynamic elements with Vanilla JavaScript.</p>
                             </div>
                         </div>
 
@@ -1135,7 +1140,7 @@
                             <span class="stat-label">Certifications</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number"><span class="stat-counter" data-target="10">0</span>+</span>
+                            <span class="stat-number"><span class="stat-counter" data-target="3">0</span>+</span>
                             <span class="stat-label">
                                 <span class="lang-fr">Projets Web</span>
                                 <span class="lang-en">Web Projects</span>
@@ -1144,8 +1149,8 @@
                         <div class="stat-item">
                             <span class="stat-number"><i class="fas fa-rocket"></i></span>
                             <span class="stat-label">
-                                <span class="lang-fr">Profil Full-Stack</span>
-                                <span class="lang-en">Full Stack Profile</span>
+                                <span class="lang-fr">Profil Front-End</span>
+                                <span class="lang-en">Front-End Profile</span>
                             </span>
                         </div>
                     </div>
@@ -1333,8 +1338,8 @@
                 <div class="footer-col brand-col">
                     <span class="footer-logo">B<span>.</span>Joseph</span>
                     <p class="footer-tagline">
-                        <span class="lang-fr">Développeur Full-Stack & Intégrateur Web indépendant. Je conçois des applications web modernes, performantes et centrées sur l'expérience utilisateur.</span>
-                        <span class="lang-en">Independent Full-Stack Developer & Web Integrator. I design modern, performant, and user-centric web applications.</span>
+                        <span class="lang-fr">Développeur Front-End & Intégrateur Web indépendant. Je conçois des interfaces web modernes, performantes et centrées sur l'expérience utilisateur.</span>
+                        <span class="lang-en">Independent Front-End Developer & Web Integrator. I design modern, performant, and user-centric web interfaces.</span>
                     </p>
                 </div>
                 <!-- Column 2: Navigation -->
