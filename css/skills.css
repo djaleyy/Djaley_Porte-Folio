@@ -701,8 +701,35 @@
     }
     
     .tech-grid {
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .specialty-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    /* Compact tech cards for 2-column mobile layout */
+    .tech-card {
+        padding: 16px 14px;
+        gap: 10px;
+    }
+
+    .tech-icon-name i {
+        font-size: 1.4rem;
+    }
+
+    .tech-name {
+        font-size: 0.9rem;
+    }
+
+    .tech-desc {
+        display: none;
+    }
+
+    .tech-level-meta {
+        font-size: 0.7rem;
     }
     
     .timeline-line {

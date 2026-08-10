@@ -37,11 +37,41 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     cursor: none;
-    /* Custom minimal cursor */
+}
+
+/* Global Paragraph Justification */
+p,
+.hero-desc,
+.about-text p,
+.cert-desc,
+.work-info p,
+.modal-body p,
+.feed-overlay p {
     text-align: justify;
-    /* Justification globale du texte */
     hyphens: auto;
-    /* Césure automatique pour éviter les grands espaces */
+    -webkit-hyphens: auto;
+}
+
+/* Titles, Headings, Buttons, Badges, and Stats (Left aligned / No Hyphens) */
+h1, h2, h3, h4, h5, h6,
+.section-title,
+.section-label,
+.hero-eyebrow,
+.hero-title,
+.astat,
+.astat-n,
+.astat-l,
+.btn-primary,
+.btn-ghost,
+.btn-text,
+.work-btn,
+.work-tags,
+.video-tag,
+.hero-meta,
+.lang-switcher {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
 }
 
 a {
@@ -785,20 +815,28 @@ textarea {
 
 .work-info {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: flex-start;
-    gap: 30px;
+    gap: 10px;
+    text-align: left;
 }
 
 .work-info h3 {
     font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 8px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    hyphens: none;
+    -webkit-hyphens: none;
+    text-align: left;
 }
 
 .work-info p {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     color: var(--text-secondary);
+    line-height: 1.5;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    text-align: justify;
 }
 
 .work-btn {
@@ -1448,7 +1486,25 @@ footer::before {
 .feed-overlay p {
     font-size: 0.95rem;
     color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 20px;
+    margin-bottom: 12px;
+}
+
+.video-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 14px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background-color: rgba(232, 164, 39, 0.15);
+    color: var(--accent-color);
+    border: 1px solid rgba(232, 164, 39, 0.3);
+    border-radius: 20px;
+    margin-top: 6px;
+    margin-bottom: 8px;
+    backdrop-filter: blur(8px);
+    pointer-events: auto;
 }
 
 .feed-scroll-hint {
@@ -1597,34 +1653,46 @@ footer::before {
         column-gap: 12px;
     }
 
-    /* Modal Adjustments on Mobile */
+    /* Modal Adjustments on Mobile (Full Phone Screen + High Visibility Close Button) */
     .custom-modal {
-        padding: 20px;
+        padding: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
     }
 
     .modal-content {
-        padding: 35px 20px 20px;
-        margin: 20px 0;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 100vh !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        border: none !important;
+        padding: 65px 16px 30px !important;
     }
 
-    .modal-close {
-        top: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
+    .modal-close,
+    .lb-close {
+        position: fixed !important;
+        top: 16px !important;
+        right: 16px !important;
+        width: 48px !important;
+        height: 48px !important;
+        font-size: 1.25rem !important;
+        background-color: var(--accent-color) !important;
+        color: #0A0A0A !important;
+        border: 2px solid rgba(255, 255, 255, 0.9) !important;
+        border-radius: 50% !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), 0 0 15px rgba(232, 164, 39, 0.6) !important;
+        z-index: 99999 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        opacity: 1 !important;
     }
 
     .lb-content img {
         max-width: 95vw;
         max-height: 75vh;
-    }
-
-    .lb-close {
-        top: 20px;
-        right: 20px;
-        width: 44px;
-        height: 44px;
     }
 
     .lb-prev {
@@ -1661,6 +1729,32 @@ footer::before {
     .hero-meta {
         flex-wrap: wrap;
         gap: 10px;
+    }
+
+    /* Feed Overlay Adjustments on Mobile */
+    .feed-overlay {
+        padding: 50px 20px 24px;
+    }
+
+    .feed-overlay h3 {
+        font-size: 1.25rem;
+    }
+
+    .feed-overlay p {
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+    }
+
+    .feed-scroll-hint {
+        top: 24px;
+        right: 20px;
+        bottom: auto;
+        background: rgba(10, 10, 10, 0.6);
+        padding: 6px 12px;
+        border-radius: 20px;
+        border: 1px solid var(--border-color);
+        backdrop-filter: blur(6px);
+        font-size: 0.7rem;
     }
 }
 
