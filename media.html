@@ -42,6 +42,57 @@
             --accent-glow: rgba(232, 164, 39, 0.5);
             --accent-rgb: 232, 164, 39;
         }
+
+        /* Rankont-edu Mobile Optimizations */
+        .rankont-btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 35px;
+        }
+        .rankont-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+        .premium-dashboard {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 24px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+            max-width: 320px;
+            margin: 0 auto;
+        }
+        .premium-dashboard-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .rankont-btn-group {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .rankont-btn {
+                width: 100%;
+                padding: 14px 20px;
+            }
+            .premium-dashboard {
+                padding: 25px;
+            }
+            .premium-dashboard-stats {
+                gap: 15px;
+            }
+        }
     </style>
 </head>
 
@@ -219,23 +270,23 @@
                         </div>
                     </div>
 
-                    <div style="margin-top: 35px; display: flex; gap: 15px; flex-wrap: wrap;">
-                        <a href="https://www.instagram.com/rankont_edu/" target="_blank" class="btn-primary" style="background-color: #E1306C; color: white; border: none; display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 50px; font-weight: 700; text-decoration: none; box-shadow: 0 10px 20px rgba(225, 48, 108, 0.2); transition: 0.3s ease;">
+                    <div class="rankont-btn-group">
+                        <a href="https://www.instagram.com/rankont_edu/" target="_blank" class="btn-primary rankont-btn" style="background-color: #E1306C; color: white; border: none; box-shadow: 0 10px 20px rgba(225, 48, 108, 0.2);">
                             <i class="fab fa-instagram" style="font-size: 1.2rem;"></i> 
                             <span class="lang-fr">Visiter Instagram</span>
                             <span class="lang-en">Visit Instagram</span>
                         </a>
-                        <a href="https://www.tiktok.com/@rankont_edu" target="_blank" class="btn-primary" style="background-color: #000000; color: white; border: 1px solid rgba(255,255,255,0.15); display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 50px; font-weight: 700; text-decoration: none; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); transition: 0.3s ease;">
+                        <a href="https://www.tiktok.com/@rankont_edu" target="_blank" class="btn-primary rankont-btn" style="background-color: #000000; color: white; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);">
                             <i class="fab fa-tiktok" style="font-size: 1.2rem;"></i> 
                             <span class="lang-fr">Visiter TikTok</span>
                             <span class="lang-en">Visit TikTok</span>
                         </a>
-                        <a href="https://www.linkedin.com/company/107760869/" target="_blank" class="btn-primary" style="background-color: #0077B5; color: white; border: none; display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 50px; font-weight: 700; text-decoration: none; box-shadow: 0 10px 20px rgba(0, 119, 181, 0.2); transition: 0.3s ease;">
+                        <a href="https://www.linkedin.com/company/107760869/" target="_blank" class="btn-primary rankont-btn" style="background-color: #0077B5; color: white; border: none; box-shadow: 0 10px 20px rgba(0, 119, 181, 0.2);">
                             <i class="fab fa-linkedin-in" style="font-size: 1.2rem;"></i> 
                             <span class="lang-fr">Visiter LinkedIn</span>
                             <span class="lang-en">Visit LinkedIn</span>
                         </a>
-                        <a href="https://whatsapp.com/channel/0029VbAwreSCRs1pAkEK9u1V" target="_blank" class="btn-primary" style="background-color: #25D366; color: white; border: none; display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 50px; font-weight: 700; text-decoration: none; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2); transition: 0.3s ease;">
+                        <a href="https://whatsapp.com/channel/0029VbAwreSCRs1pAkEK9u1V" target="_blank" class="btn-primary rankont-btn" style="background-color: #25D366; color: white; border: none; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);">
                             <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> 
                             <span class="lang-fr">Canal WhatsApp</span>
                             <span class="lang-en">WhatsApp Channel</span>
@@ -245,7 +296,7 @@
 
                 <div class="about-right reveal">
                     <!-- Premium Dashboard/Metrics Card -->
-                    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); padding: 40px; border-radius: 24px; backdrop-filter: blur(10px); box-shadow: 0 30px 60px rgba(0,0,0,0.4);">
+                    <div class="premium-dashboard">
                         <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px;">
                             <img src="Image/IMG_0785.JPG" alt="Rankont-edu Logo" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-color);">
                             <div>
@@ -255,7 +306,7 @@
                         </div>
 
                         <!-- Stats Row -->
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="premium-dashboard-stats">
                             <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.03); padding: 20px; border-radius: 16px; text-align: center;">
                                 <span style="display: block; font-size: 1.8rem; font-weight: 800; color: var(--accent-color);">Création</span>
                                 <span class="lang-fr" style="font-size: 0.85rem; color: rgba(245, 241, 232, 0.6);">Contenu Visuel</span>
@@ -822,96 +873,81 @@
     </div>
 
     <!-- Modal: Concert Videos -->
-    <div id="modal-concert-video" class="custom-modal feed-modal">
-        <div class="modal-content modal-fullscreen">
+    <div id="modal-concert-video" class="custom-modal">
+        <div class="modal-content modal-large">
             <button class="modal-close" onclick="closeModal('modal-concert-video')"><i
                     class="fas fa-times"></i></button>
-            <div class="modal-body feed-body">
-                <div class="video-feed-container">
-                    <div class="video-feed-item">
-                        <video preload="metadata" loop playsinline poster="Image/IMGP5707.jpg">
-                            <source src="Image/Recap PA pale .mp4" type="video/mp4">
-                        </video>
-                        <div class="feed-overlay">
-                            <h3><i class="fas fa-film"></i> Recap — PA Pale</h3>
-                            <p class="lang-fr">Extrait du récapitulatif complet du concert.</p>
-                            <p class="lang-en">Excerpt from the full concert recap.</p>
-                            <span class="video-tag">
-                                <span class="lang-fr">Récapitulatif</span>
-                                <span class="lang-en">Recap</span>
-                            </span>
-                            <br>
-                            <a href="METTRE_LIEN_DRIVE_RECAP_ICI" target="_blank" class="btn-primary"
-                                 style="margin-top: 15px; display: inline-block; background-color: var(--accent-color); color: var(--bg-dark); border:none;">
-                                 <i class="fas fa-external-link-alt"></i> 
-                                 <span class="lang-fr">Voir la vidéo complète sur Drive</span>
-                                 <span class="lang-en">Watch full video on Drive</span>
-                            </a>
-                            <div class="feed-scroll-hint">
-                                <i class="fas fa-chevron-down"></i>
-                                <span class="lang-fr">Défiler</span>
-                                <span class="lang-en">Scroll</span>
-                            </div>
-                        </div>
+            <div class="modal-header">
+                <h2>
+                    <span class="lang-fr">Vidéos — Récapitulatifs & Captations Live</span>
+                    <span class="lang-en">Videos — Recaps & Live Captures</span>
+                </h2>
+                <div style="margin-top: 20px; color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem; text-align: justify; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    <div class="lang-fr">
+                        <p>Découvrez mes réalisations vidéo, allant des récapitulatifs d'événements aux performances en direct. Chaque vidéo est le résultat d'un travail soigné de captation et de montage.</p>
                     </div>
-                    <div class="video-feed-item">
-                        <video preload="metadata" loop playsinline poster="Image/T01.jpg">
-                            <source src="Image/M Abandonem.mp4" type="video/mp4">
-                        </video>
-                        <div class="feed-overlay">
-                            <h3><i class="fas fa-music"></i> M Abandonem</h3>
-                            <p class="lang-fr">Extrait de la performance live.</p>
-                            <p class="lang-en">Excerpt from the live performance.</p>
-                            <span class="video-tag">
-                                <span class="lang-fr">Performance Live</span>
-                                <span class="lang-en">Live Performance</span>
-                            </span>
-                            <br>
-                            <a href="METTRE_LIEN_DRIVE_ABANDONEM_ICI" target="_blank" class="btn-primary"
-                                 style="margin-top: 15px; display: inline-block; background-color: var(--accent-color); color: var(--bg-dark); border:none;">
-                                 <i class="fas fa-external-link-alt"></i> 
-                                 <span class="lang-fr">Voir la vidéo complète sur Drive</span>
-                                 <span class="lang-en">Watch full video on Drive</span>
-                            </a>
-                            <div class="feed-scroll-hint">
-                                <i class="fas fa-chevron-down"></i>
-                                <span class="lang-fr">Défiler</span>
-                                <span class="lang-en">Scroll</span>
-                            </div>
-                        </div>
+                    <div class="lang-en">
+                        <p>Discover my video projects, ranging from event recaps to live performances. Each video is the result of careful filming and editing work.</p>
                     </div>
-                    <div class="video-feed-item">
-                        <video preload="metadata" loop playsinline poster="Image/3.jpg">
-                            <source src="Image/Recap.mp4" type="video/mp4">
-                        </video>
-                        <div class="feed-overlay">
-                            <h3><i class="fas fa-film"></i> Rétrospective Vidéo</h3>
-                            <p class="lang-fr">Compilation de nos meilleures captations et réalisations événementielles.</p>
-                            <p class="lang-en">Compilation of our best event captures and video productions.</p>
-                            <span class="video-tag">
-                                <span class="lang-fr">Rétrospective</span>
-                                <span class="lang-en">Recap</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 20px;">
+                    <!-- Video 1: Recap Pa Pale -->
+                    <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <h3 style="font-size: 1.4rem; margin-bottom: 15px; color: var(--text-light);"><i class="fas fa-film" style="color: var(--accent-color); margin-right: 8px;"></i> Recap — PA Pale</h3>
+                            <p class="lang-fr" style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 20px; line-height: 1.6;">Récapitulatif complet du concert Pa Pale, capturant les meilleurs moments de l'événement avec une ambiance dynamique.</p>
+                            <p class="lang-en" style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 20px; line-height: 1.6;">Full recap of the Pa Pale concert, capturing the best moments of the event with a dynamic atmosphere.</p>
+                            <span style="display: inline-block; padding: 6px 14px; background: rgba(232, 164, 39, 0.1); color: var(--accent-color); border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 25px;">
+                                <span class="lang-fr">Récapitulatif · Événement</span>
+                                <span class="lang-en">Recap · Event</span>
                             </span>
-                            <div class="feed-scroll-hint">
-                                <i class="fas fa-chevron-down"></i>
-                                <span class="lang-fr">Défiler</span>
-                                <span class="lang-en">Scroll</span>
-                            </div>
                         </div>
+                        <a href="https://drive.google.com/file/d/1fYm8_DGdlg7TfntzB2_NdFQw-SIm5Noa/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-primary"
+                             style="display: flex; align-items: center; justify-content: center; gap: 8px; background-color: var(--accent-color); color: var(--bg-dark); border:none; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; transition: 0.3s;">
+                             <i class="fas fa-play-circle"></i> 
+                             <span class="lang-fr">Visionner la vidéo</span>
+                             <span class="lang-en">Watch video</span>
+                        </a>
                     </div>
-                    <div class="video-feed-item">
-                        <video preload="metadata" loop playsinline poster="Image/5.jpg">
-                            <source src="Image/DOC-20260310-WA0006.mp4" type="video/mp4">
-                        </video>
-                        <div class="feed-overlay">
-                            <h3><i class="fas fa-video"></i> Vidéo de Promotion</h3>
-                            <p class="lang-fr">Production dynamique capturant l'atmosphère et les moments forts.</p>
-                            <p class="lang-en">Dynamic production capturing the atmosphere and highlights.</p>
-                            <span class="video-tag">
-                                <span class="lang-fr">Production</span>
-                                <span class="lang-en">Production</span>
+
+                    <!-- Video 2: M Abandonem -->
+                    <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <h3 style="font-size: 1.4rem; margin-bottom: 15px; color: var(--text-light);"><i class="fas fa-music" style="color: var(--accent-color); margin-right: 8px;"></i> M Abandonem</h3>
+                            <p class="lang-fr" style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 20px; line-height: 1.6;">Performance live de "M Abandonem". Une captation immersive au cœur de l'action qui retranscrit l'émotion du moment.</p>
+                            <p class="lang-en" style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 20px; line-height: 1.6;">Live performance of "M Abandonem". An immersive capture right in the heart of the action that translates the emotion of the moment.</p>
+                            <span style="display: inline-block; padding: 6px 14px; background: rgba(232, 164, 39, 0.1); color: var(--accent-color); border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 25px;">
+                                <span class="lang-fr">Performance · Live</span>
+                                <span class="lang-en">Performance · Live</span>
                             </span>
                         </div>
+                        <a href="https://drive.google.com/file/d/1ajzdv9lXcGGeDeUEA2d3Rc2gtqPk7qlv/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-primary"
+                             style="display: flex; align-items: center; justify-content: center; gap: 8px; background-color: var(--accent-color); color: var(--bg-dark); border:none; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; transition: 0.3s;">
+                             <i class="fas fa-play-circle"></i> 
+                             <span class="lang-fr">Visionner la vidéo</span>
+                             <span class="lang-en">Watch video</span>
+                        </a>
+                    </div>
+
+                    <!-- Video 3: Recap -->
+                    <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <h3 style="font-size: 1.4rem; margin-bottom: 15px; color: var(--text-light);"><i class="fas fa-chalkboard-teacher" style="color: var(--accent-color); margin-right: 8px;"></i> Recap — Formation RH</h3>
+                            <p class="lang-fr" style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 20px; line-height: 1.6;">Récapitulatif vidéo de la session de formation sur les ressources humaines, mettant en avant les moments d'échange et d'apprentissage.</p>
+                            <p class="lang-en" style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 20px; line-height: 1.6;">Video recap of the human resources training session, highlighting moments of exchange and learning.</p>
+                            <span style="display: inline-block; padding: 6px 14px; background: rgba(232, 164, 39, 0.1); color: var(--accent-color); border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 25px;">
+                                <span class="lang-fr">Formation · Ressources Humaines</span>
+                                <span class="lang-en">Training · Human Resources</span>
+                            </span>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1ODUw114gun_vE_u2Mi-8Zu4B6tw4iHSO/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-primary"
+                             style="display: flex; align-items: center; justify-content: center; gap: 8px; background-color: var(--accent-color); color: var(--bg-dark); border:none; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; transition: 0.3s;">
+                             <i class="fas fa-play-circle"></i> 
+                             <span class="lang-fr">Visionner la vidéo</span>
+                             <span class="lang-en">Watch video</span>
+                        </a>
                     </div>
                 </div>
             </div>

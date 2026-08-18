@@ -160,13 +160,19 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
 
-            // Auto-play videos inside
-            if (!modal.classList.contains('feed-modal')) {
-                const videos = modal.querySelectorAll('video');
-                videos.forEach(v => {
-                    v.play().catch(err => console.log("Autoplay blocked:", err));
-                });
-            }
+            // Auto-play videos inside and enforce 10-second preview loop
+            const videos = modal.querySelectorAll('video');
+            videos.forEach(v => {
+                v.currentTime = 0;
+                v.play().catch(err => console.log("Autoplay blocked:", err));
+
+                v.ontimeupdate = function() {
+                    if (v.currentTime >= 10) {
+                        v.currentTime = 0;
+                        v.play().catch(e => {});
+                    }
+                };
+            });
         }
     };
 
